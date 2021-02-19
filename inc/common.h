@@ -1,6 +1,11 @@
+/*! \file common.h
+    \brief File Which contains a bridge from .
+    
+    Details.
+*/
+
 #ifndef COMMON_H
 #define COMMON_H
-
 
 #include <iostream>
 #include <fstream>

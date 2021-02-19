@@ -1,0 +1,213 @@
+\hypertarget{main_8cpp}{}\section{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Image.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Player.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$G\+L\+F\+W/glfw3.\+h$>$}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structInputState}{Input\+State}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8cpp_acaaeb59c827bcce5feadee7db40525b0}{G\+L\+F\+W\+\_\+\+D\+LL}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_aaa4abcb7f4846f711d52ad1b601a5d78}{On\+Keyboard\+Pressed} (G\+L\+F\+Wwindow $\ast$window, int key, int scancode, int action, int mode)
+\item 
+void \hyperlink{main_8cpp_aeffc3e0d1a1c5969bc1f3d177d78ae90}{process\+Player\+Movement} (\hyperlink{structPlayer}{Player} \&player)
+\item 
+void \hyperlink{main_8cpp_a6d05fb67cad0ce9a942c185ad4980aee}{On\+Mouse\+Button\+Clicked} (G\+L\+F\+Wwindow $\ast$window, int button, int action, int mods)
+\item 
+void \hyperlink{main_8cpp_a9460a3d7c16ac378e8448ddfe3f6e31e}{On\+Mouse\+Move} (G\+L\+F\+Wwindow $\ast$window, double xpos, double ypos)
+\item 
+void \hyperlink{main_8cpp_af0722419fcccf4242e0cce6decfcc14b}{On\+Mouse\+Scroll} (G\+L\+F\+Wwindow $\ast$window, double xoffset, double yoffset)
+\item 
+int \hyperlink{main_8cpp_affd9792de82327852d79df77c1261657}{init\+GL} ()
+\item 
+int \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr G\+Lsizei \hyperlink{main_8cpp_a6f9dfdfc4bf437ef692c4509b1dab1de}{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+TH} = 1024
+\item 
+constexpr G\+Lsizei \hyperlink{main_8cpp_a526c9c10cab0f50a073d6ad4f7848295}{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT} = 1024
+\item 
+struct \hyperlink{structInputState}{Input\+State} \hyperlink{main_8cpp_aae98fcc029b6c75981e2489ab4ed42e5}{Input}
+\item 
+G\+Lfloat \hyperlink{main_8cpp_adf7cb443fa70a647d5603ee33b392102}{delta\+Time} = 0.\+0f
+\item 
+G\+Lfloat \hyperlink{main_8cpp_a606e9490a5462c2c60b30dc76ff573a1}{last\+Frame} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_acaaeb59c827bcce5feadee7db40525b0}\label{main_8cpp_acaaeb59c827bcce5feadee7db40525b0}} 
+\index{main.\+cpp@{main.\+cpp}!G\+L\+F\+W\+\_\+\+D\+LL@{G\+L\+F\+W\+\_\+\+D\+LL}}
+\index{G\+L\+F\+W\+\_\+\+D\+LL@{G\+L\+F\+W\+\_\+\+D\+LL}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{G\+L\+F\+W\+\_\+\+D\+LL}{GLFW\_DLL}}
+{\footnotesize\ttfamily \#define G\+L\+F\+W\+\_\+\+D\+LL}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_affd9792de82327852d79df77c1261657}\label{main_8cpp_affd9792de82327852d79df77c1261657}} 
+\index{main.\+cpp@{main.\+cpp}!init\+GL@{init\+GL}}
+\index{init\+GL@{init\+GL}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{init\+G\+L()}{initGL()}}
+{\footnotesize\ttfamily int init\+GL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{main_8cpp_affd9792de82327852d79df77c1261657_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{main_8cpp_affd9792de82327852d79df77c1261657_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_aaa4abcb7f4846f711d52ad1b601a5d78}\label{main_8cpp_aaa4abcb7f4846f711d52ad1b601a5d78}} 
+\index{main.\+cpp@{main.\+cpp}!On\+Keyboard\+Pressed@{On\+Keyboard\+Pressed}}
+\index{On\+Keyboard\+Pressed@{On\+Keyboard\+Pressed}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{On\+Keyboard\+Pressed()}{OnKeyboardPressed()}}
+{\footnotesize\ttfamily void On\+Keyboard\+Pressed (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{main_8cpp_aaa4abcb7f4846f711d52ad1b601a5d78_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a6d05fb67cad0ce9a942c185ad4980aee}\label{main_8cpp_a6d05fb67cad0ce9a942c185ad4980aee}} 
+\index{main.\+cpp@{main.\+cpp}!On\+Mouse\+Button\+Clicked@{On\+Mouse\+Button\+Clicked}}
+\index{On\+Mouse\+Button\+Clicked@{On\+Mouse\+Button\+Clicked}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Button\+Clicked()}{OnMouseButtonClicked()}}
+{\footnotesize\ttfamily void On\+Mouse\+Button\+Clicked (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{main_8cpp_a6d05fb67cad0ce9a942c185ad4980aee_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a9460a3d7c16ac378e8448ddfe3f6e31e}\label{main_8cpp_a9460a3d7c16ac378e8448ddfe3f6e31e}} 
+\index{main.\+cpp@{main.\+cpp}!On\+Mouse\+Move@{On\+Mouse\+Move}}
+\index{On\+Mouse\+Move@{On\+Mouse\+Move}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Move()}{OnMouseMove()}}
+{\footnotesize\ttfamily void On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{main_8cpp_a9460a3d7c16ac378e8448ddfe3f6e31e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_af0722419fcccf4242e0cce6decfcc14b}\label{main_8cpp_af0722419fcccf4242e0cce6decfcc14b}} 
+\index{main.\+cpp@{main.\+cpp}!On\+Mouse\+Scroll@{On\+Mouse\+Scroll}}
+\index{On\+Mouse\+Scroll@{On\+Mouse\+Scroll}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{On\+Mouse\+Scroll()}{OnMouseScroll()}}
+{\footnotesize\ttfamily void On\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{main_8cpp_af0722419fcccf4242e0cce6decfcc14b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_aeffc3e0d1a1c5969bc1f3d177d78ae90}\label{main_8cpp_aeffc3e0d1a1c5969bc1f3d177d78ae90}} 
+\index{main.\+cpp@{main.\+cpp}!process\+Player\+Movement@{process\+Player\+Movement}}
+\index{process\+Player\+Movement@{process\+Player\+Movement}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{process\+Player\+Movement()}{processPlayerMovement()}}
+{\footnotesize\ttfamily void process\+Player\+Movement (\begin{DoxyParamCaption}\item[{\hyperlink{structPlayer}{Player} \&}]{player }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{main_8cpp_aeffc3e0d1a1c5969bc1f3d177d78ae90_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{main_8cpp_aeffc3e0d1a1c5969bc1f3d177d78ae90_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_adf7cb443fa70a647d5603ee33b392102}\label{main_8cpp_adf7cb443fa70a647d5603ee33b392102}} 
+\index{main.\+cpp@{main.\+cpp}!delta\+Time@{delta\+Time}}
+\index{delta\+Time@{delta\+Time}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{delta\+Time}{deltaTime}}
+{\footnotesize\ttfamily G\+Lfloat delta\+Time = 0.\+0f}
+
+\mbox{\Hypertarget{main_8cpp_aae98fcc029b6c75981e2489ab4ed42e5}\label{main_8cpp_aae98fcc029b6c75981e2489ab4ed42e5}} 
+\index{main.\+cpp@{main.\+cpp}!Input@{Input}}
+\index{Input@{Input}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{Input}{Input}}
+{\footnotesize\ttfamily struct \hyperlink{structInputState}{Input\+State} Input}
+
+\mbox{\Hypertarget{main_8cpp_a606e9490a5462c2c60b30dc76ff573a1}\label{main_8cpp_a606e9490a5462c2c60b30dc76ff573a1}} 
+\index{main.\+cpp@{main.\+cpp}!last\+Frame@{last\+Frame}}
+\index{last\+Frame@{last\+Frame}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{last\+Frame}{lastFrame}}
+{\footnotesize\ttfamily G\+Lfloat last\+Frame = 0.\+0f}
+
+\mbox{\Hypertarget{main_8cpp_a526c9c10cab0f50a073d6ad4f7848295}\label{main_8cpp_a526c9c10cab0f50a073d6ad4f7848295}} 
+\index{main.\+cpp@{main.\+cpp}!W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT@{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT@{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT}{WINDOW\_HEIGHT}}
+{\footnotesize\ttfamily constexpr G\+Lsizei W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT = 1024}
+
+\mbox{\Hypertarget{main_8cpp_a6f9dfdfc4bf437ef692c4509b1dab1de}\label{main_8cpp_a6f9dfdfc4bf437ef692c4509b1dab1de}} 
+\index{main.\+cpp@{main.\+cpp}!W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+TH@{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+TH}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+TH@{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+TH}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+TH}{WINDOW\_WIDTH}}
+{\footnotesize\ttfamily constexpr G\+Lsizei W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+TH = 1024}
+

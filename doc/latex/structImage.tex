@@ -1,0 +1,159 @@
+\hypertarget{structImage}{}\section{Image Struct Reference}
+\label{structImage}\index{Image@{Image}}
+
+
+{\ttfamily \#include $<$Image.\+h$>$}
+
+
+
+Collaboration diagram for Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{structImage__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structImage_a9a7eb017b8c9babc495030a6d5e34e5a}{Image} (const std\+::string \&a\+\_\+path)
+\item 
+\hyperlink{structImage_ad04e368629b03afab0737f1b523947f9}{Image} (int a\+\_\+width, int a\+\_\+height, int a\+\_\+channels)
+\item 
+int \hyperlink{structImage_a4cb69c5911f1f8e4944047825dcf117c}{Save} (const std\+::string \&a\+\_\+path)
+\item 
+int \hyperlink{structImage_a191889676e394b6eba27e994edb7e02d}{Width} () const
+\item 
+int \hyperlink{structImage_a617543a57fd7abf1a4a052539fe35807}{Height} () const
+\item 
+int \hyperlink{structImage_acd164a8d76fb05eb3f0123b50032b4a4}{Channels} () const
+\item 
+size\+\_\+t \hyperlink{structImage_a3690a0986d16c2f5f30e2625e645cc8e}{Size} () const
+\item 
+\hyperlink{structPixel}{Pixel} $\ast$ \hyperlink{structImage_aad45e088de1f92fde63d3bcd7d542cdd}{Data} ()
+\item 
+\hyperlink{structPixel}{Pixel} \hyperlink{structImage_a0bedb6561074b2cdf3f5a577c80e043a}{Get\+Pixel} (int x, int y)
+\item 
+void \hyperlink{structImage_ad728f53861c64498690a311abe1667c4}{Put\+Pixel} (int x, int y, const \hyperlink{structPixel}{Pixel} \&pix)
+\item 
+\hyperlink{structImage_a0294f63700543e11c0f0da85601c7ae5}{$\sim$\+Image} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structImage_a9a7eb017b8c9babc495030a6d5e34e5a}\label{structImage_a9a7eb017b8c9babc495030a6d5e34e5a}} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{structImage_a9a7eb017b8c9babc495030a6d5e34e5a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structImage_ad04e368629b03afab0737f1b523947f9}\label{structImage_ad04e368629b03afab0737f1b523947f9}} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\subsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{int}]{a\+\_\+width,  }\item[{int}]{a\+\_\+height,  }\item[{int}]{a\+\_\+channels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structImage_a0294f63700543e11c0f0da85601c7ae5}\label{structImage_a0294f63700543e11c0f0da85601c7ae5}} 
+\index{Image@{Image}!````~Image@{$\sim$\+Image}}
+\index{````~Image@{$\sim$\+Image}!Image@{Image}}
+\subsubsection{\texorpdfstring{$\sim$\+Image()}{~Image()}}
+{\footnotesize\ttfamily Image\+::$\sim$\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{structImage_a0294f63700543e11c0f0da85601c7ae5_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structImage_acd164a8d76fb05eb3f0123b50032b4a4}\label{structImage_acd164a8d76fb05eb3f0123b50032b4a4}} 
+\index{Image@{Image}!Channels@{Channels}}
+\index{Channels@{Channels}!Image@{Image}}
+\subsubsection{\texorpdfstring{Channels()}{Channels()}}
+{\footnotesize\ttfamily int Image\+::\+Channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structImage_aad45e088de1f92fde63d3bcd7d542cdd}\label{structImage_aad45e088de1f92fde63d3bcd7d542cdd}} 
+\index{Image@{Image}!Data@{Data}}
+\index{Data@{Data}!Image@{Image}}
+\subsubsection{\texorpdfstring{Data()}{Data()}}
+{\footnotesize\ttfamily \hyperlink{structPixel}{Pixel}$\ast$ Image\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{structImage_aad45e088de1f92fde63d3bcd7d542cdd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structImage_a0bedb6561074b2cdf3f5a577c80e043a}\label{structImage_a0bedb6561074b2cdf3f5a577c80e043a}} 
+\index{Image@{Image}!Get\+Pixel@{Get\+Pixel}}
+\index{Get\+Pixel@{Get\+Pixel}!Image@{Image}}
+\subsubsection{\texorpdfstring{Get\+Pixel()}{GetPixel()}}
+{\footnotesize\ttfamily \hyperlink{structPixel}{Pixel} Image\+::\+Get\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structImage_a617543a57fd7abf1a4a052539fe35807}\label{structImage_a617543a57fd7abf1a4a052539fe35807}} 
+\index{Image@{Image}!Height@{Height}}
+\index{Height@{Height}!Image@{Image}}
+\subsubsection{\texorpdfstring{Height()}{Height()}}
+{\footnotesize\ttfamily int Image\+::\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structImage_ad728f53861c64498690a311abe1667c4}\label{structImage_ad728f53861c64498690a311abe1667c4}} 
+\index{Image@{Image}!Put\+Pixel@{Put\+Pixel}}
+\index{Put\+Pixel@{Put\+Pixel}!Image@{Image}}
+\subsubsection{\texorpdfstring{Put\+Pixel()}{PutPixel()}}
+{\footnotesize\ttfamily void Image\+::\+Put\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const \hyperlink{structPixel}{Pixel} \&}]{pix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{structImage_ad728f53861c64498690a311abe1667c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structImage_a4cb69c5911f1f8e4944047825dcf117c}\label{structImage_a4cb69c5911f1f8e4944047825dcf117c}} 
+\index{Image@{Image}!Save@{Save}}
+\index{Save@{Save}!Image@{Image}}
+\subsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily int Image\+::\+Save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{a\+\_\+path }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{structImage_a4cb69c5911f1f8e4944047825dcf117c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structImage_a3690a0986d16c2f5f30e2625e645cc8e}\label{structImage_a3690a0986d16c2f5f30e2625e645cc8e}} 
+\index{Image@{Image}!Size@{Size}}
+\index{Size@{Size}!Image@{Image}}
+\subsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily size\+\_\+t Image\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structImage_a191889676e394b6eba27e994edb7e02d}\label{structImage_a191889676e394b6eba27e994edb7e02d}} 
+\index{Image@{Image}!Width@{Width}}
+\index{Width@{Width}!Image@{Image}}
+\subsubsection{\texorpdfstring{Width()}{Width()}}
+{\footnotesize\ttfamily int Image\+::\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/\hyperlink{Image_8h}{Image.\+h}\item 
+src/\hyperlink{Image_8cpp}{Image.\+cpp}\end{DoxyCompactItemize}
