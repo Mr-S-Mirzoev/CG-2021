@@ -4,7 +4,11 @@ Computer Graphics course at CMC MSU in 2021
 
 # Problem desctiption
 
-## Rogue-like с лабиринтом из комнат (на подобие Hades, Binding of Isaac, подземелий в Legend of Zelda: A link to the past etc.)
+## Brief
+
+Rogue-like с лабиринтом из комнат (на подобие Hades, Binding of Isaac, подземелий в Legend of Zelda: A link to the past etc.)
+
+## More
 
 Игроку необходимо выбраться из лабиринта, состоящего из соединенных между собой квадратных/ прямоугольных комнат нескольких разных типов. Из очередной комнаты игроку доступно от 1 до 4 выходов (по одному возможному выходу в каждой из стен).
 
