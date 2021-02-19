@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['x',['x',['../structPoint.html#a8c779e11e694b20e0946105a9f5de842',1,'Point']]]
+  ['width',['Width',['../structImage.html#a191889676e394b6eba27e994edb7e02d',1,'Image']]],
+  ['window_5fheight',['WINDOW_HEIGHT',['../main_8cpp.html#a526c9c10cab0f50a073d6ad4f7848295',1,'main.cpp']]],
+  ['window_5fwidth',['WINDOW_WIDTH',['../main_8cpp.html#a6f9dfdfc4bf437ef692c4509b1dab1de',1,'main.cpp']]]
 ];

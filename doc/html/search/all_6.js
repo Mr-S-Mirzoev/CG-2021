@@ -1,6 +1,8 @@
 var searchData=
 [
   ['g',['g',['../structPixel.html#aeab078b7768caf273f8fe1daffa50729',1,'Pixel']]],
+  ['get_5fexts',['get_exts',['../glad_8c.html#abfb50eb07d43a6e366811edf9feff173',1,'glad.c']]],
+  ['get_5fproc',['get_proc',['../glad_8c.html#ad63f2bf7c845fd310286b42a454ba71d',1,'glad.c']]],
   ['getpixel',['GetPixel',['../structImage.html#a0bedb6561074b2cdf3f5a577c80e043a',1,'Image']]],
   ['gl_5fcheck_5ferrors',['GL_CHECK_ERRORS',['../common_8h.html#a0c19729acaa7baef460908e525be0e7f',1,'common.h']]],
   ['glad_2ec',['glad.c',['../glad_8c.html',1,'']]],
@@ -1071,6 +1073,7 @@ var searchData=
   ['glad_5fglwindowpos3iv',['glad_glWindowPos3iv',['../glad_8c.html#af3e9f30830f25d32a7bdc1e74654c678',1,'glad.c']]],
   ['glad_5fglwindowpos3s',['glad_glWindowPos3s',['../glad_8c.html#ad1662114408692e931c01a781d841a59',1,'glad.c']]],
   ['glad_5fglwindowpos3sv',['glad_glWindowPos3sv',['../glad_8c.html#aaf7b5a062bd21769a146e6fdd67e48a5',1,'glad.c']]],
+  ['gladgetprocaddressptr',['gladGetProcAddressPtr',['../glad_8c.html#a533ffb590d3a069e5d568eb898c1f251',1,'glad.c']]],
   ['gladloadgl',['gladLoadGL',['../glad_8c.html#a137453294a2756a898902ef399b3d437',1,'glad.c']]],
   ['gladloadglloader',['gladLoadGLLoader',['../glad_8c.html#af70e4674f75bd3bbfedf7979607c65ef',1,'glad.c']]],
   ['glfw_5fdll',['GLFW_DLL',['../main_8cpp.html#acaaeb59c827bcce5feadee7db40525b0',1,'main.cpp']]],

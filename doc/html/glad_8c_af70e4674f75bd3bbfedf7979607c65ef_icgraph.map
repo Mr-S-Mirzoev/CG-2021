@@ -1,4 +1,5 @@
 <map id="gladLoadGLLoader" name="gladLoadGLLoader">
-<area shape="rect" id="node2" href="$main_8cpp.html#affd9792de82327852d79df77c1261657" title="initGL" alt="" coords="184,5,240,32"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="288,5,339,32"/>
+<area shape="rect" id="node2" href="$glad_8c.html#a137453294a2756a898902ef399b3d437" title="gladLoadGL" alt="" coords="184,5,275,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#affd9792de82327852d79df77c1261657" title="initGL" alt="" coords="201,56,257,83"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="323,56,373,83"/>
 </map>

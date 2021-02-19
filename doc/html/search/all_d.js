@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['pfnglxgetprocaddressproc_5fprivate',['PFNGLXGETPROCADDRESSPROC_PRIVATE',['../glad_8c.html#aca765b78242406adec0d1614c5d7036b',1,'glad.c']]],
-  ['pixel',['Pixel',['../structPixel.html',1,'']]],
-  ['player',['Player',['../structPlayer.html',1,'Player'],['../structPlayer.html#a02434d25ce99e4bedb9f30c6cd76c73c',1,'Player::Player()']]],
-  ['player_2ecpp',['Player.cpp',['../Player_8cpp.html',1,'']]],
-  ['player_2eh',['Player.h',['../Player_8h.html',1,'']]],
-  ['point',['Point',['../structPoint.html',1,'']]],
-  ['processinput',['ProcessInput',['../structPlayer.html#a4b275c51f881fb61b52d1ede3d1dcba3',1,'Player']]],
-  ['processplayermovement',['processPlayerMovement',['../main_8cpp.html#aeffc3e0d1a1c5969bc1f3d177d78ae90',1,'main.cpp']]],
-  ['putpixel',['PutPixel',['../structImage.html#ad728f53861c64498690a311abe1667c4',1,'Image']]]
+  ['onkeyboardpressed',['OnKeyboardPressed',['../main_8cpp.html#aaa4abcb7f4846f711d52ad1b601a5d78',1,'main.cpp']]],
+  ['onmousebuttonclicked',['OnMouseButtonClicked',['../main_8cpp.html#a6d05fb67cad0ce9a942c185ad4980aee',1,'main.cpp']]],
+  ['onmousemove',['OnMouseMove',['../main_8cpp.html#a9460a3d7c16ac378e8448ddfe3f6e31e',1,'main.cpp']]],
+  ['onmousescroll',['OnMouseScroll',['../main_8cpp.html#af0722419fcccf4242e0cce6decfcc14b',1,'main.cpp']]],
+  ['open_5fgl',['open_gl',['../glad_8c.html#a538b0e09de5780f026ad62462fade0a6',1,'glad.c']]]
 ];

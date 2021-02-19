@@ -1,7 +1,8 @@
 /*! \file common.h
-    \brief File Which contains a bridge from .
+    \brief C-errors handling with exceptions
     
-    Details.
+    Here is a bridge function which handles C errors from glad and 
+	transforms it into exception. 
 */
 
 #ifndef COMMON_H
@@ -20,7 +21,14 @@
 //а также тип ошибки
 #define GL_CHECK_ERRORS ThrowExceptionOnGLError(__LINE__,__FILE__);
 
-
+/**
+ * \fn static void ThrowExceptionOnGLError(int line, const char *file)
+ * 
+ * @brief Throws error if glerror occured
+ * 
+ * @param line line number where there the error occured
+ * @param file file name where the error occured
+ */
 static void ThrowExceptionOnGLError(int line, const char *file)
 {
 

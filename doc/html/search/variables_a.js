@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['r',['r',['../structPixel.html#a47d65d4a410f57c46746ddedd709e177',1,'Pixel']]],
-  ['read',['read',['../structstbi__io__callbacks.html#a623e46b3a2a019611601409926283a88',1,'stbi_io_callbacks']]]
+  ['max_5floaded_5fmajor',['max_loaded_major',['../glad_8c.html#a9e504bd5bf1cd6a49e3a76a33a58ede4',1,'glad.c']]],
+  ['max_5floaded_5fminor',['max_loaded_minor',['../glad_8c.html#ad98d2ec0df0b5d1256e056d8d663980e',1,'glad.c']]]
 ];

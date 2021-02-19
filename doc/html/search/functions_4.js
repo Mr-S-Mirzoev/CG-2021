@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['image',['Image',['../structImage.html#a9a7eb017b8c9babc495030a6d5e34e5a',1,'Image::Image(const std::string &amp;a_path)'],['../structImage.html#ad04e368629b03afab0737f1b523947f9',1,'Image::Image(int a_width, int a_height, int a_channels)']]],
-  ['initgl',['initGL',['../main_8cpp.html#affd9792de82327852d79df77c1261657',1,'main.cpp']]]
+  ['has_5fext',['has_ext',['../glad_8c.html#abfdc555a06ed44e71045a703a7d43951',1,'glad.c']]],
+  ['height',['Height',['../structImage.html#a617543a57fd7abf1a4a052539fe35807',1,'Image']]]
 ];

@@ -1,3 +1,16 @@
+/*! \mainpage Computer Graphics Task 1
+ *
+ * \section intro_sec Introduction
+ *
+ * This is the introduction.
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Opening the box
+ *
+ * etc...
+ */
+
 #include "common.h"
 #include "Image.h"
 #include "Player.h"

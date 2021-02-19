@@ -2,23 +2,21 @@
 \label{common_8h}\index{inc/common.\+h@{inc/common.\+h}}
 
 
-File Which co.  
+C-\/errors handling with exceptions.  
 
 
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$glad/glad.\+h$>$}\newline
-Include dependency graph for common.\+h\+:
-\nopagebreak
+Include dependency graph for common.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=344pt]{common_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,19 +26,44 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{common_8h_a0c19729acaa7baef460908e525be0e7f}{G\+L\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+RS}~Throw\+Exception\+On\+G\+L\+Error(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+);
+\#define \hyperlink{common_8h_a0c19729acaa7baef460908e525be0e7f}{G\+L\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+RS}~\hyperlink{common_8h_ace33e758fb773d4c493543f84e7417b9}{Throw\+Exception\+On\+G\+L\+Error}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+);
 \end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{common_8h_ace33e758fb773d4c493543f84e7417b9}{Throw\+Exception\+On\+G\+L\+Error} (int line, const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Throws error if glerror occured. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-File Which co. 
+C-\/errors handling with exceptions. 
 
-Details. 
+Here is a bridge function which handles C errors from glad and transforms it into exception. 
 
 \subsection{Macro Definition Documentation}
 \mbox{\Hypertarget{common_8h_a0c19729acaa7baef460908e525be0e7f}\label{common_8h_a0c19729acaa7baef460908e525be0e7f}} 
 \index{common.\+h@{common.\+h}!G\+L\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+RS@{G\+L\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+RS}}
 \index{G\+L\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+RS@{G\+L\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+RS}!common.\+h@{common.\+h}}
 \subsubsection{\texorpdfstring{G\+L\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+RS}{GL\_CHECK\_ERRORS}}
-{\footnotesize\ttfamily \#define G\+L\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+RS~Throw\+Exception\+On\+G\+L\+Error(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+);}
+{\footnotesize\ttfamily \#define G\+L\+\_\+\+C\+H\+E\+C\+K\+\_\+\+E\+R\+R\+O\+RS~\hyperlink{common_8h_ace33e758fb773d4c493543f84e7417b9}{Throw\+Exception\+On\+G\+L\+Error}(\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+);}
 
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{common_8h_ace33e758fb773d4c493543f84e7417b9}\label{common_8h_ace33e758fb773d4c493543f84e7417b9}} 
+\index{common.\+h@{common.\+h}!Throw\+Exception\+On\+G\+L\+Error@{Throw\+Exception\+On\+G\+L\+Error}}
+\index{Throw\+Exception\+On\+G\+L\+Error@{Throw\+Exception\+On\+G\+L\+Error}!common.\+h@{common.\+h}}
+\subsubsection{\texorpdfstring{Throw\+Exception\+On\+G\+L\+Error()}{ThrowExceptionOnGLError()}}
+{\footnotesize\ttfamily static void Throw\+Exception\+On\+G\+L\+Error (\begin{DoxyParamCaption}\item[{int}]{line,  }\item[{const char $\ast$}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Throws error if glerror occured. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & line number where there the error occured \\
+\hline
+{\em file} & file name where the error occured \\
+\hline
+\end{DoxyParams}

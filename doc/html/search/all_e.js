@@ -1,6 +1,12 @@
 var searchData=
 [
-  ['r',['r',['../structPixel.html#a47d65d4a410f57c46746ddedd709e177',1,'Pixel']]],
-  ['read',['read',['../structstbi__io__callbacks.html#a623e46b3a2a019611601409926283a88',1,'stbi_io_callbacks']]],
-  ['right',['RIGHT',['../Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fa21507b40c80068eda19865706fdc2403',1,'Player.h']]]
+  ['pfnglxgetprocaddressproc_5fprivate',['PFNGLXGETPROCADDRESSPROC_PRIVATE',['../glad_8c.html#aca765b78242406adec0d1614c5d7036b',1,'glad.c']]],
+  ['pixel',['Pixel',['../structPixel.html',1,'']]],
+  ['player',['Player',['../structPlayer.html',1,'Player'],['../structPlayer.html#a02434d25ce99e4bedb9f30c6cd76c73c',1,'Player::Player()']]],
+  ['player_2ecpp',['Player.cpp',['../Player_8cpp.html',1,'']]],
+  ['player_2eh',['Player.h',['../Player_8h.html',1,'']]],
+  ['point',['Point',['../structPoint.html',1,'']]],
+  ['processinput',['ProcessInput',['../structPlayer.html#a4b275c51f881fb61b52d1ede3d1dcba3',1,'Player']]],
+  ['processplayermovement',['processPlayerMovement',['../main_8cpp.html#aeffc3e0d1a1c5969bc1f3d177d78ae90',1,'main.cpp']]],
+  ['putpixel',['PutPixel',['../structImage.html#ad728f53861c64498690a311abe1667c4',1,'Image']]]
 ];

@@ -1068,5 +1068,6 @@ var searchData=
   ['glad_5fglwindowpos3iv',['glad_glWindowPos3iv',['../glad_8c.html#af3e9f30830f25d32a7bdc1e74654c678',1,'glad.c']]],
   ['glad_5fglwindowpos3s',['glad_glWindowPos3s',['../glad_8c.html#ad1662114408692e931c01a781d841a59',1,'glad.c']]],
   ['glad_5fglwindowpos3sv',['glad_glWindowPos3sv',['../glad_8c.html#aaf7b5a062bd21769a146e6fdd67e48a5',1,'glad.c']]],
+  ['gladgetprocaddressptr',['gladGetProcAddressPtr',['../glad_8c.html#a533ffb590d3a069e5d568eb898c1f251',1,'glad.c']]],
   ['glversion',['GLVersion',['../glad_8c.html#a936871a0ece33eb83e12fe9a0b19aec5',1,'glad.c']]]
 ];

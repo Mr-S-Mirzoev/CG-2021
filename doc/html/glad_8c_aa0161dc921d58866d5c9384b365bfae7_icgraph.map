@@ -1,0 +1,6 @@
+<map id="load_GL_VERSION_3_1" name="load_GL_VERSION_3_1">
+<area shape="rect" id="node2" href="$glad_8c.html#af70e4674f75bd3bbfedf7979607c65ef" title="gladLoadGLLoader" alt="" coords="220,31,351,57"/>
+<area shape="rect" id="node3" href="$glad_8c.html#a137453294a2756a898902ef399b3d437" title="gladLoadGL" alt="" coords="399,5,489,32"/>
+<area shape="rect" id="node4" href="$main_8cpp.html#affd9792de82327852d79df77c1261657" title="initGL" alt="" coords="416,56,472,83"/>
+<area shape="rect" id="node5" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="537,56,588,83"/>
+</map>
