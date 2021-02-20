@@ -1,0 +1,10 @@
+digraph "stbi_write_png"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="stbi_write_png",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Image::Save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structImage.html#a4cb69c5911f1f8e4944047825dcf117c",tooltip="Save an image to path."];
+}

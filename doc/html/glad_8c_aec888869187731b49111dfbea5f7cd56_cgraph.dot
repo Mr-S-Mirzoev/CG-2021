@@ -1,0 +1,14 @@
+digraph "find_extensionsGL"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="find_extensionsGL",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="free_exts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$glad_8c.html#a250a03ed54f517313be3fb311c1d0929",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="get_exts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$glad_8c.html#abfb50eb07d43a6e366811edf9feff173",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="has_ext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$glad_8c.html#abfdc555a06ed44e71045a703a7d43951",tooltip=" "];
+}

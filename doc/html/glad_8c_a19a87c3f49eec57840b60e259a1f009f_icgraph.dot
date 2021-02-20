@@ -1,0 +1,16 @@
+digraph "load_GL_VERSION_4_6"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="load_GL_VERSION_4_6",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="gladLoadGLLoader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$glad_8c.html#af70e4674f75bd3bbfedf7979607c65ef",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="gladLoadGL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$glad_8c.html#a137453294a2756a898902ef399b3d437",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="initGL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#affd9792de82327852d79df77c1261657",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+}

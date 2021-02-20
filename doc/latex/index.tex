@@ -1,4 +1,84 @@
-\hypertarget{index_intro_sec}{}\section{Introduction}\label{index_intro_sec}
-This is the introduction.\hypertarget{index_install_sec}{}\section{Installation}\label{index_install_sec}
-\hypertarget{index_step1}{}\subsection{Step 1\+: Opening the box}\label{index_step1}
+\hypertarget{index_intro_sec}{}\doxysection{Introduction}\label{index_intro_sec}
+The goal of the task is to master the basics of developing interactive graphics applications and working with images. Material to be learned\+:
+\begin{DoxyItemize}
+\item working with images-\/overlay using alpha blending, filters;
+\item working with the window system and the frame buffer;
+\item processing user input / output.
+\end{DoxyItemize}
+
+As an interactive graphics application, you need to implement a simple 2D game in the roguelike genre according to the option.\hypertarget{index_install_sec}{}\doxysection{Installation}\label{index_install_sec}
+\hypertarget{index_step1}{}\doxysubsection{Step 1\+: Pre-\/checks}\label{index_step1}
+Make sure you\textquotesingle{}re in the root directory of this project\hypertarget{index_step2}{}\doxysubsection{Step 2\+: Install dependencies}\label{index_step2}
+To install dependencies in Ubuntu, make executable and run following script\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{chmod +x ./install.sh}
+\DoxyCodeLine{sudo ./install.sh}
+\end{DoxyCode}
+\hypertarget{index_step3}{}\doxysubsection{Step 3\+: Build the project}\label{index_step3}
+If you use C\+Make version 3.\+0 and newer, build the project this way\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake -\/B build}
+\DoxyCodeLine{make -\/C build}
+\end{DoxyCode}
+
+
+If you use an older version\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir build}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make}
+\DoxyCodeLine{cd ..}
+\end{DoxyCode}
+\hypertarget{index_run_sec}{}\doxysection{Running}\label{index_run_sec}
+To run the project hit\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./bin/\mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}}}
+\end{DoxyCode}
+\hypertarget{index_task_sec}{}\doxysection{Task statement}\label{index_task_sec}
+\hypertarget{index_autotoc_md0}{}\doxysubsection{Brief}\label{index_autotoc_md0}
+Rogue-\/like с лабиринтом из комнат (на подобие Hades, Binding of Isaac, подземелий в Legend of Zelda\+: A link to the past etc.)\hypertarget{index_autotoc_md1}{}\doxysubsection{More}\label{index_autotoc_md1}
+Игроку необходимо выбраться из лабиринта, состоящего из соединенных между собой квадратных/ прямоугольных комнат нескольких разных типов. Из очередной комнаты игроку доступно от 1 до 4 выходов (по одному возможному выходу в каждой из стен).
+
+{\bfseries{Обязательными элементами задания являются\+:}}
+
+
+\begin{DoxyItemize}
+\item Чтение карты общего лабиринта и карты комнат разных типов из текстовых файлов. Лабиринт состоит минимум из 20 комнат 4 разных типов. Одна комната целиком помещается на экран.
+\item Каждый символ в текстовом файле общего лабиринта задаёт один из нескольких типов комнат -\/ ‘\+A’, ‘\+B’, ‘\+C’, ...\+:
+\item Каждый символ в текстовом файле для комнаты задает один из нескольких вариантов тайла\+:
+\begin{DoxyItemize}
+\item пустое пространство\+: ‘ ‘ (пробел)
+\item стена\+: ‘\+::’
+\item пол\+: ‘.\+’
+\item игрок\+: ‘@’
+\item выход из комнаты\+: ‘x’
+\item выход из всего лабиринта\+: ‘\+Q’
+\item ключи, которые позволяют открывать закрытые выходы из комнат\+: ‘\+K’
+\end{DoxyItemize}
+\item Визуализация карты при помощи графики с обязательным отображением всех игровых элементов разными изображениями (тайлами/спрайтами).
+\item Реализация движения и взаимодействия с окружения игрока при помощи управления с клавиатуры (например, W, A, S, D, пробел). Игрок не должен проходить сквозь стены.
+\item При попадании в пустоту/ловушку игрок должен умирать\+: с помощью графики необходимо вывести сообщение о проигрыше и завершить игру.
+\item Если игрок достиг выхода из лабиринта, необходимо при помощи графики вывести сообщение об успешном окончании игры.
+
+{\bfseries{Дополнительная часть (максимум -\/ 15 баллов)}}
+\item Реализовать врагов, которые перемещаются по лабиринту (вариант А) или по комнате (вариант Б) -\/ патрулируют по маршруту (2 балл) и/или двигаются на игрока (4 балла).
+\item Более продвинутые реализации врагов\+: до 4 баллов. Например, противники атакуют с некоторой дистанции и отбегают от игрока, при его приближении. ~\newline
+
+\item Анимация статических объектов -\/ например, сокровища и шипы ловушек блестят. (2 балла)
+\item Плавная спрайтовая анимация динамических объектов -\/ походка игрока и врагов, открытие дверей и.\+т.\+д. (от 2 до 5 баллов)
+\item Реализовать графический эффект перехода между уровнями (вариант А) и комнатами (вариант Б) -\/ постепенное “угасание” и появление игровой карты (fade out / fade in), эффект “мозаики”, плавное “перетекание” одного изображения в другое и т.\+п. (3 балла)
+\item Эффекты пост-\/обработки всего изображения -\/ “дрожание” воздуха (heat haze), размытие/туман и т.\+п. (3 балла) Источники света -\/ факелы, лампы и т.\+д., которые “освещают” (=изменяют цвет) соседних тайлов в некотором радиусе. (4 балла)
+\begin{DoxyItemize}
+\item анимация источников света (+1 балл)
+\item bloom (+4 балла)
+\end{DoxyItemize}
+\item Реализация и графическое отображение инвентаря (3 балла)
+\item Графическое отображение характеристик игрока и соответствующие им игровые механики -\/ например, если выводится здоровье, то игрок может его потерять (ловушки, враги) и, возможно, восстановить. (2 балла)
+\item Механика ближнего боя с анимацией. (2 балла)
+\item Механика дальнего боя (стрелковое оружие и/или магия -\/ огненные шары, волшебные стрелы и т.\+д.) с анимацией летящего снаряда. (от 3 до 6 баллов в зависимости от субъективно оцениваемого визуального качества и сложности) Визуальные эффекты боя -\/ “вылетающие” спрайты цифр повреждений, искры, “тряска” экрана и т.\+п. (от 2 до 4 баллов)
+\item Финальный босс игры\+: от 2 до 6 баллов. Боссы, отличающиеся от обычных врагов только числовыми параметрами(жизни, урон и тд.), оцениваются в 2 балла. Чтобы получить больше необходимо реализовать хотя бы одну оригинальную механику для босса. Этой механики не должно быть ни у одного другого противника.
+\item Реализация большого лабиринта (вариант А)\+: 5 баллов. В данном пункте предполагается, что карта уровня больше чем отображаемая в окне область. Необходимо реализовать отображение видимой области, которая располагается вокруг игрока и перемещается вместе с ним.
+
 etc... 
+\end{DoxyItemize}

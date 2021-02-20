@@ -1,0 +1,10 @@
+digraph "open_gl"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="open_gl",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="gladLoadGL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$glad_8c.html#a137453294a2756a898902ef399b3d437",tooltip=" "];
+}

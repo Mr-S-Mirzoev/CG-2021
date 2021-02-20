@@ -2,6 +2,13 @@
 
 Computer Graphics course at CMC MSU in 2021
 
+# Requisites
+
+To install dependencies in Ubuntu, make executable and run following script:
+
+    chmod +x ./install.sh
+    sudo ./install.sh
+
 # Problem desctiption
 
 ## Brief

@@ -1,4 +1,4 @@
-\hypertarget{structPlayer}{}\section{Player Struct Reference}
+\hypertarget{structPlayer}{}\doxysection{Player Struct Reference}
 \label{structPlayer}\index{Player@{Player}}
 
 
@@ -6,78 +6,81 @@
 
 
 
-Collaboration diagram for Player\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=169pt]{structPlayer__coll__graph}
-\end{center}
-\end{figure}
-\subsection*{Public Member Functions}
+Collaboration diagram for Player\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structPlayer_a02434d25ce99e4bedb9f30c6cd76c73c}{Player} (\hyperlink{structPoint}{Point} pos=\{.x=10,.y=10\})
+\mbox{\hyperlink{structPlayer_a02434d25ce99e4bedb9f30c6cd76c73c}{Player}} (\mbox{\hyperlink{structPoint}{Point}} pos=\{.x=10,.y=10\})
 \item 
-bool \hyperlink{structPlayer_a743da3dcbc81ed11bfcb81943aae175b}{Moved} () const
+bool \mbox{\hyperlink{structPlayer_a743da3dcbc81ed11bfcb81943aae175b}{Moved}} () const
 \item 
-void \hyperlink{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3}{Process\+Input} (\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}{Movement\+Dir} dir)
-\item 
-void \hyperlink{structPlayer_a1a10995b61d63b46c6b562bd026382c4}{Draw} (\hyperlink{structImage}{Image} \&screen)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3}{Process\+Input}} (\mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}{Movement\+Dir}} dir)
+\begin{DoxyCompactList}\small\item\em Move the player from it\textquotesingle{}s current position to the direction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structPlayer_a1a10995b61d63b46c6b562bd026382c4}{Draw}} (\mbox{\hyperlink{structImage}{Image}} \&screen)
+\begin{DoxyCompactList}\small\item\em If player moved, move the player tile, save old coords. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Constructor \& Destructor Documentation}
+\doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{structPlayer_a02434d25ce99e4bedb9f30c6cd76c73c}\label{structPlayer_a02434d25ce99e4bedb9f30c6cd76c73c}} 
 \index{Player@{Player}!Player@{Player}}
 \index{Player@{Player}!Player@{Player}}
-\subsubsection{\texorpdfstring{Player()}{Player()}}
-{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{\hyperlink{structPoint}{Point}}]{pos = {\ttfamily \{.x~=~10,~.y~=~10\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPoint}{Point}}}]{pos = {\ttfamily \{.x~=~10,~.y~=~10\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 
-\subsection{Member Function Documentation}
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{structPlayer_a1a10995b61d63b46c6b562bd026382c4}\label{structPlayer_a1a10995b61d63b46c6b562bd026382c4}} 
 \index{Player@{Player}!Draw@{Draw}}
 \index{Draw@{Draw}!Player@{Player}}
-\subsubsection{\texorpdfstring{Draw()}{Draw()}}
-{\footnotesize\ttfamily void Player\+::\+Draw (\begin{DoxyParamCaption}\item[{\hyperlink{structImage}{Image} \&}]{screen }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Player\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structImage}{Image}} \&}]{screen }\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=276pt]{structPlayer_a1a10995b61d63b46c6b562bd026382c4_cgraph}
-\end{center}
-\end{figure}
+
+
+If player moved, move the player tile, save old coords. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screen} & -\/ Reference to \mbox{\hyperlink{structImage}{Image}} object on which we\textquotesingle{}re planning to draw \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+% FIG 1
 \mbox{\Hypertarget{structPlayer_a743da3dcbc81ed11bfcb81943aae175b}\label{structPlayer_a743da3dcbc81ed11bfcb81943aae175b}} 
 \index{Player@{Player}!Moved@{Moved}}
 \index{Moved@{Moved}!Player@{Player}}
-\subsubsection{\texorpdfstring{Moved()}{Moved()}}
+\doxysubsubsection{\texorpdfstring{Moved()}{Moved()}}
 {\footnotesize\ttfamily bool Player\+::\+Moved (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=270pt]{structPlayer_a743da3dcbc81ed11bfcb81943aae175b_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3}\label{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3}} 
-\index{Player@{Player}!Process\+Input@{Process\+Input}}
-\index{Process\+Input@{Process\+Input}!Player@{Player}}
-\subsubsection{\texorpdfstring{Process\+Input()}{ProcessInput()}}
-{\footnotesize\ttfamily void Player\+::\+Process\+Input (\begin{DoxyParamCaption}\item[{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}{Movement\+Dir}}]{dir }\end{DoxyParamCaption})}
+\begin{DoxyReturn}{Returns}
+true -\/ if current coordinates are equal to old 
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3_icgraph}
-\end{center}
-\end{figure}
+false -\/ if current coordinates are not equal to old 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3}\label{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3}} 
+\index{Player@{Player}!ProcessInput@{ProcessInput}}
+\index{ProcessInput@{ProcessInput}!Player@{Player}}
+\doxysubsubsection{\texorpdfstring{ProcessInput()}{ProcessInput()}}
+{\footnotesize\ttfamily void Player\+::\+Process\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}{Movement\+Dir}}}]{dir }\end{DoxyParamCaption})}
+
+
+
+Move the player from it\textquotesingle{}s current position to the direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & -\/ movement direction (of enum class Movement\+Dir) \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+% FIG 3
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-inc/\hyperlink{Player_8h}{Player.\+h}\item 
-src/\hyperlink{Player_8cpp}{Player.\+cpp}\end{DoxyCompactItemize}
+inc/\mbox{\hyperlink{Player_8h}{Player.\+h}}\item 
+src/\mbox{\hyperlink{Player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

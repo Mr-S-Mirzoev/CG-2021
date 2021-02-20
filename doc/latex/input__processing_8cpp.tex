@@ -1,0 +1,85 @@
+\hypertarget{input__processing_8cpp}{}\doxysection{src/input\+\_\+processing.cpp File Reference}
+\label{input__processing_8cpp}\index{src/input\_processing.cpp@{src/input\_processing.cpp}}
+{\ttfamily \#include \char`\"{}input\+\_\+processing.\+h\char`\"{}}\newline
+Include dependency graph for input\+\_\+processing.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{input__processing_8cpp_aaa4abcb7f4846f711d52ad1b601a5d78}{On\+Keyboard\+Pressed}} (G\+L\+F\+Wwindow $\ast$window, int key, int scancode, int action, int mode)
+\item 
+void \mbox{\hyperlink{input__processing_8cpp_aeffc3e0d1a1c5969bc1f3d177d78ae90}{process\+Player\+Movement}} (\mbox{\hyperlink{structPlayer}{Player}} \&player)
+\item 
+void \mbox{\hyperlink{input__processing_8cpp_a6d05fb67cad0ce9a942c185ad4980aee}{On\+Mouse\+Button\+Clicked}} (G\+L\+F\+Wwindow $\ast$window, int button, int action, int mods)
+\item 
+void \mbox{\hyperlink{input__processing_8cpp_a9460a3d7c16ac378e8448ddfe3f6e31e}{On\+Mouse\+Move}} (G\+L\+F\+Wwindow $\ast$window, double xpos, double ypos)
+\item 
+void \mbox{\hyperlink{input__processing_8cpp_af0722419fcccf4242e0cce6decfcc14b}{On\+Mouse\+Scroll}} (G\+L\+F\+Wwindow $\ast$window, double xoffset, double yoffset)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static G\+Lfloat \mbox{\hyperlink{input__processing_8cpp_adf7cb443fa70a647d5603ee33b392102}{delta\+Time}} = 0.\+0f
+\item 
+static G\+Lfloat \mbox{\hyperlink{input__processing_8cpp_a606e9490a5462c2c60b30dc76ff573a1}{last\+Frame}} = 0.\+0f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{input__processing_8cpp_aaa4abcb7f4846f711d52ad1b601a5d78}\label{input__processing_8cpp_aaa4abcb7f4846f711d52ad1b601a5d78}} 
+\index{input\_processing.cpp@{input\_processing.cpp}!OnKeyboardPressed@{OnKeyboardPressed}}
+\index{OnKeyboardPressed@{OnKeyboardPressed}!input\_processing.cpp@{input\_processing.cpp}}
+\doxysubsubsection{\texorpdfstring{OnKeyboardPressed()}{OnKeyboardPressed()}}
+{\footnotesize\ttfamily void On\+Keyboard\+Pressed (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{input__processing_8cpp_a6d05fb67cad0ce9a942c185ad4980aee}\label{input__processing_8cpp_a6d05fb67cad0ce9a942c185ad4980aee}} 
+\index{input\_processing.cpp@{input\_processing.cpp}!OnMouseButtonClicked@{OnMouseButtonClicked}}
+\index{OnMouseButtonClicked@{OnMouseButtonClicked}!input\_processing.cpp@{input\_processing.cpp}}
+\doxysubsubsection{\texorpdfstring{OnMouseButtonClicked()}{OnMouseButtonClicked()}}
+{\footnotesize\ttfamily void On\+Mouse\+Button\+Clicked (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{input__processing_8cpp_a9460a3d7c16ac378e8448ddfe3f6e31e}\label{input__processing_8cpp_a9460a3d7c16ac378e8448ddfe3f6e31e}} 
+\index{input\_processing.cpp@{input\_processing.cpp}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!input\_processing.cpp@{input\_processing.cpp}}
+\doxysubsubsection{\texorpdfstring{OnMouseMove()}{OnMouseMove()}}
+{\footnotesize\ttfamily void On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{input__processing_8cpp_af0722419fcccf4242e0cce6decfcc14b}\label{input__processing_8cpp_af0722419fcccf4242e0cce6decfcc14b}} 
+\index{input\_processing.cpp@{input\_processing.cpp}!OnMouseScroll@{OnMouseScroll}}
+\index{OnMouseScroll@{OnMouseScroll}!input\_processing.cpp@{input\_processing.cpp}}
+\doxysubsubsection{\texorpdfstring{OnMouseScroll()}{OnMouseScroll()}}
+{\footnotesize\ttfamily void On\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{input__processing_8cpp_aeffc3e0d1a1c5969bc1f3d177d78ae90}\label{input__processing_8cpp_aeffc3e0d1a1c5969bc1f3d177d78ae90}} 
+\index{input\_processing.cpp@{input\_processing.cpp}!processPlayerMovement@{processPlayerMovement}}
+\index{processPlayerMovement@{processPlayerMovement}!input\_processing.cpp@{input\_processing.cpp}}
+\doxysubsubsection{\texorpdfstring{processPlayerMovement()}{processPlayerMovement()}}
+{\footnotesize\ttfamily void process\+Player\+Movement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPlayer}{Player}} \&}]{player }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{input__processing_8cpp_adf7cb443fa70a647d5603ee33b392102}\label{input__processing_8cpp_adf7cb443fa70a647d5603ee33b392102}} 
+\index{input\_processing.cpp@{input\_processing.cpp}!deltaTime@{deltaTime}}
+\index{deltaTime@{deltaTime}!input\_processing.cpp@{input\_processing.cpp}}
+\doxysubsubsection{\texorpdfstring{deltaTime}{deltaTime}}
+{\footnotesize\ttfamily G\+Lfloat delta\+Time = 0.\+0f\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{input__processing_8cpp_a606e9490a5462c2c60b30dc76ff573a1}\label{input__processing_8cpp_a606e9490a5462c2c60b30dc76ff573a1}} 
+\index{input\_processing.cpp@{input\_processing.cpp}!lastFrame@{lastFrame}}
+\index{lastFrame@{lastFrame}!input\_processing.cpp@{input\_processing.cpp}}
+\doxysubsubsection{\texorpdfstring{lastFrame}{lastFrame}}
+{\footnotesize\ttfamily G\+Lfloat last\+Frame = 0.\+0f\hspace{0.3cm}{\ttfamily [static]}}
+
