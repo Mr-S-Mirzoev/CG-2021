@@ -1,7 +1,7 @@
 #include "input_processing.h"
 
-static GLfloat deltaTime = 0.0f;
-static GLfloat lastFrame = 0.0f;
+GLfloat deltaTime = 0.0f;
+GLfloat lastFrame = 0.0f;
 
 void OnKeyboardPressed(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
