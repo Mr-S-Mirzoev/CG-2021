@@ -59,13 +59,13 @@ Rogue-like с лабиринтом из комнат (на подобие Hades,
 - Чтение карты общего лабиринта и карты комнат разных типов из текстовых файлов. Лабиринт состоит минимум из 20 комнат 4 разных типов. Одна комната целиком помещается на экран.
 - Каждый символ в текстовом файле общего лабиринта задаёт один из нескольких типов комнат - ‘A’, ‘B’, ‘C’, ...:
 - Каждый символ в текстовом файле для комнаты задает один из нескольких вариантов тайла:
-  - пустое пространство: ‘ ‘ (пробел)
-  - стена: ‘#’
-  - пол: ‘.’
-  - игрок: ‘@’
-  - выход из комнаты: ‘x’
-  - выход из всего лабиринта: ‘Q’
-  - ключи, которые позволяют открывать закрытые выходы из комнат: ‘K’
+  - пустое пространство: ` ` (пробел)
+  - стена: `#`
+  - пол: `.`
+  - игрок: `@`
+  - выход из комнаты: `x`
+  - выход из всего лабиринта: `Q`
+  - ключи, которые позволяют открывать закрытые выходы из комнат: `K`
 - Визуализация карты при помощи графики с обязательным отображением всех игровых элементов разными изображениями (тайлами/спрайтами). 
 - Реализация движения и взаимодействия с окружения игрока при помощи управления с клавиатуры (например, W, A, S, D, пробел). Игрок не должен проходить сквозь стены.
 - При попадании в пустоту/ловушку игрок должен умирать: с помощью графики необходимо вывести сообщение о проигрыше и завершить игру.
@@ -97,6 +97,7 @@ Rogue-like с лабиринтом из комнат (на подобие Hades,
 #include "common.h"
 #include "Image.h"
 #include "input_processing.h"
+#include "map_loader.h"
 
 extern GLfloat deltaTime;
 extern GLfloat lastFrame;
@@ -126,12 +127,15 @@ int main(int argc, char** argv)
 	if(!glfwInit())
         return -1;
 
-//	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-//	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-//	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	std::cout << default_mapA.to_string() << std::endl;
+
+	Image img("./res/tex.png");
+	//glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	//glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-    GLFWwindow*  window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "task1 base project", nullptr, nullptr);
+    GLFWwindow*  window = glfwCreateWindow(img.Width(), img.Height(), "task1 base project", nullptr, nullptr);
 	if (window == nullptr) {
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
@@ -153,13 +157,12 @@ int main(int argc, char** argv)
 	while (gl_error != GL_NO_ERROR)
 		gl_error = glGetError();
 
-	Point starting_pos{.x = WINDOW_WIDTH / 2, .y = WINDOW_HEIGHT / 2};
+	Point starting_pos{.x = img.Width() / 2, .y = img.Height() / 2};
 	Player player{starting_pos};
 
-	Image img("../resources/tex.png");
-	Image screenBuffer(WINDOW_WIDTH, WINDOW_HEIGHT, 4);
+	//Image screenBuffer(WINDOW_WIDTH, WINDOW_HEIGHT, 4);
 
-    glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);  GL_CHECK_ERRORS;
+    glViewport(0, 0, img.Width(), img.Height());  GL_CHECK_ERRORS;
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f); GL_CHECK_ERRORS;
 
     //game loop
@@ -167,13 +170,13 @@ int main(int argc, char** argv)
 		GLfloat currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-        glfwPollEvents();
+        glfwPollEvents(); GL_CHECK_ERRORS;
 
-        processPlayerMovement(player);
-        player.Draw(screenBuffer);
+        processPlayerMovement(player); GL_CHECK_ERRORS;
+        player.Draw(img); GL_CHECK_ERRORS;
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); GL_CHECK_ERRORS;
-        glDrawPixels (WINDOW_WIDTH, WINDOW_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, screenBuffer.Data()); GL_CHECK_ERRORS;
+        glDrawPixels (img.Width(), img.Height(), GL_RGB, GL_UNSIGNED_BYTE, img.Data()); GL_CHECK_ERRORS;
 
 		glfwSwapBuffers(window);
 	}
