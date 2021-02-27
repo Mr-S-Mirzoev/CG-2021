@@ -1,4 +1,5 @@
-#include "map_loader.h"
+#include "utilities/room.h"
+
 #include <fstream>
 #include <iostream>
 
@@ -11,13 +12,12 @@
   - выход из всего лабиринта: `Q`
   - ключи, которые позволяют открывать закрытые выходы из комнат: `K`
 */
-
-Map::Map(const std::string &map_file) {
+Room::Room(const std::string &map_file) {
     std::ifstream infile(map_file);
     std::string line;
     while (std::getline(infile, line))
     {
-        std::vector <MapObject> line_of_objects;
+        std::vector <RoomObject> line_of_objects;
         for (auto c : line) {
             switch (c) {
                 case ' ':
@@ -45,15 +45,15 @@ Map::Map(const std::string &map_file) {
     }
 }
 
-std::vector<std::vector<MapObject>> Map::get_layout() const {
+std::vector<std::vector<RoomObject>> Room::get_layout() const {
     return map_layout_;
 }
 
-std::string Map::get_type() const {
+std::string Room::get_type() const {
     return map_type_;
 }
 
-std::string Map::to_string() const {
+std::string Room::to_string() const {
     std::string s;
     for (int i = 0; i < map_layout_.size(); ++i) {        
         for (int j = 0; j < map_layout_[i].size(); ++j) {
@@ -65,4 +65,32 @@ std::string Map::to_string() const {
     }
 
     return s;
+}
+
+void Room::DrawScaledPixel(Image &screen, int i, int j, Pixel color) const {
+    i *= 15;
+    j *= 15;
+    for (int x = 0; x < 16; ++x)
+        for (int y = 0; y < 16; ++y)
+            screen.PutPixel(j + x, i + y, color);
+}
+
+void Room::DrawRoomFrom(Image &screen, int left_upper_x, int left_upper_y) const {
+    for (int i = 0; i < map_layout_.size(); ++i) {
+        for (int j = 0; j < map_layout_[i].size(); ++j) {
+            if (map_layout_[i][j].name_ == "void") {
+                DrawScaledPixel(screen, left_upper_x + i, left_upper_y + j, {33, 172, 237, 255});
+            } else if (map_layout_[i][j].name_ == "wall") {
+                DrawScaledPixel(screen, left_upper_x + i, left_upper_y + j, {33, 60, 237, 255});
+            } else if (map_layout_[i][j].name_ == "floor") {
+                DrawScaledPixel(screen, left_upper_x + i, left_upper_y + j, {206, 33, 237, 255});
+            } else if (map_layout_[i][j].name_ == "exit") {
+                DrawScaledPixel(screen, left_upper_x + i, left_upper_y + j, {65, 11, 74, 255});
+            } else if (map_layout_[i][j].name_ == "main_exit") {
+                DrawScaledPixel(screen, left_upper_x + i, left_upper_y + j, {87, 85, 53, 255});
+            } else if (map_layout_[i][j].name_ == "door") {
+                DrawScaledPixel(screen, left_upper_x + i, left_upper_y + j, {74, 11, 16, 255});
+            }
+        }
+    }
 }

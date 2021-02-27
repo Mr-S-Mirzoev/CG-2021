@@ -1,5 +1,4 @@
-#include "Player.h"
-
+#include "gameplay/Player.h"
 
 bool Player::Moved() const
 {
@@ -41,6 +40,7 @@ void Player::Draw(Image &screen)
         for(int y = old_coords.y; y <= old_coords.y + tileSize; ++y) 
             for(int x = old_coords.x; x <= old_coords.x + tileSize; ++x)
                 screen.PutPixel(x, y, backgroundColor);
+        
         old_coords = coords;
     }
 

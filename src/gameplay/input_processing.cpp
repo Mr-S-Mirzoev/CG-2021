@@ -1,4 +1,4 @@
-#include "input_processing.h"
+#include "gameplay/input_processing.h"
 
 GLfloat deltaTime = 0.0f;
 GLfloat lastFrame = 0.0f;
@@ -31,6 +31,7 @@ void processPlayerMovement(Player &player)
         player.ProcessInput(MovementDir::UP);
     else if (Input.keys[GLFW_KEY_S])
         player.ProcessInput(MovementDir::DOWN);
+    
     if (Input.keys[GLFW_KEY_A])
         player.ProcessInput(MovementDir::LEFT);
     else if (Input.keys[GLFW_KEY_D])
@@ -51,8 +52,7 @@ void OnMouseButtonClicked(GLFWwindow* window, int button, int action, int mods)
 
 void OnMouseMove(GLFWwindow* window, double xpos, double ypos)
 {
-    if (Input.firstMouse)
-    {
+    if (Input.firstMouse) {
         Input.lastX = float(xpos);
         Input.lastY = float(ypos);
         Input.firstMouse = false;

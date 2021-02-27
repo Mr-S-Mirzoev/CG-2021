@@ -11,11 +11,11 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
 set(SOURCE_FILES
+        ${SRC_DIR}/gameplay/input_processing.cpp
+        ${SRC_DIR}/gameplay/Player.cpp
+        ${SRC_DIR}/graphics/Image.cpp
+        ${SRC_DIR}/utilities/map_loader.cpp
         ${SRC_DIR}/glad.c
-        ${SRC_DIR}/input_processing.cpp
-        ${SRC_DIR}/Image.cpp
-        ${SRC_DIR}/map_loader.cpp
-        ${SRC_DIR}/Player.cpp
         ${SRC_DIR}/main.cpp)
 
 set(ADDITIONAL_INCLUDE_DIRS

@@ -94,10 +94,14 @@ Rogue-like с лабиринтом из комнат (на подобие Hades,
  * etc...
  */
 
-#include "common.h"
-#include "Image.h"
-#include "input_processing.h"
-#include "map_loader.h"
+#include "utilities/common.h"
+#include "utilities/room.h"
+
+#include "utilities/matrix.h"
+
+#include "graphics/Image.h"
+
+#include "gameplay/input_processing.h"
 
 extern GLfloat deltaTime;
 extern GLfloat lastFrame;
@@ -114,10 +118,10 @@ int initGL()
 	std::cout << "Version: " << glGetString(GL_VERSION) << std::endl;
 	std::cout << "GLSL: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 
-    std::cout << "Controls: "<< std::endl;
-    std::cout << "press right mouse button to capture/release mouse cursor  "<< std::endl;
-    std::cout << "W, A, S, D - movement  "<< std::endl;
-    std::cout << "press ESC to exit" << std::endl;
+	std::cout << "Controls: "<< std::endl;
+	std::cout << "press right mouse button to capture/release mouse cursor  "<< std::endl;
+	std::cout << "W, A, S, D - movement  "<< std::endl;
+	std::cout << "press ESC to exit" << std::endl;
 
 	return 0;
 }
@@ -125,7 +129,7 @@ int initGL()
 int main(int argc, char** argv)
 {
 	if(!glfwInit())
-        return -1;
+    	return -1;
 
 	std::cout << default_mapA.to_string() << std::endl;
 
@@ -135,7 +139,7 @@ int main(int argc, char** argv)
 	//glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-    GLFWwindow*  window = glfwCreateWindow(img.Width(), img.Height(), "task1 base project", nullptr, nullptr);
+  	GLFWwindow*  window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "task1 base project", nullptr, nullptr);
 	if (window == nullptr) {
 		std::cout << "Failed to create GLFW window" << std::endl;
 		glfwTerminate();
@@ -144,39 +148,40 @@ int main(int argc, char** argv)
 	
 	glfwMakeContextCurrent(window); 
 
-	glfwSetKeyCallback        (window, OnKeyboardPressed);  
-	glfwSetCursorPosCallback  (window, OnMouseMove); 
-    glfwSetMouseButtonCallback(window, OnMouseButtonClicked);
-	glfwSetScrollCallback     (window, OnMouseScroll);
+	glfwSetKeyCallback          (window, OnKeyboardPressed);  
+	glfwSetCursorPosCallback    (window, OnMouseMove); 
+  	glfwSetMouseButtonCallback  (window, OnMouseButtonClicked);
+	glfwSetScrollCallback       (window, OnMouseScroll);
 
 	if (initGL() != 0) 
 		return -1;
 	
-  //Reset any OpenGL errors which could be present for some reason
+  	// Reset any OpenGL errors which could be present for some reason
 	GLenum gl_error = glGetError();
 	while (gl_error != GL_NO_ERROR)
 		gl_error = glGetError();
 
-	Point starting_pos{.x = img.Width() / 2, .y = img.Height() / 2};
+	Point starting_pos{.x = WINDOW_WIDTH / 2, .y = WINDOW_HEIGHT / 2};
 	Player player{starting_pos};
 
-	//Image screenBuffer(WINDOW_WIDTH, WINDOW_HEIGHT, 4);
+	Image screenBuffer(WINDOW_WIDTH, WINDOW_HEIGHT, 4);
 
-    glViewport(0, 0, img.Width(), img.Height());  GL_CHECK_ERRORS;
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); GL_CHECK_ERRORS;
+	glViewport(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);  GL_CHECK_ERRORS;
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); GL_CHECK_ERRORS;
 
-    //game loop
+	//game loop
 	while (!glfwWindowShouldClose(window)) {
 		GLfloat currentFrame = glfwGetTime();
 		deltaTime = currentFrame - lastFrame;
 		lastFrame = currentFrame;
-        glfwPollEvents(); GL_CHECK_ERRORS;
+    	glfwPollEvents();
 
-        processPlayerMovement(player); GL_CHECK_ERRORS;
-        player.Draw(img); GL_CHECK_ERRORS;
+		processPlayerMovement(player);
+		default_mapA.Draw(screenBuffer, 60, 50); // x grows from bottom to begining, y grows from left to right
+		player.Draw(screenBuffer);
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); GL_CHECK_ERRORS;
-        glDrawPixels (img.Width(), img.Height(), GL_RGB, GL_UNSIGNED_BYTE, img.Data()); GL_CHECK_ERRORS;
+	    glDrawPixels (WINDOW_WIDTH, WINDOW_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, screenBuffer.Data()); GL_CHECK_ERRORS;
 
 		glfwSwapBuffers(window);
 	}

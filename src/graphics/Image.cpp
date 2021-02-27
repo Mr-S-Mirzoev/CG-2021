@@ -1,17 +1,16 @@
-#include "Image.h"
+#include "graphics/Image.h"
 
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include "graphics/stb_image.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
-#include "stb_image_write.h"
+#include "graphics/stb_image_write.h"
 
 #include <iostream>
 
 
 Image::Image(const std::string &a_path)
 {
-    if((data = (Pixel*)stbi_load(a_path.c_str(), &width, &height, &channels, 0)) != nullptr)
-    {
+    if((data = (Pixel*)stbi_load(a_path.c_str(), &width, &height, &channels, sizeof(Pixel))) != nullptr) {
         size = width * height * channels;
     }
 }

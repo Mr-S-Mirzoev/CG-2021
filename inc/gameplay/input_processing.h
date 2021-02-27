@@ -4,7 +4,7 @@
 #define GLFW_DLL
 #include <GLFW/glfw3.h>
 
-#include "Player.h"
+#include "gameplay/Player.h"
 
 constexpr GLsizei WINDOW_WIDTH = 1024, WINDOW_HEIGHT = 1024;
 

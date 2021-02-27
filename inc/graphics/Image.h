@@ -70,9 +70,10 @@ struct Image
 
     ~Image();
 
-private:
+protected:
     int width = -1;
     int height = -1;
+private:
     int channels = 3;
     size_t size = 0;
     Pixel *data = nullptr;
