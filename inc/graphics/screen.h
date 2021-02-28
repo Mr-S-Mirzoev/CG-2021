@@ -5,7 +5,7 @@
 #define SCREEN_H
 
 #include "graphics/Image.h"
-#include "utilities/map_loader.h"
+#include "utilities/room.h"
 
 #include <array>
 
@@ -18,7 +18,7 @@ class Screen : public Image
 private:
     int x_ = 0; // left upper point of screen in map coordinates/ x coord
     int y_ = 0; // left upper point of screen in map coordinates/ y coord
-    Map* map_ = nullptr;
+    Room* map_ = nullptr;
 
     void get_changed(const std::vector <Image> &images) {
         std::vector <std::vector <bool> > changed;
@@ -32,7 +32,7 @@ public:
      */
     Screen(int width, int height, int left_upper_x = 0, int left_upper_y = 0);
 
-    void set_map(Map *map);
+    void set_map(Room *map);
     void draw(const std::vector <Image> &to_draw);
 };
 

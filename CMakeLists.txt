@@ -14,7 +14,7 @@ set(SOURCE_FILES
         ${SRC_DIR}/gameplay/input_processing.cpp
         ${SRC_DIR}/gameplay/Player.cpp
         ${SRC_DIR}/graphics/Image.cpp
-        ${SRC_DIR}/utilities/map_loader.cpp
+        ${SRC_DIR}/utilities/room.cpp
         ${SRC_DIR}/glad.c
         ${SRC_DIR}/main.cpp)
 

@@ -131,7 +131,9 @@ int main(int argc, char** argv)
 	if(!glfwInit())
     	return -1;
 
-	std::cout << default_mapA.to_string() << std::endl;
+	auto roomA = Room{"./res/maps/roomA.txt"};
+
+	std::cout << roomA.to_string() << std::endl;
 
 	Image img("./res/tex.png");
 	//glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -177,7 +179,7 @@ int main(int argc, char** argv)
     	glfwPollEvents();
 
 		processPlayerMovement(player);
-		default_mapA.Draw(screenBuffer, 60, 50); // x grows from bottom to begining, y grows from left to right
+		roomA.DrawRoomFrom(screenBuffer, WINDOW_HEIGHT / 32, WINDOW_WIDTH / 32); // x grows from bottom to begining, y grows from left to right
 		player.Draw(screenBuffer);
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); GL_CHECK_ERRORS;
