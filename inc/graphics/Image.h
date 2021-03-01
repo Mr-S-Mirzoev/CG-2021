@@ -62,7 +62,7 @@ struct Image
     size_t Size()  const { return size; }
     Pixel* Data()        { return  data; }
 
-    Pixel GetPixel(int x, int y) { return data[height * y + x];}
+    Pixel GetPixel(int x, int y) const { return data[height * y + x];}
 
     /* Setter */
 

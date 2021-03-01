@@ -98,39 +98,114 @@ void Room::DrawScaledPixel(Image &screen, int i, int j, Pixel color) const {
             screen.PutPixel(j + x, i + y, color);
 }
 
-void Room::DrawRoomFrom(Image &screen, int left_upper_x, int left_upper_y) const {
-    int x_max = std::max<int>(
-        std::min<int>(
-            left_upper_x + map_layout_.size(), 
-            screen.Height() / scale - 1
-        ), 
-        0
-    );
-    int y_max = std::max<int>(
-        std::min<int>(
-            left_upper_y + map_layout_[0].size(), 
-            screen.Width() / scale - 1
-        ), 
-        0
-    );
+void Room::DrawTile(Image &screen, int i, int j, Tile &tl) const {
+    i *= scale - 1;
+    j *= scale - 1;
+    for (int x = 0; x < scale; ++x)
+        for (int y = 0; y < scale; ++y)
+            screen.PutPixel(j + x, i + y, tl.get_pixel(x, y));
+}
 
-    for (int i = left_upper_x; i < x_max; ++i) {
-        for (int j = left_upper_y; j < y_max; ++j) {
-            int i_m = i - left_upper_x;
-            int j_m = j - left_upper_y;
+std::pair <int, int> Room::get_size() const {
+    int room_width = map_layout_[0].size();
+    int room_height = map_layout_.size();
+    return {room_height, room_width};
+}
+
+void Room::DrawRoomOn(Image* screen) const {
+    int center_x = screen->Width() / (scale * 2);
+    int center_y = screen->Height() / (scale * 2);
+
+    int room_width = map_layout_[0].size();
+    int room_height = map_layout_.size();
+
+    int x_min = center_x - room_width / 2;
+    if (x_min < 0) {
+        throw utilities::SizeMismatchException(
+            "Size of room: (" + 
+            std::to_string(room_height) + 
+            "; " + 
+            std::to_string(room_width) + 
+            "). Size of screen: (" + 
+            std::to_string(screen->Height()) + 
+            "; " + 
+            std::to_string(screen->Width()) + 
+            ")"
+        );
+    }
+
+    int x_max = center_x + room_width - room_width / 2;
+    if (x_max >= screen->Width()) {
+        throw utilities::SizeMismatchException(
+            "Size of room: (" + 
+            std::to_string(room_height) + 
+            "; " + 
+            std::to_string(room_width) + 
+            "). Size of screen: (" + 
+            std::to_string(screen->Height()) + 
+            "; " + 
+            std::to_string(screen->Width()) + 
+            ")"
+        );
+    }
+
+    int y_min = center_y - room_height / 2;
+    if (y_min < 0) {
+        throw utilities::SizeMismatchException(
+            "Size of room: (" + 
+            std::to_string(room_height) + 
+            "; " + 
+            std::to_string(room_width) + 
+            "). Size of screen: (" + 
+            std::to_string(screen->Height()) + 
+            "; " + 
+            std::to_string(screen->Width()) + 
+            ")"
+        );
+    }
+
+    int y_max = center_y + room_height - room_height / 2;
+    if (y_max >= screen->Height()) {
+        throw utilities::SizeMismatchException(
+            "Size of room: (" + 
+            std::to_string(room_height) + 
+            "; " + 
+            std::to_string(room_width) + 
+            "). Size of screen: (" + 
+            std::to_string(screen->Height()) + 
+            "; " + 
+            std::to_string(screen->Width()) + 
+            ")"
+        );
+    }
+
+    for (int j = x_min; j < x_max; ++j) {
+        for (int i = y_min; i < y_max; ++i) {
+            int i_m = i - y_min;
+            int j_m = j - x_min;
+
+            std::cout << "======BLOCK======" << std::endl;
+            std::cout << x_min << " " << x_max << std::endl;
+            std::cout << y_min << " " << y_max << std::endl;
+            std::cout << room_height << " " << room_width << std::endl;
+            std::cout << i_m << " " << j_m << std::endl;
+
+            auto& tile = get_tile_by_name(map_layout_[i_m][j_m].get_name());
 
             if (map_layout_[i_m][j_m].get_name() == "void") {
-                DrawScaledPixel(screen, i, j, {33, 172, 237, 255});
+                DrawTile(*screen, i, j, tile);
             } else if (map_layout_[i_m][j_m].get_name() == "wall") {
-                DrawScaledPixel(screen, i, j, {33, 60, 237, 255});
+                DrawTile(*screen, i, j, tile);
             } else if (map_layout_[i_m][j_m].get_name() == "floor") {
-                DrawScaledPixel(screen, i, j, {206, 33, 237, 255});
+                DrawTile(*screen, i, j, tile);
             } else if (map_layout_[i_m][j_m].get_name() == "exit") {
-                DrawScaledPixel(screen, i, j, {65, 11, 74, 255});
+                DrawTile(*screen, i, j, tile);
             } else if (map_layout_[i_m][j_m].get_name() == "main_exit") {
-                DrawScaledPixel(screen, i, j, {87, 85, 53, 255});
+                DrawTile(*screen, i, j, tile);
             } else if (map_layout_[i_m][j_m].get_name() == "door") {
-                DrawScaledPixel(screen, i, j, {74, 11, 16, 255});
+                DrawTile(*screen, i, j, tile);
+            } else if (map_layout_[i_m][j_m].get_name() == "key") {
+                DrawTile(*screen, i, j, tile);
             }
         }
     }

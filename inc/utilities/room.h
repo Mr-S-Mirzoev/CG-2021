@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "graphics/Image.h"
+#include "graphics/tile.h"
 
 class Game;
 
@@ -87,15 +88,19 @@ public:
 
     Room (const std::string &map_file);
     Room (int room_type);
+    Room (Room &rhs) = default;
 
     std::vector<std::vector<RoomObject>> get_layout() const;
     std::string get_type() const;
+    std::pair <int, int> get_size() const;
 
     std::string to_string() const;
 
     void DrawScaledPixel(Image &screen, int i, int j, Pixel color) const;
 
-    void DrawRoomFrom(Image &screen, int left_upper_x, int left_upper_y) const;
+    void DrawTile(Image &screen, int i, int j, Tile &tl) const;
+
+    void DrawRoomOn(Image* screen) const;
 };
 
 #endif // ROOM_H

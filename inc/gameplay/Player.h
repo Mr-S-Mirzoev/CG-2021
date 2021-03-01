@@ -5,7 +5,7 @@
 #define MAIN_PLAYER_H
 
 #include "graphics/Image.h"
-
+#include "graphics/tile.h"
 struct Point
 {
     int x;
@@ -23,7 +23,7 @@ enum class MovementDir
 struct Player
 {
     explicit Player(Point pos = {.x = 10, .y = 10}) :
-                    coords(pos), old_coords(coords) {};
+                    coords(pos), old_coords(coords), person(get_tile_by_name("person")) {};
 
     /**
      * @return true - if current coordinates are equal to old
@@ -48,6 +48,7 @@ private:
     Point old_coords {.x = 10, .y = 10};
     Pixel color {.r = 255, .g = 255, .b = 0, .a = 255};
     int move_speed = 4;
+    Tile &person;
 };
 
 #endif //MAIN_PLAYER_H

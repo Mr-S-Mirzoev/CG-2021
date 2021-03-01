@@ -7,13 +7,15 @@
 #include <vector>
 #include <ostream>
 
+#include "graphics/Image.h"
+
 template <typename T>
 class Matrix {
     std::vector <T> data_ {};
     size_t width_{0}, height_{0};
 public:
     Matrix(std::size_t width, std::size_t height);
-    Matrix();
+    Matrix() = default;
 
     void resize(std::size_t width, std::size_t height);
 
@@ -23,6 +25,8 @@ public:
 
     T &operator [] (std::pair <int, int> indexes);
     T operator [] (std::pair <int, int> indexes) const;
+
+    Matrix<T> transposed() const;
 
     friend std::ostream& operator<<(std::ostream& out, const Matrix <T>& mat) {
         auto sz = mat.size();
@@ -72,17 +76,31 @@ std::vector <T> Matrix<T>::operator [] (int i) const {
 
 template <typename T>
 T &Matrix<T>::operator [] (std::pair <int, int> indexes) {
-    return (*this)[indexes.first * width_ + indexes.second];
+    return data_[indexes.first * width_ + indexes.second];
 }
 
 template <typename T>
 T Matrix<T>::operator [] (std::pair <int, int> indexes) const {
-    return (*this)[indexes.first * width_ + indexes.second];
+    return data_[indexes.first * width_ + indexes.second];
 }
 
 template <typename T>
 std::pair <int, int> Matrix<T>::size() const {
     return {width_, height_};
 }
+
+template <typename T>
+Matrix<T> Matrix<T>::transposed() const {
+    Matrix<T> cpy(*this);
+
+    for (int i = 0; i < height_; ++i)
+        for (int j = 0; j < i; ++j)
+            std::swap(cpy[{i, j}], cpy[{j, i}]);
+
+    return cpy;
+}
+
+Matrix<Pixel> from_image(const Image &img);
+Image to_image(const Matrix <Pixel>& m);
 
 #endif //MATRIX_H

@@ -11,6 +11,7 @@ bool Player::Moved() const
 void Player::ProcessInput(MovementDir dir)
 {
     int move_dist = move_speed * 1;
+
     switch(dir)
     {
         case MovementDir::UP:
@@ -46,5 +47,5 @@ void Player::Draw(Image &screen)
 
     for(int y = coords.y; y <= coords.y + tileSize; ++y)
         for(int x = coords.x; x <= coords.x + tileSize; ++x)
-            screen.PutPixel(x, y, color);
+            screen.PutPixel(x, y, person.get_pixel(x - coords.x, tileSize - y + coords.y));
 }

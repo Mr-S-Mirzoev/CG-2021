@@ -14,7 +14,11 @@ set(SOURCE_FILES
         ${SRC_DIR}/gameplay/input_processing.cpp
         ${SRC_DIR}/gameplay/Player.cpp
         ${SRC_DIR}/graphics/Image.cpp
+        ${SRC_DIR}/graphics/screen.cpp
+        ${SRC_DIR}/graphics/tile.cpp
         ${SRC_DIR}/utilities/room.cpp
+        ${SRC_DIR}/utilities/labirinth.cpp
+        ${SRC_DIR}/utilities/matrix.cpp
         ${SRC_DIR}/glad.c
         ${SRC_DIR}/main.cpp)
 
@@ -28,12 +32,12 @@ set(ADDITIONAL_RUNTIME_LIBRARY_DIRS
 set (CMAKE_CXX_FLAGS_DEBUG  "${CMAKE_CXX_FLAGS_DEBUG}")
 
 if(WIN32)
-  set(ADDITIONAL_INCLUDE_DIRS 
-        ${ADDITIONAL_INCLUDE_DIRS}
-        deps/include)
-  link_directories(${ADDITIONAL_LIBRARY_DIRS})
+        set(ADDITIONAL_INCLUDE_DIRS 
+                ${ADDITIONAL_INCLUDE_DIRS}
+                deps/include)
+        link_directories(${ADDITIONAL_LIBRARY_DIRS})
 else()
-	find_package(glfw3 REQUIRED)
+        find_package(glfw3 REQUIRED)
 endif()
 
 include_directories(${ADDITIONAL_INCLUDE_DIRS} ${INC_DIR})
@@ -45,13 +49,13 @@ add_executable(main ${SOURCE_FILES})
 target_include_directories(main PRIVATE ${OPENGL_INCLUDE_DIR})
 
 if(WIN32)
-  add_custom_command(TARGET main POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_SOURCE_DIR}/deps/bin" $<TARGET_FILE_DIR:main>)
-  set_target_properties(main PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
-  target_compile_options(main PRIVATE)
-  target_link_libraries(main LINK_PUBLIC ${OPENGL_gl_LIBRARY} glfw3dll)
+        add_custom_command(TARGET main POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_SOURCE_DIR}/deps/bin" $<TARGET_FILE_DIR:main>)
+        set_target_properties(main PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}")
+        target_compile_options(main PRIVATE)
+        target_link_libraries(main LINK_PUBLIC ${OPENGL_gl_LIBRARY} glfw3dll)
 else()
-  target_compile_options(main PRIVATE -Wnarrowing)
-  target_link_libraries(main LINK_PUBLIC ${OPENGL_gl_LIBRARY} glfw rt dl)
+        target_compile_options(main PRIVATE -Wnarrowing)
+        target_link_libraries(main LINK_PUBLIC ${OPENGL_gl_LIBRARY} glfw rt dl)
 endif()
 
 # first we can indicate the documentation build as an option and set it to ON by default
