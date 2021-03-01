@@ -16,9 +16,11 @@
 class Screen : public Image
 {
 private:
-    int x_ = 0; // left upper point of screen in map coordinates/ x coord
-    int y_ = 0; // left upper point of screen in map coordinates/ y coord
+    int x_ = 0; // left upper point of map in screen coordinates/ x coord
+    int y_ = 0; // left upper point of map in screen coordinates/ y coord
+    
     Room* map_ = nullptr;
+    Room* const_map_ = nullptr;
 
     void get_changed(const std::vector <Image> &images) {
         std::vector <std::vector <bool> > changed;
@@ -32,8 +34,11 @@ public:
      */
     Screen(int width, int height, int left_upper_x = 0, int left_upper_y = 0);
 
-    void set_map(Room *map);
+    void set_room(Room *map);
+    void set_pose(std::pair <int, int> &map_pose);
     void draw(const std::vector <Image> &to_draw);
+
+    Pixel get_bg(int x, int y) const ;
 };
 
 #endif //SCREEN_H
