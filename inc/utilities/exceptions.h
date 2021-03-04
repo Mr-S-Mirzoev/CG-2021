@@ -49,6 +49,24 @@ namespace utilities
             GameException("Invalid key: " + key + " in the " + function + " function") {}
     };
 
+    class InventoryException: public GameException {
+    public:
+        InventoryException(const std::string &what):
+            GameException(what) {}
+    };
+
+    class InventoryHadItException: public InventoryException {
+    public:
+        InventoryHadItException(const std::string &item):
+            InventoryException("Inventory already had " + item) {}
+    };
+
+    class InventoryDidntHaveItException: public InventoryException {
+    public:
+        InventoryDidntHaveItException(const std::string &item):
+            InventoryException("Inventory didn't have " + item) {}
+    };
+
 } // namespace utilities
 
 #endif //EXCEPTIONS_H
