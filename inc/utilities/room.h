@@ -6,78 +6,83 @@
 
 #include "graphics/Image.h"
 #include "graphics/tile.h"
+#include "utilities/game_object.h"
 
 class Game;
 
-class RoomObject {
-    std::string name_;
-    bool mutable_; // If object can be changed or removed from the map and put into inventory
-public:
-    RoomObject (const std::string &name, bool mutability);
+class MutableGameObject: public GameObject {
+protected:
+    enum Action {
+        ACTION_NOT_APPLIED,
+        ACTION_APPLIED
+    };
 
-    std::string get_name() const;
-    bool is_mutable() const;
-};
-
-class MutableRoomObject: public RoomObject {
+    int state_ = ACTION_NOT_APPLIED;
 public:
-    MutableRoomObject(const std::string &name): RoomObject(name, true) {}
+    MutableGameObject(const std::string &name): GameObject(name, true) {}
     virtual void apply_action(Game &gm) = 0;
 };
 
-class StaticRoomObject: public RoomObject {
+class StaticGameObject: public GameObject {
 public:
-    StaticRoomObject(const std::string &name): RoomObject(name, false) {}
+    StaticGameObject(const std::string &name): GameObject(name, false) {}
 };
 
-class VoidObject: public StaticRoomObject {
+class VoidObject: public StaticGameObject {
 public:
-    VoidObject (): StaticRoomObject("void") {}
+    VoidObject (): StaticGameObject("void") {}
 };
 
-class WallObject: public StaticRoomObject {
+class WallObject: public StaticGameObject {
 public:
-    WallObject (): StaticRoomObject("wall") {}
+    WallObject (): StaticGameObject("wall") {}
 };
 
-class FloorObject: public StaticRoomObject {
+class FloorObject: public StaticGameObject {
 public:
-    FloorObject (): StaticRoomObject("floor") {}
+    FloorObject (): StaticGameObject("floor") {}
 };
 
-class ExitObject: public MutableRoomObject {
+class ExitObject: public MutableGameObject {
 public:
-    ExitObject (): MutableRoomObject("exit") {}
+    ExitObject (): MutableGameObject("exit") {}
 
-    void apply_action(Game &gm) override {}
+    void apply_action(Game &gm) override;
 };
 
-class MainExitObject: public MutableRoomObject {
+class MainExitObject: public MutableGameObject {
 public:
-    MainExitObject (): MutableRoomObject("main_exit") {}
+    MainExitObject (): MutableGameObject("main_exit") {}
 
-    void apply_action(Game &gm) override {}
+    void apply_action(Game &gm) override;
 };
 
-class DoorObject: public MutableRoomObject {
+class DoorObject: public MutableGameObject {
 public:
-    DoorObject (): MutableRoomObject("door") {}
+    DoorObject (): MutableGameObject("door") {}
 
-    void apply_action(Game &gm) override {}
+    void apply_action(Game &gm) override;
 };
 
-class KeyObject: public MutableRoomObject {
+class KeyObject: public MutableGameObject {
 public:
-    KeyObject (): MutableRoomObject("key") {}
+    KeyObject (): MutableGameObject("key") {}
 
-    void apply_action(Game &gm) override {}
+    void apply_action(Game &gm) override;
 };
 
 class Room {
     std::string map_type_;
-    std::vector<std::vector<RoomObject>> map_layout_;
+    std::vector<std::vector<GameObject>> map_layout_;
     std::pair <unsigned, unsigned> player_starting_pose_;
+
+    void throw_exception (int room_width,
+                          int room_height,
+                          int screen_width,
+                          int screen_height) const;
+
 public:
+
     typedef enum {
         ROOM_TYPE_A,
         ROOM_TYPE_B,
@@ -90,7 +95,7 @@ public:
     Room (int room_type);
     Room (Room &rhs) = default;
 
-    std::vector<std::vector<RoomObject>> get_layout() const;
+    std::vector<std::vector<GameObject>> get_layout() const;
     std::string get_type() const;
     std::pair <int, int> get_size() const;
 

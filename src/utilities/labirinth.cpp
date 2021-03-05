@@ -71,4 +71,6 @@ namespace mapping {
         }
     } // Labirinth::Labirinth ()
 
+    
+
 } // namespace mapping

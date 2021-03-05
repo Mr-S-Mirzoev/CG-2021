@@ -28,14 +28,17 @@ void OnKeyboardPressed(GLFWwindow* window, int key, int scancode, int action, in
 void processPlayerMovement(Player &player)
 {
     if (Input.keys[GLFW_KEY_W])
-        player.ProcessInput(MovementDir::UP);
+        player.ProcessInput(PlayerAction::UP);
     else if (Input.keys[GLFW_KEY_S])
-        player.ProcessInput(MovementDir::DOWN);
+        player.ProcessInput(PlayerAction::DOWN);
     
     if (Input.keys[GLFW_KEY_A])
-        player.ProcessInput(MovementDir::LEFT);
+        player.ProcessInput(PlayerAction::LEFT);
     else if (Input.keys[GLFW_KEY_D])
-        player.ProcessInput(MovementDir::RIGHT);
+        player.ProcessInput(PlayerAction::RIGHT);
+
+    if (Input.keys[GLFW_KEY_ENTER])
+        player.ProcessInput(PlayerAction::APPLY_ACTION);
 }
 
 void OnMouseButtonClicked(GLFWwindow* window, int button, int action, int mods)

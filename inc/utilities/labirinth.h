@@ -15,12 +15,26 @@
 
 namespace mapping {
 
+    enum NavigationDirection {
+        GO_LEFT,
+        GO_UP,
+        GO_RIGHT,
+        GO_DOWN
+    };
+
     class Labirinth
     {
         Matrix <Room::room_type> labirinth_plan_;
         int current_pose_x_, current_pose_y_;
     public:
+        /**
+         * @brief Construct a new Labirinth object
+         * 
+         * @param lab_path Path to file which contains labirinth description.
+         */
         Labirinth(const std::string &lab_path);
+
+        void navigate(int direction);
     }; // class Labirinth
 
 } // namespace mapping

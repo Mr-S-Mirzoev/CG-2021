@@ -1,5 +1,5 @@
 /*! \file Player.h
-    \brief Point, MovementDirection and Player classes
+    \brief Point, PlayerAction and Player classes
 */
 #ifndef MAIN_PLAYER_H
 #define MAIN_PLAYER_H
@@ -12,12 +12,13 @@ struct Point
     int y;
 };
 
-enum class MovementDir
+enum class PlayerAction
 {
     UP,
     DOWN,
     LEFT,
-    RIGHT
+    RIGHT,
+    APPLY_ACTION
 };
 
 struct Player
@@ -33,9 +34,9 @@ struct Player
     /**
      * @brief Move the player from it's current position to the direction
      * 
-     * @param dir - movement direction (of enum class MovementDir)
+     * @param dir - movement direction (of enum class PlayerAction)
      */
-    void ProcessInput(MovementDir dir);
+    void ProcessInput(PlayerAction dir);
     /**
      * @brief If player moved, move the player tile, save old coords
      * 
@@ -47,7 +48,7 @@ private:
     Point coords {.x = 10, .y = 10};
     Point old_coords {.x = 10, .y = 10};
     Pixel color {.r = 255, .g = 255, .b = 0, .a = 255};
-    int move_speed = 4;
+    int move_speed = 2;
     Tile &person;
 };
 

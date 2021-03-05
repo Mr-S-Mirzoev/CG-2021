@@ -12,10 +12,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
 set(SOURCE_FILES
         ${SRC_DIR}/gameplay/input_processing.cpp
+        ${SRC_DIR}/gameplay/inventory.cpp
+        ${SRC_DIR}/gameplay/game.cpp
         ${SRC_DIR}/gameplay/Player.cpp
         ${SRC_DIR}/graphics/Image.cpp
         ${SRC_DIR}/graphics/screen.cpp
         ${SRC_DIR}/graphics/tile.cpp
+        ${SRC_DIR}/utilities/game_object.cpp
         ${SRC_DIR}/utilities/room.cpp
         ${SRC_DIR}/utilities/labirinth.cpp
         ${SRC_DIR}/utilities/matrix.cpp
