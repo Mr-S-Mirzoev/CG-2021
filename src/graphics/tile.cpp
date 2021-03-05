@@ -7,9 +7,12 @@ Image floorset("./res/floor.png");
 Image objset("./res/obj_set.png");
 Image persset("./res/persons.png");
 
-Tile::Tile(const Image &src, int x_s, int y_s): img_(16, 16, 4) {
-    for (int i = x_s; i < x_s + 16; ++i)
-        for (int j = y_s; j < y_s + 16; ++j)
+Tile::Tile(const Image &src, int x_s, int y_s): img_(tileSize, tileSize, 4) {
+    x_s *= tileSize;
+    y_s *= tileSize;
+
+    for (int i = x_s; i < x_s + tileSize; ++i)
+        for (int j = y_s; j < y_s + tileSize; ++j)
             img_.PutPixel(i - x_s, j - y_s, src.GetPixel(i, j));
 }
 
@@ -17,17 +20,17 @@ Pixel Tile::get_pixel(int i, int j) const {
     return img_.GetPixel(i, j);
 }
 
-Tile wall(objset, 16, 16);
-Tile room_floor(floorset, 16, 16);
-Tile void_floor(objset, 48, 48);
-Tile closed_door(wallset, 64, 32);
+Tile wall(objset, 1, 1);
+Tile room_floor(floorset, 1, 1);
+Tile void_floor(objset, 3, 3);
+Tile closed_door(wallset, 4, 2);
 /*
 Tile open_door(wallset, 64, 48);
 Tile tile_exit(wallset, 48, 96);
 */
-Tile main_exit(wallset, 64, 16);
-Tile key(objset, 128, 96);
-Tile person = Tile(persset, 16, 144);
+Tile main_exit(wallset, 4, 1);
+Tile key(objset, 8, 6);
+Tile person = Tile(persset, 1, 9);
 
 Tile& get_tile_by_name(const std::string &tile_name) {
     if (tile_name == "wall")

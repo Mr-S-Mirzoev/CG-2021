@@ -6,6 +6,8 @@
 
 #include "graphics/Image.h"
 
+constexpr const int tile_size = 16;
+
 #include <string>
 
 class Tile {
