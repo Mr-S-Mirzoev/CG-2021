@@ -1,0 +1,11 @@
+digraph "StaticGameObject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{StaticGameObject\n||+ StaticGameObject()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{GameObject\n||+ GameObject()\l+ GameObject()\l+ get_name()\l+ is_mutable()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classGameObject.html",tooltip=" "];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" #current_tile_" ,arrowhead="odiamond"];
+  Node3 [label="{Tile\n||+ Tile()\l+ get_pixel()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTile.html",tooltip=" "];
+}

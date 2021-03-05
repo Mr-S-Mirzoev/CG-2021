@@ -15,7 +15,7 @@ Collaboration diagram for Player\+:
 \item 
 bool \mbox{\hyperlink{structPlayer_a743da3dcbc81ed11bfcb81943aae175b}{Moved}} () const
 \item 
-void \mbox{\hyperlink{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3}{Process\+Input}} (\mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}{Movement\+Dir}} dir)
+void \mbox{\hyperlink{structPlayer_a11bebe44cf2833978ec843611abce250}{Process\+Input}} (\mbox{\hyperlink{Player_8h_aea132397c26cad8f8637a9422260deca}{Player\+Action}} dir)
 \begin{DoxyCompactList}\small\item\em Move the player from it\textquotesingle{}s current position to the direction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{structPlayer_a1a10995b61d63b46c6b562bd026382c4}{Draw}} (\mbox{\hyperlink{structImage}{Image}} \&screen)
 \begin{DoxyCompactList}\small\item\em If player moved, move the player tile, save old coords. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -48,6 +48,8 @@ If player moved, move the player tile, save old coords.
 \end{DoxyParams}
 Here is the call graph for this function\+:
 % FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
 \mbox{\Hypertarget{structPlayer_a743da3dcbc81ed11bfcb81943aae175b}\label{structPlayer_a743da3dcbc81ed11bfcb81943aae175b}} 
 \index{Player@{Player}!Moved@{Moved}}
 \index{Moved@{Moved}!Player@{Player}}
@@ -60,12 +62,12 @@ true -\/ if current coordinates are equal to old
 false -\/ if current coordinates are not equal to old 
 \end{DoxyReturn}
 Here is the caller graph for this function\+:
-% FIG 2
-\mbox{\Hypertarget{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3}\label{structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3}} 
+% FIG 3
+\mbox{\Hypertarget{structPlayer_a11bebe44cf2833978ec843611abce250}\label{structPlayer_a11bebe44cf2833978ec843611abce250}} 
 \index{Player@{Player}!ProcessInput@{ProcessInput}}
 \index{ProcessInput@{ProcessInput}!Player@{Player}}
 \doxysubsubsection{\texorpdfstring{ProcessInput()}{ProcessInput()}}
-{\footnotesize\ttfamily void Player\+::\+Process\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}{Movement\+Dir}}}]{dir }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Player\+::\+Process\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Player_8h_aea132397c26cad8f8637a9422260deca}{Player\+Action}}}]{dir }\end{DoxyParamCaption})}
 
 
 
@@ -73,14 +75,14 @@ Move the player from it\textquotesingle{}s current position to the direction.
 
 
 \begin{DoxyParams}{Parameters}
-{\em dir} & -\/ movement direction (of enum class Movement\+Dir) \\
+{\em dir} & -\/ movement direction (of enum class Player\+Action) \\
 \hline
 \end{DoxyParams}
 Here is the caller graph for this function\+:
-% FIG 3
+% FIG 4
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-inc/\mbox{\hyperlink{Player_8h}{Player.\+h}}\item 
-src/\mbox{\hyperlink{Player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}
+inc/gameplay/\mbox{\hyperlink{Player_8h}{Player.\+h}}\item 
+src/gameplay/\mbox{\hyperlink{Player_8cpp}{Player.\+cpp}}\end{DoxyCompactItemize}

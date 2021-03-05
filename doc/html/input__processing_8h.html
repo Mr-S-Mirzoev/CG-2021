@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Computer Graphics Task 1: inc/input_processing.h File Reference</title>
+<title>Computer Graphics Task 1: inc/gameplay/input_processing.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_3e0da0dbc6b350c7650fd60425c62ba8.html">gameplay</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,16 +75,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;GLFW/glfw3.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="Player_8h_source.html">Player.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Player_8h_source.html">gameplay/Player.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for input_processing.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="input__processing_8h__incl.png" border="0" usemap="#inc_2input__processing_8h" alt=""/></div>
+<div class="center"><img src="input__processing_8h__incl.png" border="0" usemap="#inc_2gameplay_2input__processing_8h" alt=""/></div>
+<!-- MAP 0 -->
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="input__processing_8h__dep__incl.png" border="0" usemap="#inc_2input__processing_8hdep" alt=""/></div>
+<div class="center"><img src="input__processing_8h__dep__incl.png" border="0" usemap="#inc_2gameplay_2input__processing_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="input__processing_8h_source.html">Go to the source code of this file.</a></p>
@@ -101,7 +103,7 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aaa4abcb7f4846f711d52ad1b601a5d78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__processing_8h.html#aaa4abcb7f4846f711d52ad1b601a5d78">OnKeyboardPressed</a> (GLFWwindow *window, int key, int scancode, int action, int mode)</td></tr>
+<tr class="memitem:aaa4abcb7f4846f711d52ad1b601a5d78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__processing_8h.html#aaa4abcb7f4846f711d52ad1b601a5d78">OnKeyboardPressed</a> (GLFWwindow *window, int <a class="el" href="tile_8cpp.html#a8a9edaef564ad676565f687652b4f1ac">key</a>, int scancode, int action, int mode)</td></tr>
 <tr class="separator:aaa4abcb7f4846f711d52ad1b601a5d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeffc3e0d1a1c5969bc1f3d177d78ae90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__processing_8h.html#aeffc3e0d1a1c5969bc1f3d177d78ae90">processPlayerMovement</a> (<a class="el" href="structPlayer.html">Player</a> &amp;player)</td></tr>
 <tr class="separator:aeffc3e0d1a1c5969bc1f3d177d78ae90"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,9 +116,9 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6f9dfdfc4bf437ef692c4509b1dab1de"><td class="memItemLeft" align="right" valign="top">constexpr GLsizei&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__processing_8h.html#a6f9dfdfc4bf437ef692c4509b1dab1de">WINDOW_WIDTH</a> = 1024</td></tr>
+<tr class="memitem:a6f9dfdfc4bf437ef692c4509b1dab1de"><td class="memItemLeft" align="right" valign="top">constexpr GLsizei&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__processing_8h.html#a6f9dfdfc4bf437ef692c4509b1dab1de">WINDOW_WIDTH</a> = 512</td></tr>
 <tr class="separator:a6f9dfdfc4bf437ef692c4509b1dab1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a526c9c10cab0f50a073d6ad4f7848295"><td class="memItemLeft" align="right" valign="top">constexpr GLsizei&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__processing_8h.html#a526c9c10cab0f50a073d6ad4f7848295">WINDOW_HEIGHT</a> = 1024</td></tr>
+<tr class="memitem:a526c9c10cab0f50a073d6ad4f7848295"><td class="memItemLeft" align="right" valign="top">constexpr GLsizei&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__processing_8h.html#a526c9c10cab0f50a073d6ad4f7848295">WINDOW_HEIGHT</a> = 512</td></tr>
 <tr class="separator:a526c9c10cab0f50a073d6ad4f7848295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae98fcc029b6c75981e2489ab4ed42e5"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structInputState.html">InputState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input__processing_8h.html#aae98fcc029b6c75981e2489ab4ed42e5">Input</a></td></tr>
 <tr class="separator:aae98fcc029b6c75981e2489ab4ed42e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -180,11 +182,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="input__processing_8h_aaa4abcb7f4846f711d52ad1b601a5d78_icgraph.png" border="0" usemap="#input__processing_8h_aaa4abcb7f4846f711d52ad1b601a5d78_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -225,11 +222,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="input__processing_8h_a6d05fb67cad0ce9a942c185ad4980aee_icgraph.png" border="0" usemap="#input__processing_8h_a6d05fb67cad0ce9a942c185ad4980aee_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -264,11 +256,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="input__processing_8h_a9460a3d7c16ac378e8448ddfe3f6e31e_icgraph.png" border="0" usemap="#input__processing_8h_a9460a3d7c16ac378e8448ddfe3f6e31e_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -303,11 +290,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="input__processing_8h_af0722419fcccf4242e0cce6decfcc14b_icgraph.png" border="0" usemap="#input__processing_8h_af0722419fcccf4242e0cce6decfcc14b_icgraph" alt=""/></div>
-</div>
 
 </div>
 </div>
@@ -330,11 +312,13 @@ Here is the caller graph for this function:</div>
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="input__processing_8h_aeffc3e0d1a1c5969bc1f3d177d78ae90_cgraph.png" border="0" usemap="#input__processing_8h_aeffc3e0d1a1c5969bc1f3d177d78ae90_cgraph" alt=""/></div>
+<!-- MAP 2 -->
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="input__processing_8h_aeffc3e0d1a1c5969bc1f3d177d78ae90_icgraph.png" border="0" usemap="#input__processing_8h_aeffc3e0d1a1c5969bc1f3d177d78ae90_icgraph" alt=""/></div>
+<!-- MAP 3 -->
 </div>
 
 </div>
@@ -361,7 +345,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr GLsizei WINDOW_HEIGHT = 1024</td>
+          <td class="memname">constexpr GLsizei WINDOW_HEIGHT = 512</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -378,7 +362,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr GLsizei WINDOW_WIDTH = 1024</td>
+          <td class="memname">constexpr GLsizei WINDOW_WIDTH = 512</td>
         </tr>
       </table>
   </td>

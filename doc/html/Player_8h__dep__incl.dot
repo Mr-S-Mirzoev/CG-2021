@@ -1,15 +1,22 @@
-digraph "inc/Player.h"
+digraph "inc/gameplay/Player.h"
 {
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="inc/Player.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Point, MovementDirection and Player classes."];
+  Node1 [label="inc/gameplay/Player.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Point, PlayerActionection and Player classes."];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="src/Player.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Player_8cpp.html",tooltip=" "];
+  Node2 [label="src/gameplay/Player.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Player_8cpp.html",tooltip=" "];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="inc/input_processing.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$input__processing_8h.html",tooltip=" "];
+  Node3 [label="inc/gameplay/game.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$game_8h.html",tooltip="Storage class, which holds the game state."];
   Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="src/input_processing.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$input__processing_8cpp.html",tooltip=" "];
+  Node4 [label="src/gameplay/game.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$game_8cpp.html",tooltip=" "];
   Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/utilities/room.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$room_8cpp.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="inc/gameplay/input\l_processing.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$input__processing_8h.html",tooltip=" "];
+  Node7 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/gameplay/input\l_processing.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$input__processing_8cpp.html",tooltip=" "];
 }

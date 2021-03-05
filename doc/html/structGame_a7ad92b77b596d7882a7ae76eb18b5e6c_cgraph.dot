@@ -1,0 +1,24 @@
+digraph "Game::loop"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Game::loop",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Image::Data",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structImage.html#aad45e088de1f92fde63d3bcd7d542cdd",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Player::Draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structPlayer.html#a1a10995b61d63b46c6b562bd026382c4",tooltip="If player moved, move the player tile, save old coords."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Tile::get_pixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTile.html#a775e32adf797e243d76ad37a3ee3d941",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Image::GetPixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structImage.html#a376a8990402b0f5b584281f688bb982e",tooltip=" "];
+  Node3 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Player::Moved",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structPlayer.html#a743da3dcbc81ed11bfcb81943aae175b",tooltip=" "];
+  Node3 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Image::PutPixel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structImage.html#ad728f53861c64498690a311abe1667c4",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="processPlayerMovement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$input__processing_8cpp.html#aeffc3e0d1a1c5969bc1f3d177d78ae90",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Player::ProcessInput",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structPlayer.html#a11bebe44cf2833978ec843611abce250",tooltip="Move the player from it's current position to the direction."];
+}

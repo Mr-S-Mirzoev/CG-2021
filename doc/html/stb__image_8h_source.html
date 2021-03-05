@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Computer Graphics Task 1: inc/stb_image.h Source File</title>
+<title>Computer Graphics Task 1: inc/graphics/stb_image.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_fe6711a0e3a24b97f5d53045c8a5246d.html">graphics</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -502,12 +502,12 @@ $(function() {
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="preprocessor">#ifndef STBI_NO_HDR</span></div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;   <a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#ab18889e43518d6b4421b705782bb1b5e">stbi_hdr_to_ldr_gamma</a>(<span class="keywordtype">float</span> gamma);</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;   <a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#ae21cc1184eeb5cc814699f1ed62c5258">stbi_hdr_to_ldr_scale</a>(<span class="keywordtype">float</span> scale);</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;   <a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#ae21cc1184eeb5cc814699f1ed62c5258">stbi_hdr_to_ldr_scale</a>(<span class="keywordtype">float</span> <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a>);</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="preprocessor">#endif // STBI_NO_HDR</span></div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="preprocessor">#ifndef STBI_NO_LINEAR</span></div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;   <a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#a1feccdcf726dcc6b5502e3efa85b7dbb">stbi_ldr_to_hdr_gamma</a>(<span class="keywordtype">float</span> gamma);</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;   <a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#af946583656a362a316b40c0421c20561">stbi_ldr_to_hdr_scale</a>(<span class="keywordtype">float</span> scale);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;   <a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#af946583656a362a316b40c0421c20561">stbi_ldr_to_hdr_scale</a>(<span class="keywordtype">float</span> <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a>);</div>
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="preprocessor">#endif // STBI_NO_LINEAR</span></div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;<span class="comment">// stbi_is_hdr is always defined, but always returns false if STBI_NO_HDR</span></div>
@@ -1578,13 +1578,13 @@ $(function() {
 <div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;<span class="keyword">static</span> <span class="keywordtype">float</span> stbi__l2h_gamma=2.2f, stbi__l2h_scale=1.0f;</div>
 <div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160; </div>
 <div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;<a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#a1feccdcf726dcc6b5502e3efa85b7dbb">stbi_ldr_to_hdr_gamma</a>(<span class="keywordtype">float</span> gamma) { stbi__l2h_gamma = gamma; }</div>
-<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;<a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#af946583656a362a316b40c0421c20561">stbi_ldr_to_hdr_scale</a>(<span class="keywordtype">float</span> scale) { stbi__l2h_scale = scale; }</div>
+<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;<a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#af946583656a362a316b40c0421c20561">stbi_ldr_to_hdr_scale</a>(<span class="keywordtype">float</span> <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a>) { stbi__l2h_scale = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a>; }</div>
 <div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160; </div>
 <div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;<span class="keyword">static</span> <span class="keywordtype">float</span> stbi__h2l_gamma_i=1.0f/2.2f, stbi__h2l_scale_i=1.0f;</div>
 <div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160; </div>
 <div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;<a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#ab18889e43518d6b4421b705782bb1b5e">stbi_hdr_to_ldr_gamma</a>(<span class="keywordtype">float</span> gamma) { stbi__h2l_gamma_i = 1/gamma; }</div>
-<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;<a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#ae21cc1184eeb5cc814699f1ed62c5258">stbi_hdr_to_ldr_scale</a>(<span class="keywordtype">float</span> scale) { stbi__h2l_scale_i = 1/scale; }</div>
+<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;<a class="code" href="stb__image_8h.html#a2d9ec9850cd12aefe7641b456266a4c2">STBIDEF</a> <span class="keywordtype">void</span>   <a class="code" href="stb__image_8h.html#ae21cc1184eeb5cc814699f1ed62c5258">stbi_hdr_to_ldr_scale</a>(<span class="keywordtype">float</span> <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a>) { stbi__h2l_scale_i = 1/<a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a>; }</div>
 <div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160; </div>
 <div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160; </div>
 <div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;<span class="comment">//</span></div>
@@ -4731,7 +4731,7 @@ $(function() {
 <div class="line"><a name="l04669"></a><span class="lineno"> 4669</span>&#160;         <a class="code" href="stb__image_8h.html#a28eb51a1512ce382ee50f20e1d04d50d">stbi_uc</a> *in  = a-&gt;out + stride*j + x*out_n - img_width_bytes;</div>
 <div class="line"><a name="l04670"></a><span class="lineno"> 4670</span>&#160;         <span class="comment">// unpack 1/2/4-bit into a 8-bit buffer. allows us to keep the common 8-bit path optimal at minimal cost for 1/2/4-bit</span></div>
 <div class="line"><a name="l04671"></a><span class="lineno"> 4671</span>&#160;         <span class="comment">// png guarante byte alignment, if width is not multiple of 8/4/2 we&#39;ll decode dummy trailing data that will be skipped in the later loop</span></div>
-<div class="line"><a name="l04672"></a><span class="lineno"> 4672</span>&#160;         <a class="code" href="stb__image_8h.html#a28eb51a1512ce382ee50f20e1d04d50d">stbi_uc</a> scale = (color == 0) ? stbi__depth_scale_table[depth] : 1; <span class="comment">// scale grayscale values to 0..255 range</span></div>
+<div class="line"><a name="l04672"></a><span class="lineno"> 4672</span>&#160;         <a class="code" href="stb__image_8h.html#a28eb51a1512ce382ee50f20e1d04d50d">stbi_uc</a> <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> = (color == 0) ? stbi__depth_scale_table[depth] : 1; <span class="comment">// scale grayscale values to 0..255 range</span></div>
 <div class="line"><a name="l04673"></a><span class="lineno"> 4673</span>&#160; </div>
 <div class="line"><a name="l04674"></a><span class="lineno"> 4674</span>&#160;         <span class="comment">// note that the final byte might overshoot and write more data than desired.</span></div>
 <div class="line"><a name="l04675"></a><span class="lineno"> 4675</span>&#160;         <span class="comment">// we can allocate enough data that this never writes out of memory, but it</span></div>
@@ -4741,38 +4741,38 @@ $(function() {
 <div class="line"><a name="l04679"></a><span class="lineno"> 4679</span>&#160; </div>
 <div class="line"><a name="l04680"></a><span class="lineno"> 4680</span>&#160;         <span class="keywordflow">if</span> (depth == 4) {</div>
 <div class="line"><a name="l04681"></a><span class="lineno"> 4681</span>&#160;            <span class="keywordflow">for</span> (k=x*img_n; k &gt;= 2; k-=2, ++in) {</div>
-<div class="line"><a name="l04682"></a><span class="lineno"> 4682</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 4)       );</div>
-<div class="line"><a name="l04683"></a><span class="lineno"> 4683</span>&#160;               *cur++ = scale * ((*in     ) &amp; 0x0f);</div>
+<div class="line"><a name="l04682"></a><span class="lineno"> 4682</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 4)       );</div>
+<div class="line"><a name="l04683"></a><span class="lineno"> 4683</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in     ) &amp; 0x0f);</div>
 <div class="line"><a name="l04684"></a><span class="lineno"> 4684</span>&#160;            }</div>
-<div class="line"><a name="l04685"></a><span class="lineno"> 4685</span>&#160;            <span class="keywordflow">if</span> (k &gt; 0) *cur++ = scale * ((*in &gt;&gt; 4)       );</div>
+<div class="line"><a name="l04685"></a><span class="lineno"> 4685</span>&#160;            <span class="keywordflow">if</span> (k &gt; 0) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 4)       );</div>
 <div class="line"><a name="l04686"></a><span class="lineno"> 4686</span>&#160;         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (depth == 2) {</div>
 <div class="line"><a name="l04687"></a><span class="lineno"> 4687</span>&#160;            <span class="keywordflow">for</span> (k=x*img_n; k &gt;= 4; k-=4, ++in) {</div>
-<div class="line"><a name="l04688"></a><span class="lineno"> 4688</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 6)       );</div>
-<div class="line"><a name="l04689"></a><span class="lineno"> 4689</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 4) &amp; 0x03);</div>
-<div class="line"><a name="l04690"></a><span class="lineno"> 4690</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 2) &amp; 0x03);</div>
-<div class="line"><a name="l04691"></a><span class="lineno"> 4691</span>&#160;               *cur++ = scale * ((*in     ) &amp; 0x03);</div>
+<div class="line"><a name="l04688"></a><span class="lineno"> 4688</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 6)       );</div>
+<div class="line"><a name="l04689"></a><span class="lineno"> 4689</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 4) &amp; 0x03);</div>
+<div class="line"><a name="l04690"></a><span class="lineno"> 4690</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 2) &amp; 0x03);</div>
+<div class="line"><a name="l04691"></a><span class="lineno"> 4691</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in     ) &amp; 0x03);</div>
 <div class="line"><a name="l04692"></a><span class="lineno"> 4692</span>&#160;            }</div>
-<div class="line"><a name="l04693"></a><span class="lineno"> 4693</span>&#160;            <span class="keywordflow">if</span> (k &gt; 0) *cur++ = scale * ((*in &gt;&gt; 6)       );</div>
-<div class="line"><a name="l04694"></a><span class="lineno"> 4694</span>&#160;            <span class="keywordflow">if</span> (k &gt; 1) *cur++ = scale * ((*in &gt;&gt; 4) &amp; 0x03);</div>
-<div class="line"><a name="l04695"></a><span class="lineno"> 4695</span>&#160;            <span class="keywordflow">if</span> (k &gt; 2) *cur++ = scale * ((*in &gt;&gt; 2) &amp; 0x03);</div>
+<div class="line"><a name="l04693"></a><span class="lineno"> 4693</span>&#160;            <span class="keywordflow">if</span> (k &gt; 0) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 6)       );</div>
+<div class="line"><a name="l04694"></a><span class="lineno"> 4694</span>&#160;            <span class="keywordflow">if</span> (k &gt; 1) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 4) &amp; 0x03);</div>
+<div class="line"><a name="l04695"></a><span class="lineno"> 4695</span>&#160;            <span class="keywordflow">if</span> (k &gt; 2) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 2) &amp; 0x03);</div>
 <div class="line"><a name="l04696"></a><span class="lineno"> 4696</span>&#160;         } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (depth == 1) {</div>
 <div class="line"><a name="l04697"></a><span class="lineno"> 4697</span>&#160;            <span class="keywordflow">for</span> (k=x*img_n; k &gt;= 8; k-=8, ++in) {</div>
-<div class="line"><a name="l04698"></a><span class="lineno"> 4698</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 7)       );</div>
-<div class="line"><a name="l04699"></a><span class="lineno"> 4699</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 6) &amp; 0x01);</div>
-<div class="line"><a name="l04700"></a><span class="lineno"> 4700</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 5) &amp; 0x01);</div>
-<div class="line"><a name="l04701"></a><span class="lineno"> 4701</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 4) &amp; 0x01);</div>
-<div class="line"><a name="l04702"></a><span class="lineno"> 4702</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 3) &amp; 0x01);</div>
-<div class="line"><a name="l04703"></a><span class="lineno"> 4703</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 2) &amp; 0x01);</div>
-<div class="line"><a name="l04704"></a><span class="lineno"> 4704</span>&#160;               *cur++ = scale * ((*in &gt;&gt; 1) &amp; 0x01);</div>
-<div class="line"><a name="l04705"></a><span class="lineno"> 4705</span>&#160;               *cur++ = scale * ((*in     ) &amp; 0x01);</div>
+<div class="line"><a name="l04698"></a><span class="lineno"> 4698</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 7)       );</div>
+<div class="line"><a name="l04699"></a><span class="lineno"> 4699</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 6) &amp; 0x01);</div>
+<div class="line"><a name="l04700"></a><span class="lineno"> 4700</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 5) &amp; 0x01);</div>
+<div class="line"><a name="l04701"></a><span class="lineno"> 4701</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 4) &amp; 0x01);</div>
+<div class="line"><a name="l04702"></a><span class="lineno"> 4702</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 3) &amp; 0x01);</div>
+<div class="line"><a name="l04703"></a><span class="lineno"> 4703</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 2) &amp; 0x01);</div>
+<div class="line"><a name="l04704"></a><span class="lineno"> 4704</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 1) &amp; 0x01);</div>
+<div class="line"><a name="l04705"></a><span class="lineno"> 4705</span>&#160;               *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in     ) &amp; 0x01);</div>
 <div class="line"><a name="l04706"></a><span class="lineno"> 4706</span>&#160;            }</div>
-<div class="line"><a name="l04707"></a><span class="lineno"> 4707</span>&#160;            <span class="keywordflow">if</span> (k &gt; 0) *cur++ = scale * ((*in &gt;&gt; 7)       );</div>
-<div class="line"><a name="l04708"></a><span class="lineno"> 4708</span>&#160;            <span class="keywordflow">if</span> (k &gt; 1) *cur++ = scale * ((*in &gt;&gt; 6) &amp; 0x01);</div>
-<div class="line"><a name="l04709"></a><span class="lineno"> 4709</span>&#160;            <span class="keywordflow">if</span> (k &gt; 2) *cur++ = scale * ((*in &gt;&gt; 5) &amp; 0x01);</div>
-<div class="line"><a name="l04710"></a><span class="lineno"> 4710</span>&#160;            <span class="keywordflow">if</span> (k &gt; 3) *cur++ = scale * ((*in &gt;&gt; 4) &amp; 0x01);</div>
-<div class="line"><a name="l04711"></a><span class="lineno"> 4711</span>&#160;            <span class="keywordflow">if</span> (k &gt; 4) *cur++ = scale * ((*in &gt;&gt; 3) &amp; 0x01);</div>
-<div class="line"><a name="l04712"></a><span class="lineno"> 4712</span>&#160;            <span class="keywordflow">if</span> (k &gt; 5) *cur++ = scale * ((*in &gt;&gt; 2) &amp; 0x01);</div>
-<div class="line"><a name="l04713"></a><span class="lineno"> 4713</span>&#160;            <span class="keywordflow">if</span> (k &gt; 6) *cur++ = scale * ((*in &gt;&gt; 1) &amp; 0x01);</div>
+<div class="line"><a name="l04707"></a><span class="lineno"> 4707</span>&#160;            <span class="keywordflow">if</span> (k &gt; 0) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 7)       );</div>
+<div class="line"><a name="l04708"></a><span class="lineno"> 4708</span>&#160;            <span class="keywordflow">if</span> (k &gt; 1) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 6) &amp; 0x01);</div>
+<div class="line"><a name="l04709"></a><span class="lineno"> 4709</span>&#160;            <span class="keywordflow">if</span> (k &gt; 2) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 5) &amp; 0x01);</div>
+<div class="line"><a name="l04710"></a><span class="lineno"> 4710</span>&#160;            <span class="keywordflow">if</span> (k &gt; 3) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 4) &amp; 0x01);</div>
+<div class="line"><a name="l04711"></a><span class="lineno"> 4711</span>&#160;            <span class="keywordflow">if</span> (k &gt; 4) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 3) &amp; 0x01);</div>
+<div class="line"><a name="l04712"></a><span class="lineno"> 4712</span>&#160;            <span class="keywordflow">if</span> (k &gt; 5) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 2) &amp; 0x01);</div>
+<div class="line"><a name="l04713"></a><span class="lineno"> 4713</span>&#160;            <span class="keywordflow">if</span> (k &gt; 6) *cur++ = <a class="code" href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a> * ((*in &gt;&gt; 1) &amp; 0x01);</div>
 <div class="line"><a name="l04714"></a><span class="lineno"> 4714</span>&#160;         }</div>
 <div class="line"><a name="l04715"></a><span class="lineno"> 4715</span>&#160;         <span class="keywordflow">if</span> (img_n != out_n) {</div>
 <div class="line"><a name="l04716"></a><span class="lineno"> 4716</span>&#160;            <span class="keywordtype">int</span> q;</div>
@@ -7840,6 +7840,7 @@ $(function() {
 <div class="ttc" id="astb__image_8h_html_ace82446ecd7b5c760cde062179660f46"><div class="ttname"><a href="stb__image_8h.html#ace82446ecd7b5c760cde062179660f46">stbi_loadf_from_file</a></div><div class="ttdeci">STBIDEF float * stbi_loadf_from_file(FILE *f, int *x, int *y, int *channels_in_file, int desired_channels)</div></div>
 <div class="ttc" id="astb__image_8h_html_ad683202a3f6ec89729b5ad9220ae98ee"><div class="ttname"><a href="stb__image_8h.html#ad683202a3f6ec89729b5ad9220ae98ee">stbi_set_flip_vertically_on_load_thread</a></div><div class="ttdeci">STBIDEF void stbi_set_flip_vertically_on_load_thread(int flag_true_if_should_flip)</div></div>
 <div class="ttc" id="astb__image_8h_html_a3f02e0053e1c8d08a3ed436e6a82c7c9"><div class="ttname"><a href="stb__image_8h.html#a3f02e0053e1c8d08a3ed436e6a82c7c9">stbi_set_unpremultiply_on_load</a></div><div class="ttdeci">STBIDEF void stbi_set_unpremultiply_on_load(int flag_true_if_should_unpremultiply)</div></div>
+<div class="ttc" id="aroom_8cpp_html_acdea8e3df2e767462c78461c0fc35c43"><div class="ttname"><a href="room_8cpp.html#acdea8e3df2e767462c78461c0fc35c43">scale</a></div><div class="ttdeci">constexpr int scale</div><div class="ttdef"><b>Definition:</b> room.cpp:10</div></div>
 <div class="ttc" id="astb__image_8h_html_a990e0e38ab6e600bd9cbf5d30abd2f8f"><div class="ttname"><a href="stb__image_8h.html#a990e0e38ab6e600bd9cbf5d30abd2f8f">stbi_is_16_bit_from_callbacks</a></div><div class="ttdeci">STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *clbk, void *user)</div></div>
 <div class="ttc" id="astb__image_8h_html_aefdc7387857a14894bbf321e9ea4f048"><div class="ttname"><a href="stb__image_8h.html#aefdc7387857a14894bbf321e9ea4f048">stbi_load</a></div><div class="ttdeci">STBIDEF stbi_uc * stbi_load(char const *filename, int *x, int *y, int *channels_in_file, int desired_channels)</div></div>
 <div class="ttc" id="astb__image_8h_html_ab59081c58fec889ef8ed66f539a5bb46"><div class="ttname"><a href="stb__image_8h.html#ab59081c58fec889ef8ed66f539a5bb46">stbi_failure_reason</a></div><div class="ttdeci">const STBIDEF char * stbi_failure_reason(void)</div></div>

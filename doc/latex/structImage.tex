@@ -11,8 +11,12 @@ Class representation of \mbox{\hyperlink{structImage}{Image}} abstraction.
 
 
 
-Collaboration diagram for Image\+:
+Inheritance diagram for Image\+:
 % FIG 0
+
+
+Collaboration diagram for Image\+:
+% FIG 1
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -32,11 +36,18 @@ size\+\_\+t \mbox{\hyperlink{structImage_a3690a0986d16c2f5f30e2625e645cc8e}{Size
 \item 
 \mbox{\hyperlink{structPixel}{Pixel}} $\ast$ \mbox{\hyperlink{structImage_aad45e088de1f92fde63d3bcd7d542cdd}{Data}} ()
 \item 
-\mbox{\hyperlink{structPixel}{Pixel}} \mbox{\hyperlink{structImage_a0bedb6561074b2cdf3f5a577c80e043a}{Get\+Pixel}} (int x, int y)
+\mbox{\hyperlink{structPixel}{Pixel}} \mbox{\hyperlink{structImage_a376a8990402b0f5b584281f688bb982e}{Get\+Pixel}} (int x, int y) const
 \item 
 void \mbox{\hyperlink{structImage_ad728f53861c64498690a311abe1667c4}{Put\+Pixel}} (int x, int y, const \mbox{\hyperlink{structPixel}{Pixel}} \&pix)
 \item 
 \mbox{\hyperlink{structImage_a0294f63700543e11c0f0da85601c7ae5}{$\sim$\+Image}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structImage_ab8d12f635013c04159cd4d3d972bac88}{width}} = -\/1
+\item 
+int \mbox{\hyperlink{structImage_a51df43db420c9c0b57536cb2dd36de5c}{height}} = -\/1
 \end{DoxyCompactItemize}
 
 
@@ -62,7 +73,7 @@ Construct a new \mbox{\hyperlink{structImage}{Image}} object from image in path.
 \hline
 \end{DoxyParams}
 Here is the call graph for this function\+:
-% FIG 1
+% FIG 2
 \mbox{\Hypertarget{structImage_ad04e368629b03afab0737f1b523947f9}\label{structImage_ad04e368629b03afab0737f1b523947f9}} 
 \index{Image@{Image}!Image@{Image}}
 \index{Image@{Image}!Image@{Image}}
@@ -89,7 +100,7 @@ Construct a blank \mbox{\hyperlink{structImage}{Image}} object.
 {\footnotesize\ttfamily Image\+::$\sim$\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Here is the call graph for this function\+:
-% FIG 2
+% FIG 3
 
 
 \doxysubsection{Member Function Documentation}
@@ -106,13 +117,15 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \mbox{\hyperlink{structPixel}{Pixel}}$\ast$ Image\+::\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Here is the caller graph for this function\+:
-% FIG 3
-\mbox{\Hypertarget{structImage_a0bedb6561074b2cdf3f5a577c80e043a}\label{structImage_a0bedb6561074b2cdf3f5a577c80e043a}} 
+% FIG 4
+\mbox{\Hypertarget{structImage_a376a8990402b0f5b584281f688bb982e}\label{structImage_a376a8990402b0f5b584281f688bb982e}} 
 \index{Image@{Image}!GetPixel@{GetPixel}}
 \index{GetPixel@{GetPixel}!Image@{Image}}
 \doxysubsubsection{\texorpdfstring{GetPixel()}{GetPixel()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structPixel}{Pixel}} Image\+::\+Get\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPixel}{Pixel}} Image\+::\+Get\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Here is the caller graph for this function\+:
+% FIG 5
 \mbox{\Hypertarget{structImage_a617543a57fd7abf1a4a052539fe35807}\label{structImage_a617543a57fd7abf1a4a052539fe35807}} 
 \index{Image@{Image}!Height@{Height}}
 \index{Height@{Height}!Image@{Image}}
@@ -120,7 +133,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily int Image\+::\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Here is the caller graph for this function\+:
-% FIG 4
+% FIG 6
 \mbox{\Hypertarget{structImage_ad728f53861c64498690a311abe1667c4}\label{structImage_ad728f53861c64498690a311abe1667c4}} 
 \index{Image@{Image}!PutPixel@{PutPixel}}
 \index{PutPixel@{PutPixel}!Image@{Image}}
@@ -128,7 +141,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily void Image\+::\+Put\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{const \mbox{\hyperlink{structPixel}{Pixel}} \&}]{pix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Here is the caller graph for this function\+:
-% FIG 5
+% FIG 7
 \mbox{\Hypertarget{structImage_a4cb69c5911f1f8e4944047825dcf117c}\label{structImage_a4cb69c5911f1f8e4944047825dcf117c}} 
 \index{Image@{Image}!Save@{Save}}
 \index{Save@{Save}!Image@{Image}}
@@ -151,7 +164,7 @@ If path ends with $\ast$.png the \mbox{\hyperlink{structImage}{Image}} object wi
 int -\/ 0 on success; 1 on error 
 \end{DoxyReturn}
 Here is the call graph for this function\+:
-% FIG 6
+% FIG 8
 \mbox{\Hypertarget{structImage_a3690a0986d16c2f5f30e2625e645cc8e}\label{structImage_a3690a0986d16c2f5f30e2625e645cc8e}} 
 \index{Image@{Image}!Size@{Size}}
 \index{Size@{Size}!Image@{Image}}
@@ -165,10 +178,25 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily int Image\+::\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Here is the caller graph for this function\+:
-% FIG 7
+% FIG 9
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structImage_a51df43db420c9c0b57536cb2dd36de5c}\label{structImage_a51df43db420c9c0b57536cb2dd36de5c}} 
+\index{Image@{Image}!height@{height}}
+\index{height@{height}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Image\+::height = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{structImage_ab8d12f635013c04159cd4d3d972bac88}\label{structImage_ab8d12f635013c04159cd4d3d972bac88}} 
+\index{Image@{Image}!width@{width}}
+\index{width@{width}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Image\+::width = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
+
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-inc/\mbox{\hyperlink{Image_8h}{Image.\+h}}\item 
-src/\mbox{\hyperlink{Image_8cpp}{Image.\+cpp}}\end{DoxyCompactItemize}
+inc/graphics/\mbox{\hyperlink{Image_8h}{Image.\+h}}\item 
+src/graphics/\mbox{\hyperlink{Image_8cpp}{Image.\+cpp}}\end{DoxyCompactItemize}

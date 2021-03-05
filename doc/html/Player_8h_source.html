@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Computer Graphics Task 1: inc/Player.h Source File</title>
+<title>Computer Graphics Task 1: inc/gameplay/Player.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_3e0da0dbc6b350c7650fd60425c62ba8.html">gameplay</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,57 +73,63 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#ifndef MAIN_PLAYER_H</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define MAIN_PLAYER_H</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Image_8h.html">Image.h</a>&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Image_8h.html">graphics/Image.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tile_8h.html">graphics/tile.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structPoint.html">    9</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structPoint.html">Point</a></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structPoint.html#a8c779e11e694b20e0946105a9f5de842">   11</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPoint.html#a8c779e11e694b20e0946105a9f5de842">x</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structPoint.html#a2e1b5fb2b2a83571f5c0bc0f66a73cf7">   12</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structPoint.html#a2e1b5fb2b2a83571f5c0bc0f66a73cf7">y</a>;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;};</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61f">   15</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61f">MovementDir</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="Player_8h.html#aea132397c26cad8f8637a9422260deca">   15</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="Player_8h.html#aea132397c26cad8f8637a9422260deca">PlayerAction</a></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fafbaedde498cdead4f2780217646e9ba1">UP</a>,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fac4e0e4e3118472beeb2ae75827450f1f">DOWN</a>,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fa684d325a7303f52e64011467ff5c5758">LEFT</a>,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fa21507b40c80068eda19865706fdc2403">RIGHT</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structPlayer.html">   23</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structPlayer.html">Player</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="structPlayer.html#a02434d25ce99e4bedb9f30c6cd76c73c">   25</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structPlayer.html#a02434d25ce99e4bedb9f30c6cd76c73c">Player</a>(<a class="code" href="structPoint.html">Point</a> pos = {.<a class="code" href="structPoint.html#a8c779e11e694b20e0946105a9f5de842">x</a> = 10, .y = 10}) :</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                    coords(pos), old_coords(coords) {};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structPlayer.html#a743da3dcbc81ed11bfcb81943aae175b">Moved</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structPlayer.html#a4b275c51f881fb61b52d1ede3d1dcba3">ProcessInput</a>(<a class="code" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61f">MovementDir</a> dir);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structPlayer.html#a1a10995b61d63b46c6b562bd026382c4">Draw</a>(<a class="code" href="structImage.html">Image</a> &amp;screen);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="structPoint.html">Point</a> coords {.<a class="code" href="structPoint.html#a8c779e11e694b20e0946105a9f5de842">x</a> = 10, .y = 10};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="structPoint.html">Point</a> old_coords {.<a class="code" href="structPoint.html#a8c779e11e694b20e0946105a9f5de842">x</a> = 10, .y = 10};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="structPixel.html">Pixel</a> color {.<a class="code" href="structPixel.html#a47d65d4a410f57c46746ddedd709e177">r</a> = 255, .g = 255, .b = 0, .a = 255};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> move_speed = 4;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif //MAIN_PLAYER_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="Player_8h.html#aea132397c26cad8f8637a9422260decaafbaedde498cdead4f2780217646e9ba1">UP</a>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="Player_8h.html#aea132397c26cad8f8637a9422260decaac4e0e4e3118472beeb2ae75827450f1f">DOWN</a>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="Player_8h.html#aea132397c26cad8f8637a9422260decaa684d325a7303f52e64011467ff5c5758">LEFT</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="Player_8h.html#aea132397c26cad8f8637a9422260decaa21507b40c80068eda19865706fdc2403">RIGHT</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="Player_8h.html#aea132397c26cad8f8637a9422260decaa866e8db4472be5f72246d816fbcbac48">APPLY_ACTION</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structPlayer.html">   24</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structPlayer.html">Player</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structPlayer.html#a02434d25ce99e4bedb9f30c6cd76c73c">   26</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="structPlayer.html#a02434d25ce99e4bedb9f30c6cd76c73c">Player</a>(<a class="code" href="structPoint.html">Point</a> pos = {.<a class="code" href="structPoint.html#a8c779e11e694b20e0946105a9f5de842">x</a> = 10, .y = 10}) :</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    coords(pos), old_coords(coords), person(<a class="code" href="tile_8cpp.html#ab4f09f79be1300fa8174edd2862c8eb0">get_tile_by_name</a>(<span class="stringliteral">&quot;person&quot;</span>)) {};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structPlayer.html#a743da3dcbc81ed11bfcb81943aae175b">Moved</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structPlayer.html#a11bebe44cf2833978ec843611abce250">ProcessInput</a>(<a class="code" href="Player_8h.html#aea132397c26cad8f8637a9422260deca">PlayerAction</a> dir);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structPlayer.html#a1a10995b61d63b46c6b562bd026382c4">Draw</a>(<a class="code" href="structImage.html">Image</a> &amp;screen);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="structPoint.html">Point</a> coords {.<a class="code" href="structPoint.html#a8c779e11e694b20e0946105a9f5de842">x</a> = 10, .y = 10};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="structPoint.html">Point</a> old_coords {.<a class="code" href="structPoint.html#a8c779e11e694b20e0946105a9f5de842">x</a> = 10, .y = 10};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="structPixel.html">Pixel</a> color {.<a class="code" href="structPixel.html#a47d65d4a410f57c46746ddedd709e177">r</a> = 255, .g = 255, .b = 0, .a = 255};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> move_speed = 2;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classTile.html">Tile</a> &amp;person;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif //MAIN_PLAYER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aPlayer_8h_html_aa91f5cffa9b1b82e96c8824b1fe5c61fa684d325a7303f52e64011467ff5c5758"><div class="ttname"><a href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fa684d325a7303f52e64011467ff5c5758">MovementDir::LEFT</a></div><div class="ttdeci">@ LEFT</div></div>
+<div class="ttc" id="aPlayer_8h_html_aea132397c26cad8f8637a9422260decaa866e8db4472be5f72246d816fbcbac48"><div class="ttname"><a href="Player_8h.html#aea132397c26cad8f8637a9422260decaa866e8db4472be5f72246d816fbcbac48">PlayerAction::APPLY_ACTION</a></div><div class="ttdeci">@ APPLY_ACTION</div></div>
+<div class="ttc" id="aPlayer_8h_html_aea132397c26cad8f8637a9422260decaafbaedde498cdead4f2780217646e9ba1"><div class="ttname"><a href="Player_8h.html#aea132397c26cad8f8637a9422260decaafbaedde498cdead4f2780217646e9ba1">PlayerAction::UP</a></div><div class="ttdeci">@ UP</div></div>
+<div class="ttc" id="aPlayer_8h_html_aea132397c26cad8f8637a9422260decaa684d325a7303f52e64011467ff5c5758"><div class="ttname"><a href="Player_8h.html#aea132397c26cad8f8637a9422260decaa684d325a7303f52e64011467ff5c5758">PlayerAction::LEFT</a></div><div class="ttdeci">@ LEFT</div></div>
 <div class="ttc" id="astructPoint_html_a2e1b5fb2b2a83571f5c0bc0f66a73cf7"><div class="ttname"><a href="structPoint.html#a2e1b5fb2b2a83571f5c0bc0f66a73cf7">Point::y</a></div><div class="ttdeci">int y</div><div class="ttdef"><b>Definition:</b> Player.h:12</div></div>
-<div class="ttc" id="aPlayer_8h_html_aa91f5cffa9b1b82e96c8824b1fe5c61fafbaedde498cdead4f2780217646e9ba1"><div class="ttname"><a href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fafbaedde498cdead4f2780217646e9ba1">MovementDir::UP</a></div><div class="ttdeci">@ UP</div></div>
+<div class="ttc" id="aclassTile_html"><div class="ttname"><a href="classTile.html">Tile</a></div><div class="ttdef"><b>Definition:</b> tile.h:11</div></div>
+<div class="ttc" id="aPlayer_8h_html_aea132397c26cad8f8637a9422260decaa21507b40c80068eda19865706fdc2403"><div class="ttname"><a href="Player_8h.html#aea132397c26cad8f8637a9422260decaa21507b40c80068eda19865706fdc2403">PlayerAction::RIGHT</a></div><div class="ttdeci">@ RIGHT</div></div>
 <div class="ttc" id="astructImage_html"><div class="ttname"><a href="structImage.html">Image</a></div><div class="ttdoc">Class representation of Image abstraction.</div><div class="ttdef"><b>Definition:</b> Image.h:29</div></div>
-<div class="ttc" id="aPlayer_8h_html_aa91f5cffa9b1b82e96c8824b1fe5c61fac4e0e4e3118472beeb2ae75827450f1f"><div class="ttname"><a href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fac4e0e4e3118472beeb2ae75827450f1f">MovementDir::DOWN</a></div><div class="ttdeci">@ DOWN</div></div>
+<div class="ttc" id="atile_8cpp_html_ab4f09f79be1300fa8174edd2862c8eb0"><div class="ttname"><a href="tile_8cpp.html#ab4f09f79be1300fa8174edd2862c8eb0">get_tile_by_name</a></div><div class="ttdeci">Tile &amp; get_tile_by_name(const std::string &amp;tile_name)</div><div class="ttdef"><b>Definition:</b> tile.cpp:32</div></div>
 <div class="ttc" id="astructPoint_html"><div class="ttname"><a href="structPoint.html">Point</a></div><div class="ttdef"><b>Definition:</b> Player.h:9</div></div>
-<div class="ttc" id="aPlayer_8h_html_aa91f5cffa9b1b82e96c8824b1fe5c61fa21507b40c80068eda19865706fdc2403"><div class="ttname"><a href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fa21507b40c80068eda19865706fdc2403">MovementDir::RIGHT</a></div><div class="ttdeci">@ RIGHT</div></div>
 <div class="ttc" id="aImage_8h_html"><div class="ttname"><a href="Image_8h.html">Image.h</a></div><div class="ttdoc">Image and Pixel representation.</div></div>
 <div class="ttc" id="astructPixel_html"><div class="ttname"><a href="structPixel.html">Pixel</a></div><div class="ttdoc">Pixel in RGBA representation.</div><div class="ttdef"><b>Definition:</b> Image.h:15</div></div>
-<div class="ttc" id="aPlayer_8h_html_aa91f5cffa9b1b82e96c8824b1fe5c61f"><div class="ttname"><a href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61f">MovementDir</a></div><div class="ttdeci">MovementDir</div><div class="ttdef"><b>Definition:</b> Player.h:15</div></div>
-<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:23</div></div>
-<div class="ttc" id="astructPlayer_html_a1a10995b61d63b46c6b562bd026382c4"><div class="ttname"><a href="structPlayer.html#a1a10995b61d63b46c6b562bd026382c4">Player::Draw</a></div><div class="ttdeci">void Draw(Image &amp;screen)</div><div class="ttdoc">If player moved, move the player tile, save old coords.</div><div class="ttdef"><b>Definition:</b> Player.cpp:38</div></div>
+<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:24</div></div>
+<div class="ttc" id="aPlayer_8h_html_aea132397c26cad8f8637a9422260deca"><div class="ttname"><a href="Player_8h.html#aea132397c26cad8f8637a9422260deca">PlayerAction</a></div><div class="ttdeci">PlayerAction</div><div class="ttdef"><b>Definition:</b> Player.h:15</div></div>
+<div class="ttc" id="astructPlayer_html_a1a10995b61d63b46c6b562bd026382c4"><div class="ttname"><a href="structPlayer.html#a1a10995b61d63b46c6b562bd026382c4">Player::Draw</a></div><div class="ttdeci">void Draw(Image &amp;screen)</div><div class="ttdoc">If player moved, move the player tile, save old coords.</div><div class="ttdef"><b>Definition:</b> Player.cpp:40</div></div>
 <div class="ttc" id="astructPixel_html_a47d65d4a410f57c46746ddedd709e177"><div class="ttname"><a href="structPixel.html#a47d65d4a410f57c46746ddedd709e177">Pixel::r</a></div><div class="ttdeci">uint8_t r</div><div class="ttdef"><b>Definition:</b> Image.h:17</div></div>
-<div class="ttc" id="astructPlayer_html_a4b275c51f881fb61b52d1ede3d1dcba3"><div class="ttname"><a href="structPlayer.html#a4b275c51f881fb61b52d1ede3d1dcba3">Player::ProcessInput</a></div><div class="ttdeci">void ProcessInput(MovementDir dir)</div><div class="ttdoc">Move the player from it's current position to the direction.</div><div class="ttdef"><b>Definition:</b> Player.cpp:12</div></div>
-<div class="ttc" id="astructPlayer_html_a743da3dcbc81ed11bfcb81943aae175b"><div class="ttname"><a href="structPlayer.html#a743da3dcbc81ed11bfcb81943aae175b">Player::Moved</a></div><div class="ttdeci">bool Moved() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:4</div></div>
+<div class="ttc" id="astructPlayer_html_a11bebe44cf2833978ec843611abce250"><div class="ttname"><a href="structPlayer.html#a11bebe44cf2833978ec843611abce250">Player::ProcessInput</a></div><div class="ttdeci">void ProcessInput(PlayerAction dir)</div><div class="ttdoc">Move the player from it's current position to the direction.</div><div class="ttdef"><b>Definition:</b> Player.cpp:13</div></div>
+<div class="ttc" id="astructPlayer_html_a743da3dcbc81ed11bfcb81943aae175b"><div class="ttname"><a href="structPlayer.html#a743da3dcbc81ed11bfcb81943aae175b">Player::Moved</a></div><div class="ttdeci">bool Moved() const</div><div class="ttdef"><b>Definition:</b> Player.cpp:5</div></div>
 <div class="ttc" id="astructPoint_html_a8c779e11e694b20e0946105a9f5de842"><div class="ttname"><a href="structPoint.html#a8c779e11e694b20e0946105a9f5de842">Point::x</a></div><div class="ttdeci">int x</div><div class="ttdef"><b>Definition:</b> Player.h:11</div></div>
-<div class="ttc" id="astructPlayer_html_a02434d25ce99e4bedb9f30c6cd76c73c"><div class="ttname"><a href="structPlayer.html#a02434d25ce99e4bedb9f30c6cd76c73c">Player::Player</a></div><div class="ttdeci">Player(Point pos={.x=10,.y=10})</div><div class="ttdef"><b>Definition:</b> Player.h:25</div></div>
+<div class="ttc" id="atile_8h_html"><div class="ttname"><a href="tile_8h.html">tile.h</a></div></div>
+<div class="ttc" id="astructPlayer_html_a02434d25ce99e4bedb9f30c6cd76c73c"><div class="ttname"><a href="structPlayer.html#a02434d25ce99e4bedb9f30c6cd76c73c">Player::Player</a></div><div class="ttdeci">Player(Point pos={.x=10,.y=10})</div><div class="ttdef"><b>Definition:</b> Player.h:26</div></div>
+<div class="ttc" id="aPlayer_8h_html_aea132397c26cad8f8637a9422260decaac4e0e4e3118472beeb2ae75827450f1f"><div class="ttname"><a href="Player_8h.html#aea132397c26cad8f8637a9422260decaac4e0e4e3118472beeb2ae75827450f1f">PlayerAction::DOWN</a></div><div class="ttdeci">@ DOWN</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

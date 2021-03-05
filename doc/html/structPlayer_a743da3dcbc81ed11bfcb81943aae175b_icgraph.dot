@@ -7,4 +7,8 @@ digraph "Player::Moved"
   Node1 [label="Player::Moved",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="Player::Draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structPlayer.html#a1a10995b61d63b46c6b562bd026382c4",tooltip="If player moved, move the player tile, save old coords."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Game::loop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structGame.html#a7ad92b77b596d7882a7ae76eb18b5e6c",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
 }

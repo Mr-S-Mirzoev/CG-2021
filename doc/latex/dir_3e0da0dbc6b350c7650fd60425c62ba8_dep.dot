@@ -1,0 +1,15 @@
+digraph "inc/gameplay" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_bfccd401955b95cf8c75461437045ac0 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="inc" fontname="Helvetica", fontsize="10", URL="dir_bfccd401955b95cf8c75461437045ac0.html"]
+  dir_3e0da0dbc6b350c7650fd60425c62ba8 [shape=box, label="gameplay", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_3e0da0dbc6b350c7650fd60425c62ba8.html"];
+  }
+  dir_956851c7e7a34f978e008cb8ce5a4f9c [shape=box label="utilities" URL="dir_956851c7e7a34f978e008cb8ce5a4f9c.html"];
+  dir_fe6711a0e3a24b97f5d53045c8a5246d [shape=box label="graphics" URL="dir_fe6711a0e3a24b97f5d53045c8a5246d.html"];
+  dir_956851c7e7a34f978e008cb8ce5a4f9c->dir_fe6711a0e3a24b97f5d53045c8a5246d [headlabel="4", labeldistance=1.5 headhref="dir_000003_000002.html"];
+  dir_3e0da0dbc6b350c7650fd60425c62ba8->dir_956851c7e7a34f978e008cb8ce5a4f9c [headlabel="2", labeldistance=1.5 headhref="dir_000001_000003.html"];
+  dir_3e0da0dbc6b350c7650fd60425c62ba8->dir_fe6711a0e3a24b97f5d53045c8a5246d [headlabel="4", labeldistance=1.5 headhref="dir_000001_000002.html"];
+  dir_fe6711a0e3a24b97f5d53045c8a5246d->dir_956851c7e7a34f978e008cb8ce5a4f9c [headlabel="1", labeldistance=1.5 headhref="dir_000002_000003.html"];
+}

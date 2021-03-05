@@ -1,0 +1,117 @@
+\hypertarget{tile_8cpp}{}\doxysection{src/graphics/tile.cpp File Reference}
+\label{tile_8cpp}\index{src/graphics/tile.cpp@{src/graphics/tile.cpp}}
+{\ttfamily \#include \char`\"{}graphics/tile.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utilities/exceptions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utilities/matrix.\+h\char`\"{}}\newline
+Include dependency graph for tile.\+cpp\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTile}{Tile}} \& \mbox{\hyperlink{tile_8cpp_ab4f09f79be1300fa8174edd2862c8eb0}{get\+\_\+tile\+\_\+by\+\_\+name}} (const std\+::string \&tile\+\_\+name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structImage}{Image}} \mbox{\hyperlink{tile_8cpp_adb9310d121c18b14d73b3bb6e1d41308}{wallset}} (\char`\"{}./res/walls.\+png\char`\"{})
+\item 
+\mbox{\hyperlink{structImage}{Image}} \mbox{\hyperlink{tile_8cpp_af9d98b42acbbf404c4c7ad5636073a28}{floorset}} (\char`\"{}./res/floor.\+png\char`\"{})
+\item 
+\mbox{\hyperlink{structImage}{Image}} \mbox{\hyperlink{tile_8cpp_a2e7fc4490de07067186eb19a7eaba7c5}{objset}} (\char`\"{}./res/obj\+\_\+set.\+png\char`\"{})
+\item 
+\mbox{\hyperlink{structImage}{Image}} \mbox{\hyperlink{tile_8cpp_ad7c9dfd412ccee1bf508f7ab0b4781ae}{persset}} (\char`\"{}./res/persons.\+png\char`\"{})
+\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{tile_8cpp_a7248d05d223302dace62e8bffa091635}{wall}} (\mbox{\hyperlink{tile_8cpp_a2e7fc4490de07067186eb19a7eaba7c5}{objset}}, 16, 16)
+\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{tile_8cpp_adcece2439a588bf7d2319448b503d07d}{room\+\_\+floor}} (\mbox{\hyperlink{tile_8cpp_af9d98b42acbbf404c4c7ad5636073a28}{floorset}}, 16, 16)
+\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{tile_8cpp_a3883fbd7f20bd075f0f27a03bd77600d}{void\+\_\+floor}} (\mbox{\hyperlink{tile_8cpp_a2e7fc4490de07067186eb19a7eaba7c5}{objset}}, 48, 48)
+\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{tile_8cpp_ab71fecf1a33e6dbd5c7db7a99f04bd34}{closed\+\_\+door}} (\mbox{\hyperlink{tile_8cpp_adb9310d121c18b14d73b3bb6e1d41308}{wallset}}, 64, 32)
+\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{tile_8cpp_a6252faa96c2e966fc7d9701ad4c7716d}{main\+\_\+exit}} (\mbox{\hyperlink{tile_8cpp_adb9310d121c18b14d73b3bb6e1d41308}{wallset}}, 64, 16)
+\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{tile_8cpp_a8a9edaef564ad676565f687652b4f1ac}{key}} (\mbox{\hyperlink{tile_8cpp_a2e7fc4490de07067186eb19a7eaba7c5}{objset}}, 128, 96)
+\item 
+\mbox{\hyperlink{classTile}{Tile}} \mbox{\hyperlink{tile_8cpp_a13410caa3fc86408ce377eac6503fe36}{person}} = \mbox{\hyperlink{classTile}{Tile}}(\mbox{\hyperlink{tile_8cpp_ad7c9dfd412ccee1bf508f7ab0b4781ae}{persset}}, 16, 144)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tile_8cpp_ab4f09f79be1300fa8174edd2862c8eb0}\label{tile_8cpp_ab4f09f79be1300fa8174edd2862c8eb0}} 
+\index{tile.cpp@{tile.cpp}!get\_tile\_by\_name@{get\_tile\_by\_name}}
+\index{get\_tile\_by\_name@{get\_tile\_by\_name}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{get\_tile\_by\_name()}{get\_tile\_by\_name()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}}\& get\+\_\+tile\+\_\+by\+\_\+name (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tile\+\_\+name }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+% FIG 1
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tile_8cpp_ab71fecf1a33e6dbd5c7db7a99f04bd34}\label{tile_8cpp_ab71fecf1a33e6dbd5c7db7a99f04bd34}} 
+\index{tile.cpp@{tile.cpp}!closed\_door@{closed\_door}}
+\index{closed\_door@{closed\_door}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{closed\_door}{closed\_door}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} closed\+\_\+door(\mbox{\hyperlink{tile_8cpp_adb9310d121c18b14d73b3bb6e1d41308}{wallset}}, 64, 32)}
+
+\mbox{\Hypertarget{tile_8cpp_af9d98b42acbbf404c4c7ad5636073a28}\label{tile_8cpp_af9d98b42acbbf404c4c7ad5636073a28}} 
+\index{tile.cpp@{tile.cpp}!floorset@{floorset}}
+\index{floorset@{floorset}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{floorset}{floorset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structImage}{Image}} floorset(\char`\"{}./res/floor.\+png\char`\"{})}
+
+\mbox{\Hypertarget{tile_8cpp_a8a9edaef564ad676565f687652b4f1ac}\label{tile_8cpp_a8a9edaef564ad676565f687652b4f1ac}} 
+\index{tile.cpp@{tile.cpp}!key@{key}}
+\index{key@{key}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} key(\mbox{\hyperlink{tile_8cpp_a2e7fc4490de07067186eb19a7eaba7c5}{objset}}, 128, 96)}
+
+\mbox{\Hypertarget{tile_8cpp_a6252faa96c2e966fc7d9701ad4c7716d}\label{tile_8cpp_a6252faa96c2e966fc7d9701ad4c7716d}} 
+\index{tile.cpp@{tile.cpp}!main\_exit@{main\_exit}}
+\index{main\_exit@{main\_exit}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{main\_exit}{main\_exit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} main\+\_\+exit(\mbox{\hyperlink{tile_8cpp_adb9310d121c18b14d73b3bb6e1d41308}{wallset}}, 64, 16)}
+
+\mbox{\Hypertarget{tile_8cpp_a2e7fc4490de07067186eb19a7eaba7c5}\label{tile_8cpp_a2e7fc4490de07067186eb19a7eaba7c5}} 
+\index{tile.cpp@{tile.cpp}!objset@{objset}}
+\index{objset@{objset}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{objset}{objset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structImage}{Image}} objset(\char`\"{}./res/obj\+\_\+set.\+png\char`\"{})}
+
+\mbox{\Hypertarget{tile_8cpp_a13410caa3fc86408ce377eac6503fe36}\label{tile_8cpp_a13410caa3fc86408ce377eac6503fe36}} 
+\index{tile.cpp@{tile.cpp}!person@{person}}
+\index{person@{person}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{person}{person}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} person = \mbox{\hyperlink{classTile}{Tile}}(\mbox{\hyperlink{tile_8cpp_ad7c9dfd412ccee1bf508f7ab0b4781ae}{persset}}, 16, 144)}
+
+\mbox{\Hypertarget{tile_8cpp_ad7c9dfd412ccee1bf508f7ab0b4781ae}\label{tile_8cpp_ad7c9dfd412ccee1bf508f7ab0b4781ae}} 
+\index{tile.cpp@{tile.cpp}!persset@{persset}}
+\index{persset@{persset}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{persset}{persset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structImage}{Image}} persset(\char`\"{}./res/persons.\+png\char`\"{})}
+
+\mbox{\Hypertarget{tile_8cpp_adcece2439a588bf7d2319448b503d07d}\label{tile_8cpp_adcece2439a588bf7d2319448b503d07d}} 
+\index{tile.cpp@{tile.cpp}!room\_floor@{room\_floor}}
+\index{room\_floor@{room\_floor}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{room\_floor}{room\_floor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} room\+\_\+floor(\mbox{\hyperlink{tile_8cpp_af9d98b42acbbf404c4c7ad5636073a28}{floorset}}, 16, 16)}
+
+\mbox{\Hypertarget{tile_8cpp_a3883fbd7f20bd075f0f27a03bd77600d}\label{tile_8cpp_a3883fbd7f20bd075f0f27a03bd77600d}} 
+\index{tile.cpp@{tile.cpp}!void\_floor@{void\_floor}}
+\index{void\_floor@{void\_floor}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{void\_floor}{void\_floor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} void\+\_\+floor(\mbox{\hyperlink{tile_8cpp_a2e7fc4490de07067186eb19a7eaba7c5}{objset}}, 48, 48)}
+
+\mbox{\Hypertarget{tile_8cpp_a7248d05d223302dace62e8bffa091635}\label{tile_8cpp_a7248d05d223302dace62e8bffa091635}} 
+\index{tile.cpp@{tile.cpp}!wall@{wall}}
+\index{wall@{wall}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{wall}{wall}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTile}{Tile}} wall(\mbox{\hyperlink{tile_8cpp_a2e7fc4490de07067186eb19a7eaba7c5}{objset}}, 16, 16)}
+
+\mbox{\Hypertarget{tile_8cpp_adb9310d121c18b14d73b3bb6e1d41308}\label{tile_8cpp_adb9310d121c18b14d73b3bb6e1d41308}} 
+\index{tile.cpp@{tile.cpp}!wallset@{wallset}}
+\index{wallset@{wallset}!tile.cpp@{tile.cpp}}
+\doxysubsubsection{\texorpdfstring{wallset}{wallset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structImage}{Image}} wallset(\char`\"{}./res/walls.\+png\char`\"{})}
+

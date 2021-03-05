@@ -10,7 +10,5 @@ digraph "load_GL_VERSION_4_2"
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="gladLoadGL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$glad_8c.html#a137453294a2756a898902ef399b3d437",tooltip=" "];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="initGL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#affd9792de82327852d79df77c1261657",tooltip=" "];
-  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627",tooltip=" "];
+  Node4 [label="Game::initGL",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structGame.html#a6a9380646c673c0e0371b35c148adc02",tooltip=" "];
 }

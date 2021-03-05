@@ -66,15 +66,13 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="common_8h_source.html">common.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Image_8h_source.html">Image.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="input__processing_8h_source.html">input_processing.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;sstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="game_8h_source.html">gameplay/game.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
@@ -84,48 +82,10 @@ Include dependency graph for main.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:affd9792de82327852d79df77c1261657"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#affd9792de82327852d79df77c1261657">initGL</a> ()</td></tr>
-<tr class="separator:affd9792de82327852d79df77c1261657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
 <tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:adf7cb443fa70a647d5603ee33b392102"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adf7cb443fa70a647d5603ee33b392102">deltaTime</a></td></tr>
-<tr class="separator:adf7cb443fa70a647d5603ee33b392102"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a606e9490a5462c2c60b30dc76ff573a1"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a606e9490a5462c2c60b30dc76ff573a1">lastFrame</a></td></tr>
-<tr class="separator:a606e9490a5462c2c60b30dc76ff573a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="affd9792de82327852d79df77c1261657"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#affd9792de82327852d79df77c1261657">&#9670;&nbsp;</a></span>initGL()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int initGL </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_affd9792de82327852d79df77c1261657_cgraph.png" border="0" usemap="#main_8cpp_affd9792de82327852d79df77c1261657_cgraph" alt=""/></div>
-<!-- MAP 1 -->
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_affd9792de82327852d79df77c1261657_icgraph.png" border="0" usemap="#main_8cpp_affd9792de82327852d79df77c1261657_icgraph" alt=""/></div>
-<!-- MAP 2 -->
-</div>
-
-</div>
-</div>
 <a id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c04138a5bfe5d72780bb7e82a18e627">&#9670;&nbsp;</a></span>main()</h2>
 
@@ -155,37 +115,8 @@ Here is the caller graph for this function:</div>
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph.png" border="0" usemap="#main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph" alt=""/></div>
-<!-- MAP 3 -->
+<!-- MAP 1 -->
 </div>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="adf7cb443fa70a647d5603ee33b392102"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf7cb443fa70a647d5603ee33b392102">&#9670;&nbsp;</a></span>deltaTime</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GLfloat deltaTime</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a606e9490a5462c2c60b30dc76ff573a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a606e9490a5462c2c60b30dc76ff573a1">&#9670;&nbsp;</a></span>lastFrame</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GLfloat lastFrame</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

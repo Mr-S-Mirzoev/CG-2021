@@ -83,9 +83,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a02434d25ce99e4bedb9f30c6cd76c73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a743da3dcbc81ed11bfcb81943aae175b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#a743da3dcbc81ed11bfcb81943aae175b">Moved</a> () const</td></tr>
 <tr class="separator:a743da3dcbc81ed11bfcb81943aae175b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b275c51f881fb61b52d1ede3d1dcba3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#a4b275c51f881fb61b52d1ede3d1dcba3">ProcessInput</a> (<a class="el" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61f">MovementDir</a> dir)</td></tr>
-<tr class="memdesc:a4b275c51f881fb61b52d1ede3d1dcba3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the player from it's current position to the direction.  <a href="structPlayer.html#a4b275c51f881fb61b52d1ede3d1dcba3">More...</a><br /></td></tr>
-<tr class="separator:a4b275c51f881fb61b52d1ede3d1dcba3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11bebe44cf2833978ec843611abce250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#a11bebe44cf2833978ec843611abce250">ProcessInput</a> (<a class="el" href="Player_8h.html#aea132397c26cad8f8637a9422260deca">PlayerAction</a> dir)</td></tr>
+<tr class="memdesc:a11bebe44cf2833978ec843611abce250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the player from it's current position to the direction.  <a href="structPlayer.html#a11bebe44cf2833978ec843611abce250">More...</a><br /></td></tr>
+<tr class="separator:a11bebe44cf2833978ec843611abce250"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a10995b61d63b46c6b562bd026382c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPlayer.html#a1a10995b61d63b46c6b562bd026382c4">Draw</a> (<a class="el" href="structImage.html">Image</a> &amp;screen)</td></tr>
 <tr class="memdesc:a1a10995b61d63b46c6b562bd026382c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">If player moved, move the player tile, save old coords.  <a href="structPlayer.html#a1a10995b61d63b46c6b562bd026382c4">More...</a><br /></td></tr>
 <tr class="separator:a1a10995b61d63b46c6b562bd026382c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +147,12 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="structPlayer_a1a10995b61d63b46c6b562bd026382c4_cgraph.png" border="0" usemap="#structPlayer_a1a10995b61d63b46c6b562bd026382c4_cgraph" alt=""/></div>
 <!-- MAP 1 -->
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structPlayer_a1a10995b61d63b46c6b562bd026382c4_icgraph.png" border="0" usemap="#structPlayer_a1a10995b61d63b46c6b562bd026382c4_icgraph" alt=""/></div>
+<!-- MAP 2 -->
+</div>
 
 </div>
 </div>
@@ -171,13 +177,13 @@ false - if current coordinates are not equal to old </dd></dl>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structPlayer_a743da3dcbc81ed11bfcb81943aae175b_icgraph.png" border="0" usemap="#structPlayer_a743da3dcbc81ed11bfcb81943aae175b_icgraph" alt=""/></div>
-<!-- MAP 2 -->
+<!-- MAP 3 -->
 </div>
 
 </div>
 </div>
-<a id="a4b275c51f881fb61b52d1ede3d1dcba3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b275c51f881fb61b52d1ede3d1dcba3">&#9670;&nbsp;</a></span>ProcessInput()</h2>
+<a id="a11bebe44cf2833978ec843611abce250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11bebe44cf2833978ec843611abce250">&#9670;&nbsp;</a></span>ProcessInput()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -185,7 +191,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void Player::ProcessInput </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61f">MovementDir</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="Player_8h.html#aea132397c26cad8f8637a9422260deca">PlayerAction</a>&#160;</td>
           <td class="paramname"><em>dir</em></td><td>)</td>
           <td></td>
         </tr>
@@ -195,22 +201,22 @@ Here is the caller graph for this function:</div>
 <p>Move the player from it's current position to the direction. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dir</td><td>- movement direction (of enum class MovementDir) </td></tr>
+    <tr><td class="paramname">dir</td><td>- movement direction (of enum class PlayerAction) </td></tr>
   </table>
   </dd>
 </dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3_icgraph.png" border="0" usemap="#structPlayer_a4b275c51f881fb61b52d1ede3d1dcba3_icgraph" alt=""/></div>
-<!-- MAP 3 -->
+<div class="center"><img src="structPlayer_a11bebe44cf2833978ec843611abce250_icgraph.png" border="0" usemap="#structPlayer_a11bebe44cf2833978ec843611abce250_icgraph" alt=""/></div>
+<!-- MAP 4 -->
 </div>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>inc/<a class="el" href="Player_8h_source.html">Player.h</a></li>
-<li>src/<a class="el" href="Player_8cpp.html">Player.cpp</a></li>
+<li>inc/gameplay/<a class="el" href="Player_8h_source.html">Player.h</a></li>
+<li>src/gameplay/<a class="el" href="Player_8cpp.html">Player.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

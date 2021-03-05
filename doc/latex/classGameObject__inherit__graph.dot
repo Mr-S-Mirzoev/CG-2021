@@ -1,0 +1,25 @@
+digraph "GameObject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{GameObject\n|# current_tile_\l|+ GameObject()\l+ GameObject()\l+ get_name()\l+ is_mutable()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node2 [label="{MutableGameObject\n|# state_\l|+ MutableGameObject()\l+ apply_action()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMutableGameObject.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node3 [label="{DoorObject\n||+ DoorObject()\l+ apply_action()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classDoorObject.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node4 [label="{ExitObject\n||+ ExitObject()\l+ apply_action()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classExitObject.html",tooltip=" "];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node5 [label="{KeyObject\n||+ KeyObject()\l+ apply_action()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classKeyObject.html",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node6 [label="{MainExitObject\n||+ MainExitObject()\l+ apply_action()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainExitObject.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node7 [label="{StaticGameObject\n||+ StaticGameObject()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classStaticGameObject.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node8 [label="{FloorObject\n||+ FloorObject()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classFloorObject.html",tooltip=" "];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node9 [label="{VoidObject\n||+ VoidObject()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classVoidObject.html",tooltip=" "];
+  Node7 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal"];
+  Node10 [label="{WallObject\n||+ WallObject()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classWallObject.html",tooltip=" "];
+}

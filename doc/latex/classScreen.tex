@@ -1,0 +1,95 @@
+\hypertarget{classScreen}{}\doxysection{Screen Class Reference}
+\label{classScreen}\index{Screen@{Screen}}
+
+
+Class which represents an abstact of screen plane ~\newline
+ on which we\textquotesingle{}ll print the tiles and pther info.  
+
+
+
+
+{\ttfamily \#include $<$screen.\+h$>$}
+
+
+
+Inheritance diagram for Screen\+:
+% FIG 0
+
+
+Collaboration diagram for Screen\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScreen_ad0afc992d768294587bbf9a8fb98a64e}{Screen}} (int \mbox{\hyperlink{structImage_ab8d12f635013c04159cd4d3d972bac88}{width}}, int \mbox{\hyperlink{structImage_a51df43db420c9c0b57536cb2dd36de5c}{height}}, int left\+\_\+upper\+\_\+x=0, int left\+\_\+upper\+\_\+y=0)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classScreen}{Screen}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScreen_a345cc93e416d82bfea1401fc25b8dd49}{set\+\_\+room}} (\mbox{\hyperlink{classRoom}{Room}} $\ast$map)
+\item 
+void \mbox{\hyperlink{classScreen_accf3f3254e7b008830f4de7b2e861fb5}{set\+\_\+pose}} (std\+::pair$<$ int, int $>$ \&map\+\_\+pose)
+\item 
+void \mbox{\hyperlink{classScreen_ab1d77215b31bf5ac9f64eea8585df00f}{draw}} (const std\+::vector$<$ \mbox{\hyperlink{structImage}{Image}} $>$ \&to\+\_\+draw)
+\item 
+\mbox{\hyperlink{structPixel}{Pixel}} \mbox{\hyperlink{classScreen_a350d0560174a8a0df1a096ae82587f42}{get\+\_\+bg}} (int x, int y) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class which represents an abstact of screen plane ~\newline
+ on which we\textquotesingle{}ll print the tiles and pther info. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScreen_ad0afc992d768294587bbf9a8fb98a64e}\label{classScreen_ad0afc992d768294587bbf9a8fb98a64e}} 
+\index{Screen@{Screen}!Screen@{Screen}}
+\index{Screen@{Screen}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{Screen()}{Screen()}}
+{\footnotesize\ttfamily Screen\+::\+Screen (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{int}]{left\+\_\+upper\+\_\+x = {\ttfamily 0},  }\item[{int}]{left\+\_\+upper\+\_\+y = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classScreen}{Screen}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & width of the screen \\
+\hline
+{\em height} & height of the screen \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScreen_ab1d77215b31bf5ac9f64eea8585df00f}\label{classScreen_ab1d77215b31bf5ac9f64eea8585df00f}} 
+\index{Screen@{Screen}!draw@{draw}}
+\index{draw@{draw}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Screen\+::draw (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structImage}{Image}} $>$ \&}]{to\+\_\+draw }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classScreen_a350d0560174a8a0df1a096ae82587f42}\label{classScreen_a350d0560174a8a0df1a096ae82587f42}} 
+\index{Screen@{Screen}!get\_bg@{get\_bg}}
+\index{get\_bg@{get\_bg}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{get\_bg()}{get\_bg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPixel}{Pixel}} Screen\+::get\+\_\+bg (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classScreen_accf3f3254e7b008830f4de7b2e861fb5}\label{classScreen_accf3f3254e7b008830f4de7b2e861fb5}} 
+\index{Screen@{Screen}!set\_pose@{set\_pose}}
+\index{set\_pose@{set\_pose}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{set\_pose()}{set\_pose()}}
+{\footnotesize\ttfamily void Screen\+::set\+\_\+pose (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$ \&}]{map\+\_\+pose }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classScreen_a345cc93e416d82bfea1401fc25b8dd49}\label{classScreen_a345cc93e416d82bfea1401fc25b8dd49}} 
+\index{Screen@{Screen}!set\_room@{set\_room}}
+\index{set\_room@{set\_room}!Screen@{Screen}}
+\doxysubsubsection{\texorpdfstring{set\_room()}{set\_room()}}
+{\footnotesize\ttfamily void Screen\+::set\+\_\+room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoom}{Room}} $\ast$}]{map }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/graphics/\mbox{\hyperlink{screen_8h}{screen.\+h}}\item 
+src/graphics/\mbox{\hyperlink{screen_8cpp}{screen.\+cpp}}\end{DoxyCompactItemize}

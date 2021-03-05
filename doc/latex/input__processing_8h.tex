@@ -1,5 +1,107 @@
-\hypertarget{input__processing_8h}{}\doxysection{inc/input\+\_\+processing.h File Reference}
-\label{input__processing_8h}\index{inc/input\_processing.h@{inc/input\_processing.h}}
+\hypertarget{input__processing_8h}{}\doxysection{inc/gameplay/input\+\_\+processing.h File Reference}
+\label{input__processing_8h}\index{inc/gameplay/input\_processing.h@{inc/gameplay/input\_processing.h}}
 {\ttfamily \#include $<$G\+L\+F\+W/glfw3.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}Player.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gameplay/\+Player.\+h\char`\"{}}\newline
 Include dependency graph for input\+\_\+processing.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structInputState}{Input\+State}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{input__processing_8h_acaaeb59c827bcce5feadee7db40525b0}{G\+L\+F\+W\+\_\+\+D\+LL}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{input__processing_8h_aaa4abcb7f4846f711d52ad1b601a5d78}{On\+Keyboard\+Pressed}} (G\+L\+F\+Wwindow $\ast$window, int \mbox{\hyperlink{tile_8cpp_a8a9edaef564ad676565f687652b4f1ac}{key}}, int scancode, int action, int mode)
+\item 
+void \mbox{\hyperlink{input__processing_8h_aeffc3e0d1a1c5969bc1f3d177d78ae90}{process\+Player\+Movement}} (\mbox{\hyperlink{structPlayer}{Player}} \&player)
+\item 
+void \mbox{\hyperlink{input__processing_8h_a6d05fb67cad0ce9a942c185ad4980aee}{On\+Mouse\+Button\+Clicked}} (G\+L\+F\+Wwindow $\ast$window, int button, int action, int mods)
+\item 
+void \mbox{\hyperlink{input__processing_8h_a9460a3d7c16ac378e8448ddfe3f6e31e}{On\+Mouse\+Move}} (G\+L\+F\+Wwindow $\ast$window, double xpos, double ypos)
+\item 
+void \mbox{\hyperlink{input__processing_8h_af0722419fcccf4242e0cce6decfcc14b}{On\+Mouse\+Scroll}} (G\+L\+F\+Wwindow $\ast$window, double xoffset, double yoffset)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr G\+Lsizei \mbox{\hyperlink{input__processing_8h_a6f9dfdfc4bf437ef692c4509b1dab1de}{W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+TH}} = 512
+\item 
+constexpr G\+Lsizei \mbox{\hyperlink{input__processing_8h_a526c9c10cab0f50a073d6ad4f7848295}{W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT}} = 512
+\item 
+struct \mbox{\hyperlink{structInputState}{Input\+State}} \mbox{\hyperlink{input__processing_8h_aae98fcc029b6c75981e2489ab4ed42e5}{Input}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{input__processing_8h_acaaeb59c827bcce5feadee7db40525b0}\label{input__processing_8h_acaaeb59c827bcce5feadee7db40525b0}} 
+\index{input\_processing.h@{input\_processing.h}!GLFW\_DLL@{GLFW\_DLL}}
+\index{GLFW\_DLL@{GLFW\_DLL}!input\_processing.h@{input\_processing.h}}
+\doxysubsubsection{\texorpdfstring{GLFW\_DLL}{GLFW\_DLL}}
+{\footnotesize\ttfamily \#define G\+L\+F\+W\+\_\+\+D\+LL}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{input__processing_8h_aaa4abcb7f4846f711d52ad1b601a5d78}\label{input__processing_8h_aaa4abcb7f4846f711d52ad1b601a5d78}} 
+\index{input\_processing.h@{input\_processing.h}!OnKeyboardPressed@{OnKeyboardPressed}}
+\index{OnKeyboardPressed@{OnKeyboardPressed}!input\_processing.h@{input\_processing.h}}
+\doxysubsubsection{\texorpdfstring{OnKeyboardPressed()}{OnKeyboardPressed()}}
+{\footnotesize\ttfamily void On\+Keyboard\+Pressed (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{input__processing_8h_a6d05fb67cad0ce9a942c185ad4980aee}\label{input__processing_8h_a6d05fb67cad0ce9a942c185ad4980aee}} 
+\index{input\_processing.h@{input\_processing.h}!OnMouseButtonClicked@{OnMouseButtonClicked}}
+\index{OnMouseButtonClicked@{OnMouseButtonClicked}!input\_processing.h@{input\_processing.h}}
+\doxysubsubsection{\texorpdfstring{OnMouseButtonClicked()}{OnMouseButtonClicked()}}
+{\footnotesize\ttfamily void On\+Mouse\+Button\+Clicked (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{button,  }\item[{int}]{action,  }\item[{int}]{mods }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{input__processing_8h_a9460a3d7c16ac378e8448ddfe3f6e31e}\label{input__processing_8h_a9460a3d7c16ac378e8448ddfe3f6e31e}} 
+\index{input\_processing.h@{input\_processing.h}!OnMouseMove@{OnMouseMove}}
+\index{OnMouseMove@{OnMouseMove}!input\_processing.h@{input\_processing.h}}
+\doxysubsubsection{\texorpdfstring{OnMouseMove()}{OnMouseMove()}}
+{\footnotesize\ttfamily void On\+Mouse\+Move (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{double}]{xpos,  }\item[{double}]{ypos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{input__processing_8h_af0722419fcccf4242e0cce6decfcc14b}\label{input__processing_8h_af0722419fcccf4242e0cce6decfcc14b}} 
+\index{input\_processing.h@{input\_processing.h}!OnMouseScroll@{OnMouseScroll}}
+\index{OnMouseScroll@{OnMouseScroll}!input\_processing.h@{input\_processing.h}}
+\doxysubsubsection{\texorpdfstring{OnMouseScroll()}{OnMouseScroll()}}
+{\footnotesize\ttfamily void On\+Mouse\+Scroll (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{double}]{xoffset,  }\item[{double}]{yoffset }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{input__processing_8h_aeffc3e0d1a1c5969bc1f3d177d78ae90}\label{input__processing_8h_aeffc3e0d1a1c5969bc1f3d177d78ae90}} 
+\index{input\_processing.h@{input\_processing.h}!processPlayerMovement@{processPlayerMovement}}
+\index{processPlayerMovement@{processPlayerMovement}!input\_processing.h@{input\_processing.h}}
+\doxysubsubsection{\texorpdfstring{processPlayerMovement()}{processPlayerMovement()}}
+{\footnotesize\ttfamily void process\+Player\+Movement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPlayer}{Player}} \&}]{player }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{input__processing_8h_aae98fcc029b6c75981e2489ab4ed42e5}\label{input__processing_8h_aae98fcc029b6c75981e2489ab4ed42e5}} 
+\index{input\_processing.h@{input\_processing.h}!Input@{Input}}
+\index{Input@{Input}!input\_processing.h@{input\_processing.h}}
+\doxysubsubsection{\texorpdfstring{Input}{Input}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structInputState}{Input\+State}} Input}
+
+\mbox{\Hypertarget{input__processing_8h_a526c9c10cab0f50a073d6ad4f7848295}\label{input__processing_8h_a526c9c10cab0f50a073d6ad4f7848295}} 
+\index{input\_processing.h@{input\_processing.h}!WINDOW\_HEIGHT@{WINDOW\_HEIGHT}}
+\index{WINDOW\_HEIGHT@{WINDOW\_HEIGHT}!input\_processing.h@{input\_processing.h}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_HEIGHT}{WINDOW\_HEIGHT}}
+{\footnotesize\ttfamily constexpr G\+Lsizei W\+I\+N\+D\+O\+W\+\_\+\+H\+E\+I\+G\+HT = 512}
+
+\mbox{\Hypertarget{input__processing_8h_a6f9dfdfc4bf437ef692c4509b1dab1de}\label{input__processing_8h_a6f9dfdfc4bf437ef692c4509b1dab1de}} 
+\index{input\_processing.h@{input\_processing.h}!WINDOW\_WIDTH@{WINDOW\_WIDTH}}
+\index{WINDOW\_WIDTH@{WINDOW\_WIDTH}!input\_processing.h@{input\_processing.h}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_WIDTH}{WINDOW\_WIDTH}}
+{\footnotesize\ttfamily constexpr G\+Lsizei W\+I\+N\+D\+O\+W\+\_\+\+W\+I\+D\+TH = 512\hspace{0.3cm}{\ttfamily [constexpr]}}
+

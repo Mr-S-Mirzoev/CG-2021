@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Computer Graphics Task 1: inc/input_processing.h Source File</title>
+<title>Computer Graphics Task 1: inc/gameplay/input_processing.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_3e0da0dbc6b350c7650fd60425c62ba8.html">gameplay</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -75,9 +75,9 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="input__processing_8h.html#acaaeb59c827bcce5feadee7db40525b0">    4</a></span>&#160;<span class="preprocessor">#define GLFW_DLL</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;GLFW/glfw3.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Player_8h.html">Player.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Player_8h.html">gameplay/Player.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="input__processing_8h.html#a6f9dfdfc4bf437ef692c4509b1dab1de">    9</a></span>&#160;constexpr GLsizei <a class="code" href="input__processing_8h.html#a6f9dfdfc4bf437ef692c4509b1dab1de">WINDOW_WIDTH</a> = 1024, <a class="code" href="input__processing_8h.html#a526c9c10cab0f50a073d6ad4f7848295">WINDOW_HEIGHT</a> = 1024;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="input__processing_8h.html#a6f9dfdfc4bf437ef692c4509b1dab1de">    9</a></span>&#160;constexpr GLsizei <a class="code" href="input__processing_8h.html#a6f9dfdfc4bf437ef692c4509b1dab1de">WINDOW_WIDTH</a> = 512, <a class="code" href="input__processing_8h.html#a526c9c10cab0f50a073d6ad4f7848295">WINDOW_HEIGHT</a> = 512;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="structInputState.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structInputState.html">InputState</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
@@ -88,7 +88,7 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structInputState.html#a2f8fa6ce827fe9a9310cc6c4ebccb1f8">   17</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structInputState.html#a2f8fa6ce827fe9a9310cc6c4ebccb1f8">capturedMouseJustNow</a> = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;} <span class="keyword">static</span> <a class="code" href="input__processing_8h.html#aae98fcc029b6c75981e2489ab4ed42e5">Input</a>;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="input__processing_8h.html#aaa4abcb7f4846f711d52ad1b601a5d78">OnKeyboardPressed</a>(GLFWwindow* window, <span class="keywordtype">int</span> key, <span class="keywordtype">int</span> scancode, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mode);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span> <a class="code" href="input__processing_8h.html#aaa4abcb7f4846f711d52ad1b601a5d78">OnKeyboardPressed</a>(GLFWwindow* window, <span class="keywordtype">int</span> <a class="code" href="tile_8cpp.html#a8a9edaef564ad676565f687652b4f1ac">key</a>, <span class="keywordtype">int</span> scancode, <span class="keywordtype">int</span> action, <span class="keywordtype">int</span> mode);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span> <a class="code" href="input__processing_8h.html#aeffc3e0d1a1c5969bc1f3d177d78ae90">processPlayerMovement</a>(<a class="code" href="structPlayer.html">Player</a> &amp;player);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
@@ -103,8 +103,8 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructInputState_html_a289aa049f05b5fad72c9f2c772d99c1e"><div class="ttname"><a href="structInputState.html#a289aa049f05b5fad72c9f2c772d99c1e">InputState::firstMouse</a></div><div class="ttdeci">bool firstMouse</div><div class="ttdef"><b>Definition:</b> input_processing.h:15</div></div>
 <div class="ttc" id="astructInputState_html_a5dd10a0ab1fc5f4275a26335d733c79b"><div class="ttname"><a href="structInputState.html#a5dd10a0ab1fc5f4275a26335d733c79b">InputState::lastX</a></div><div class="ttdeci">GLfloat lastX</div><div class="ttdef"><b>Definition:</b> input_processing.h:14</div></div>
-<div class="ttc" id="aPlayer_8h_html"><div class="ttname"><a href="Player_8h.html">Player.h</a></div><div class="ttdoc">Point, MovementDirection and Player classes.</div></div>
-<div class="ttc" id="ainput__processing_8h_html_a6d05fb67cad0ce9a942c185ad4980aee"><div class="ttname"><a href="input__processing_8h.html#a6d05fb67cad0ce9a942c185ad4980aee">OnMouseButtonClicked</a></div><div class="ttdeci">void OnMouseButtonClicked(GLFWwindow *window, int button, int action, int mods)</div><div class="ttdef"><b>Definition:</b> input_processing.cpp:40</div></div>
+<div class="ttc" id="aPlayer_8h_html"><div class="ttname"><a href="Player_8h.html">Player.h</a></div><div class="ttdoc">Point, PlayerActionection and Player classes.</div></div>
+<div class="ttc" id="ainput__processing_8h_html_a6d05fb67cad0ce9a942c185ad4980aee"><div class="ttname"><a href="input__processing_8h.html#a6d05fb67cad0ce9a942c185ad4980aee">OnMouseButtonClicked</a></div><div class="ttdeci">void OnMouseButtonClicked(GLFWwindow *window, int button, int action, int mods)</div><div class="ttdef"><b>Definition:</b> input_processing.cpp:44</div></div>
 <div class="ttc" id="astructInputState_html_a2f8fa6ce827fe9a9310cc6c4ebccb1f8"><div class="ttname"><a href="structInputState.html#a2f8fa6ce827fe9a9310cc6c4ebccb1f8">InputState::capturedMouseJustNow</a></div><div class="ttdeci">bool capturedMouseJustNow</div><div class="ttdef"><b>Definition:</b> input_processing.h:17</div></div>
 <div class="ttc" id="ainput__processing_8h_html_aeffc3e0d1a1c5969bc1f3d177d78ae90"><div class="ttname"><a href="input__processing_8h.html#aeffc3e0d1a1c5969bc1f3d177d78ae90">processPlayerMovement</a></div><div class="ttdeci">void processPlayerMovement(Player &amp;player)</div><div class="ttdef"><b>Definition:</b> input_processing.cpp:28</div></div>
 <div class="ttc" id="astructInputState_html"><div class="ttname"><a href="structInputState.html">InputState</a></div><div class="ttdef"><b>Definition:</b> input_processing.h:11</div></div>
@@ -112,12 +112,13 @@ $(function() {
 <div class="ttc" id="ainput__processing_8h_html_a526c9c10cab0f50a073d6ad4f7848295"><div class="ttname"><a href="input__processing_8h.html#a526c9c10cab0f50a073d6ad4f7848295">WINDOW_HEIGHT</a></div><div class="ttdeci">constexpr GLsizei WINDOW_HEIGHT</div><div class="ttdef"><b>Definition:</b> input_processing.h:9</div></div>
 <div class="ttc" id="ainput__processing_8h_html_aaa4abcb7f4846f711d52ad1b601a5d78"><div class="ttname"><a href="input__processing_8h.html#aaa4abcb7f4846f711d52ad1b601a5d78">OnKeyboardPressed</a></div><div class="ttdeci">void OnKeyboardPressed(GLFWwindow *window, int key, int scancode, int action, int mode)</div><div class="ttdef"><b>Definition:</b> input_processing.cpp:6</div></div>
 <div class="ttc" id="astructInputState_html_a0eda88bc636b0b2a150caa48310a05e3"><div class="ttname"><a href="structInputState.html#a0eda88bc636b0b2a150caa48310a05e3">InputState::lastY</a></div><div class="ttdeci">GLfloat lastY</div><div class="ttdef"><b>Definition:</b> input_processing.h:14</div></div>
-<div class="ttc" id="ainput__processing_8h_html_a9460a3d7c16ac378e8448ddfe3f6e31e"><div class="ttname"><a href="input__processing_8h.html#a9460a3d7c16ac378e8448ddfe3f6e31e">OnMouseMove</a></div><div class="ttdeci">void OnMouseMove(GLFWwindow *window, double xpos, double ypos)</div><div class="ttdef"><b>Definition:</b> input_processing.cpp:52</div></div>
-<div class="ttc" id="ainput__processing_8h_html_af0722419fcccf4242e0cce6decfcc14b"><div class="ttname"><a href="input__processing_8h.html#af0722419fcccf4242e0cce6decfcc14b">OnMouseScroll</a></div><div class="ttdeci">void OnMouseScroll(GLFWwindow *window, double xoffset, double yoffset)</div><div class="ttdef"><b>Definition:</b> input_processing.cpp:69</div></div>
+<div class="ttc" id="ainput__processing_8h_html_a9460a3d7c16ac378e8448ddfe3f6e31e"><div class="ttname"><a href="input__processing_8h.html#a9460a3d7c16ac378e8448ddfe3f6e31e">OnMouseMove</a></div><div class="ttdeci">void OnMouseMove(GLFWwindow *window, double xpos, double ypos)</div><div class="ttdef"><b>Definition:</b> input_processing.cpp:56</div></div>
+<div class="ttc" id="ainput__processing_8h_html_af0722419fcccf4242e0cce6decfcc14b"><div class="ttname"><a href="input__processing_8h.html#af0722419fcccf4242e0cce6decfcc14b">OnMouseScroll</a></div><div class="ttdeci">void OnMouseScroll(GLFWwindow *window, double xoffset, double yoffset)</div><div class="ttdef"><b>Definition:</b> input_processing.cpp:72</div></div>
 <div class="ttc" id="astructInputState_html_a6821699434a96ab81583ec2b43f0fc0b"><div class="ttname"><a href="structInputState.html#a6821699434a96ab81583ec2b43f0fc0b">InputState::keys</a></div><div class="ttdeci">bool keys[1024]</div><div class="ttdef"><b>Definition:</b> input_processing.h:13</div></div>
-<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:23</div></div>
+<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:24</div></div>
 <div class="ttc" id="ainput__processing_8h_html_a6f9dfdfc4bf437ef692c4509b1dab1de"><div class="ttname"><a href="input__processing_8h.html#a6f9dfdfc4bf437ef692c4509b1dab1de">WINDOW_WIDTH</a></div><div class="ttdeci">constexpr GLsizei WINDOW_WIDTH</div><div class="ttdef"><b>Definition:</b> input_processing.h:9</div></div>
 <div class="ttc" id="astructInputState_html_a0f1bccefb8c7067c973c423692295420"><div class="ttname"><a href="structInputState.html#a0f1bccefb8c7067c973c423692295420">InputState::captureMouse</a></div><div class="ttdeci">bool captureMouse</div><div class="ttdef"><b>Definition:</b> input_processing.h:16</div></div>
+<div class="ttc" id="atile_8cpp_html_a8a9edaef564ad676565f687652b4f1ac"><div class="ttname"><a href="tile_8cpp.html#a8a9edaef564ad676565f687652b4f1ac">key</a></div><div class="ttdeci">Tile key(objset, 128, 96)</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

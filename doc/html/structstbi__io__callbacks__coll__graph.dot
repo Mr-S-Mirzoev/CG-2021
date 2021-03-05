@@ -4,10 +4,8 @@ digraph "stbi_io_callbacks"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="{stbi_io_callbacks\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
-  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +eof" ,arrowhead="odiamond",fontname="Helvetica"];
-  Node2 [label="{int(*)(void *user)\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
-  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +skip" ,arrowhead="odiamond",fontname="Helvetica"];
-  Node3 [label="{void(*)(void *user,\l int n)\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
-  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +read" ,arrowhead="odiamond",fontname="Helvetica"];
-  Node4 [label="{int(*)(void *user,\l char *data, int size)\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +skip" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{void(*)(void *user,\l int n)\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +eof\n+read" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{int\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
 }

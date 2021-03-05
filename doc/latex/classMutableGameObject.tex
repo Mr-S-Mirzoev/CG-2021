@@ -1,0 +1,88 @@
+\hypertarget{classMutableGameObject}{}\doxysection{Mutable\+Game\+Object Class Reference}
+\label{classMutableGameObject}\index{MutableGameObject@{MutableGameObject}}
+
+
+{\ttfamily \#include $<$room.\+h$>$}
+
+
+
+Inheritance diagram for Mutable\+Game\+Object\+:
+% FIG 0
+
+
+Collaboration diagram for Mutable\+Game\+Object\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMutableGameObject_ab1b88785f29d3d2d4bf853346b846f88}{Mutable\+Game\+Object}} (const std\+::string \&name)
+\item 
+virtual void \mbox{\hyperlink{classMutableGameObject_af18e99a3c7d6647ba267fdb3b2879af3}{apply\+\_\+action}} (\mbox{\hyperlink{structGame}{Game}} \&gm)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18}{Action}} \{ \mbox{\hyperlink{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18a7bcd3ed49f29655f50ecdf85c8881a2e}{A\+C\+T\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+A\+P\+P\+L\+I\+ED}}, 
+\mbox{\hyperlink{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18a8622b477514f684020c530da3f9c43e9}{A\+C\+T\+I\+O\+N\+\_\+\+A\+P\+P\+L\+I\+ED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classMutableGameObject_a4b20b30c0470d64575d084d0acbc38c0}{state\+\_\+}} = \mbox{\hyperlink{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18a7bcd3ed49f29655f50ecdf85c8881a2e}{A\+C\+T\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+A\+P\+P\+L\+I\+ED}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18}\label{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18}} 
+\index{MutableGameObject@{MutableGameObject}!Action@{Action}}
+\index{Action@{Action}!MutableGameObject@{MutableGameObject}}
+\doxysubsubsection{\texorpdfstring{Action}{Action}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18}{Mutable\+Game\+Object\+::\+Action}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_NOT\_APPLIED@{ACTION\_NOT\_APPLIED}!MutableGameObject@{MutableGameObject}}\index{MutableGameObject@{MutableGameObject}!ACTION\_NOT\_APPLIED@{ACTION\_NOT\_APPLIED}}}\mbox{\Hypertarget{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18a7bcd3ed49f29655f50ecdf85c8881a2e}\label{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18a7bcd3ed49f29655f50ecdf85c8881a2e}} 
+A\+C\+T\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+A\+P\+P\+L\+I\+ED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTION\_APPLIED@{ACTION\_APPLIED}!MutableGameObject@{MutableGameObject}}\index{MutableGameObject@{MutableGameObject}!ACTION\_APPLIED@{ACTION\_APPLIED}}}\mbox{\Hypertarget{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18a8622b477514f684020c530da3f9c43e9}\label{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18a8622b477514f684020c530da3f9c43e9}} 
+A\+C\+T\+I\+O\+N\+\_\+\+A\+P\+P\+L\+I\+ED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMutableGameObject_ab1b88785f29d3d2d4bf853346b846f88}\label{classMutableGameObject_ab1b88785f29d3d2d4bf853346b846f88}} 
+\index{MutableGameObject@{MutableGameObject}!MutableGameObject@{MutableGameObject}}
+\index{MutableGameObject@{MutableGameObject}!MutableGameObject@{MutableGameObject}}
+\doxysubsubsection{\texorpdfstring{MutableGameObject()}{MutableGameObject()}}
+{\footnotesize\ttfamily Mutable\+Game\+Object\+::\+Mutable\+Game\+Object (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMutableGameObject_af18e99a3c7d6647ba267fdb3b2879af3}\label{classMutableGameObject_af18e99a3c7d6647ba267fdb3b2879af3}} 
+\index{MutableGameObject@{MutableGameObject}!apply\_action@{apply\_action}}
+\index{apply\_action@{apply\_action}!MutableGameObject@{MutableGameObject}}
+\doxysubsubsection{\texorpdfstring{apply\_action()}{apply\_action()}}
+{\footnotesize\ttfamily virtual void Mutable\+Game\+Object\+::apply\+\_\+action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGame}{Game}} \&}]{gm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classKeyObject_adeb9c8669fe325d7c1497e64691418b5}{Key\+Object}}, \mbox{\hyperlink{classDoorObject_a7382f4cae3b0108aa97536d3e99ff887}{Door\+Object}}, \mbox{\hyperlink{classMainExitObject_aea77dd62d1070d31ca89c51a1f48d872}{Main\+Exit\+Object}}, and \mbox{\hyperlink{classExitObject_a8251b05fbf3f816ac57d784b82fe46fd}{Exit\+Object}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMutableGameObject_a4b20b30c0470d64575d084d0acbc38c0}\label{classMutableGameObject_a4b20b30c0470d64575d084d0acbc38c0}} 
+\index{MutableGameObject@{MutableGameObject}!state\_@{state\_}}
+\index{state\_@{state\_}!MutableGameObject@{MutableGameObject}}
+\doxysubsubsection{\texorpdfstring{state\_}{state\_}}
+{\footnotesize\ttfamily int Mutable\+Game\+Object\+::state\+\_\+ = \mbox{\hyperlink{classMutableGameObject_a4f4f902514c1be520b9f1f1b766e8b18a7bcd3ed49f29655f50ecdf85c8881a2e}{A\+C\+T\+I\+O\+N\+\_\+\+N\+O\+T\+\_\+\+A\+P\+P\+L\+I\+ED}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+inc/utilities/\mbox{\hyperlink{room_8h}{room.\+h}}\end{DoxyCompactItemize}

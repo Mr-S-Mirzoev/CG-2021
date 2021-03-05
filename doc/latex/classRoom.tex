@@ -1,0 +1,158 @@
+\hypertarget{classRoom}{}\doxysection{Room Class Reference}
+\label{classRoom}\index{Room@{Room}}
+
+
+{\ttfamily \#include $<$room.\+h$>$}
+
+
+
+Collaboration diagram for Room\+:
+% FIG 0
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classRoom_a88b7f16920a6f3556b8457b3c6b1a85f}{room\+\_\+type}} \{ \newline
+\mbox{\hyperlink{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fa031ff74c0211546f1385d1a449f3aacd}{R\+O\+O\+M\+\_\+\+T\+Y\+P\+E\+\_\+A}}, 
+\mbox{\hyperlink{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fa4a1cc83857e04538269c102bc95c10e4}{R\+O\+O\+M\+\_\+\+T\+Y\+P\+E\+\_\+B}}, 
+\mbox{\hyperlink{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fafc552f26eeb6be1c8dec11d13d1aed6a}{R\+O\+O\+M\+\_\+\+T\+Y\+P\+E\+\_\+C}}, 
+\mbox{\hyperlink{classRoom_a88b7f16920a6f3556b8457b3c6b1a85faddfa2c7874fe222ff8126cd3b44f41b4}{R\+O\+O\+M\+\_\+\+T\+Y\+P\+E\+\_\+D}}, 
+\newline
+\mbox{\hyperlink{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fab392935bcceae26af39bd53a16009e5c}{N\+O\+\_\+\+R\+O\+OM}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRoom_af89221cac6a0e8564c4ea7d694640fb3}{Room}} (const std\+::string \&map\+\_\+file)
+\item 
+\mbox{\hyperlink{classRoom_a2703912c72f2629eec373aaadc7584de}{Room}} (int \mbox{\hyperlink{classRoom_a88b7f16920a6f3556b8457b3c6b1a85f}{room\+\_\+type}})
+\item 
+\mbox{\hyperlink{classRoom_a712b54d25ad3d22918721213a1cf5dc2}{Room}} (\mbox{\hyperlink{classRoom}{Room}} \&rhs)=default
+\item 
+std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classGameObject}{Game\+Object}} $>$ $>$ \mbox{\hyperlink{classRoom_a777c972d8d294c5a0ee6711f54e88aa6}{get\+\_\+layout}} () const
+\item 
+std\+::string \mbox{\hyperlink{classRoom_a811149d754e0c2c0de3583e1db5f84b7}{get\+\_\+type}} () const
+\item 
+std\+::pair$<$ int, int $>$ \mbox{\hyperlink{classRoom_a4f708410e7e53b476d5c5f3c1a0f562d}{get\+\_\+size}} () const
+\item 
+std\+::string \mbox{\hyperlink{classRoom_a9c3b8463f40e1f1b070b9fa817a663c8}{to\+\_\+string}} () const
+\item 
+void \mbox{\hyperlink{classRoom_ac41693308be2c89cf31deb7abdf7e1cf}{Draw\+Scaled\+Pixel}} (\mbox{\hyperlink{structImage}{Image}} \&screen, int i, int j, \mbox{\hyperlink{structPixel}{Pixel}} color) const
+\item 
+void \mbox{\hyperlink{classRoom_afbe132ba2aae8dc549a7547536d511d8}{Draw\+Tile}} (\mbox{\hyperlink{structImage}{Image}} \&screen, int i, int j, \mbox{\hyperlink{classTile}{Tile}} \&tl) const
+\item 
+void \mbox{\hyperlink{classRoom_a04ed4955a5049fff264ceee77e13316a}{Draw\+Room\+On}} (\mbox{\hyperlink{structImage}{Image}} $\ast$screen) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classRoom_a88b7f16920a6f3556b8457b3c6b1a85f}\label{classRoom_a88b7f16920a6f3556b8457b3c6b1a85f}} 
+\index{Room@{Room}!room\_type@{room\_type}}
+\index{room\_type@{room\_type}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{room\_type}{room\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classRoom_a88b7f16920a6f3556b8457b3c6b1a85f}{Room\+::room\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOM\_TYPE\_A@{ROOM\_TYPE\_A}!Room@{Room}}\index{Room@{Room}!ROOM\_TYPE\_A@{ROOM\_TYPE\_A}}}\mbox{\Hypertarget{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fa031ff74c0211546f1385d1a449f3aacd}\label{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fa031ff74c0211546f1385d1a449f3aacd}} 
+R\+O\+O\+M\+\_\+\+T\+Y\+P\+E\+\_\+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOM\_TYPE\_B@{ROOM\_TYPE\_B}!Room@{Room}}\index{Room@{Room}!ROOM\_TYPE\_B@{ROOM\_TYPE\_B}}}\mbox{\Hypertarget{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fa4a1cc83857e04538269c102bc95c10e4}\label{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fa4a1cc83857e04538269c102bc95c10e4}} 
+R\+O\+O\+M\+\_\+\+T\+Y\+P\+E\+\_\+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOM\_TYPE\_C@{ROOM\_TYPE\_C}!Room@{Room}}\index{Room@{Room}!ROOM\_TYPE\_C@{ROOM\_TYPE\_C}}}\mbox{\Hypertarget{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fafc552f26eeb6be1c8dec11d13d1aed6a}\label{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fafc552f26eeb6be1c8dec11d13d1aed6a}} 
+R\+O\+O\+M\+\_\+\+T\+Y\+P\+E\+\_\+C&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROOM\_TYPE\_D@{ROOM\_TYPE\_D}!Room@{Room}}\index{Room@{Room}!ROOM\_TYPE\_D@{ROOM\_TYPE\_D}}}\mbox{\Hypertarget{classRoom_a88b7f16920a6f3556b8457b3c6b1a85faddfa2c7874fe222ff8126cd3b44f41b4}\label{classRoom_a88b7f16920a6f3556b8457b3c6b1a85faddfa2c7874fe222ff8126cd3b44f41b4}} 
+R\+O\+O\+M\+\_\+\+T\+Y\+P\+E\+\_\+D&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_ROOM@{NO\_ROOM}!Room@{Room}}\index{Room@{Room}!NO\_ROOM@{NO\_ROOM}}}\mbox{\Hypertarget{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fab392935bcceae26af39bd53a16009e5c}\label{classRoom_a88b7f16920a6f3556b8457b3c6b1a85fab392935bcceae26af39bd53a16009e5c}} 
+N\+O\+\_\+\+R\+O\+OM&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRoom_af89221cac6a0e8564c4ea7d694640fb3}\label{classRoom_af89221cac6a0e8564c4ea7d694640fb3}} 
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{Room()}{Room()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Room\+::\+Room (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{map\+\_\+file }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRoom_a2703912c72f2629eec373aaadc7584de}\label{classRoom_a2703912c72f2629eec373aaadc7584de}} 
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{Room()}{Room()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Room\+::\+Room (\begin{DoxyParamCaption}\item[{int}]{room\+\_\+type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classRoom_a712b54d25ad3d22918721213a1cf5dc2}\label{classRoom_a712b54d25ad3d22918721213a1cf5dc2}} 
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{Room()}{Room()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Room\+::\+Room (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRoom}{Room}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRoom_a04ed4955a5049fff264ceee77e13316a}\label{classRoom_a04ed4955a5049fff264ceee77e13316a}} 
+\index{Room@{Room}!DrawRoomOn@{DrawRoomOn}}
+\index{DrawRoomOn@{DrawRoomOn}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{DrawRoomOn()}{DrawRoomOn()}}
+{\footnotesize\ttfamily void Room\+::\+Draw\+Room\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structImage}{Image}} $\ast$}]{screen }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classRoom_ac41693308be2c89cf31deb7abdf7e1cf}\label{classRoom_ac41693308be2c89cf31deb7abdf7e1cf}} 
+\index{Room@{Room}!DrawScaledPixel@{DrawScaledPixel}}
+\index{DrawScaledPixel@{DrawScaledPixel}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{DrawScaledPixel()}{DrawScaledPixel()}}
+{\footnotesize\ttfamily void Room\+::\+Draw\+Scaled\+Pixel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structImage}{Image}} \&}]{screen,  }\item[{int}]{i,  }\item[{int}]{j,  }\item[{\mbox{\hyperlink{structPixel}{Pixel}}}]{color }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classRoom_afbe132ba2aae8dc549a7547536d511d8}\label{classRoom_afbe132ba2aae8dc549a7547536d511d8}} 
+\index{Room@{Room}!DrawTile@{DrawTile}}
+\index{DrawTile@{DrawTile}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{DrawTile()}{DrawTile()}}
+{\footnotesize\ttfamily void Room\+::\+Draw\+Tile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structImage}{Image}} \&}]{screen,  }\item[{int}]{i,  }\item[{int}]{j,  }\item[{\mbox{\hyperlink{classTile}{Tile}} \&}]{tl }\end{DoxyParamCaption}) const}
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classRoom_a777c972d8d294c5a0ee6711f54e88aa6}\label{classRoom_a777c972d8d294c5a0ee6711f54e88aa6}} 
+\index{Room@{Room}!get\_layout@{get\_layout}}
+\index{get\_layout@{get\_layout}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{get\_layout()}{get\_layout()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classGameObject}{Game\+Object}} $>$ $>$ Room\+::get\+\_\+layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classRoom_a4f708410e7e53b476d5c5f3c1a0f562d}\label{classRoom_a4f708410e7e53b476d5c5f3c1a0f562d}} 
+\index{Room@{Room}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ Room\+::get\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classRoom_a811149d754e0c2c0de3583e1db5f84b7}\label{classRoom_a811149d754e0c2c0de3583e1db5f84b7}} 
+\index{Room@{Room}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily std\+::string Room\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classRoom_a9c3b8463f40e1f1b070b9fa817a663c8}\label{classRoom_a9c3b8463f40e1f1b070b9fa817a663c8}} 
+\index{Room@{Room}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!Room@{Room}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string Room\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inc/utilities/\mbox{\hyperlink{room_8h}{room.\+h}}\item 
+src/utilities/\mbox{\hyperlink{room_8cpp}{room.\+cpp}}\end{DoxyCompactItemize}

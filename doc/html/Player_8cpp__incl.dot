@@ -1,13 +1,17 @@
-digraph "src/Player.cpp"
+digraph "src/gameplay/Player.cpp"
 {
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="src/Player.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [label="src/gameplay/Player.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="Player.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Player_8h.html",tooltip="Point, MovementDirection and Player classes."];
+  Node2 [label="gameplay/Player.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Player_8h.html",tooltip="Point, PlayerActionection and Player classes."];
   Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="Image.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Image_8h.html",tooltip="Image and Pixel representation."];
+  Node3 [label="graphics/Image.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Image_8h.html",tooltip="Image and Pixel representation."];
   Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node4 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="graphics/tile.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tile_8h.html",tooltip=" "];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

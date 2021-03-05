@@ -1,11 +1,12 @@
-\hypertarget{Player_8h}{}\doxysection{inc/\+Player.h File Reference}
-\label{Player_8h}\index{inc/Player.h@{inc/Player.h}}
+\hypertarget{Player_8h}{}\doxysection{inc/gameplay/\+Player.h File Reference}
+\label{Player_8h}\index{inc/gameplay/Player.h@{inc/gameplay/Player.h}}
 
 
-\mbox{\hyperlink{structPoint}{Point}}, Movement\+Direction and \mbox{\hyperlink{structPlayer}{Player}} classes.  
+\mbox{\hyperlink{structPoint}{Point}}, Player\+Actionection and \mbox{\hyperlink{structPlayer}{Player}} classes.  
 
 
-{\ttfamily \#include \char`\"{}Image.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graphics/\+Image.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graphics/tile.\+h\char`\"{}}\newline
 Include dependency graph for Player.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
@@ -20,41 +21,48 @@ struct \mbox{\hyperlink{structPlayer}{Player}}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}{Movement\+Dir}} \{ \mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fafbaedde498cdead4f2780217646e9ba1}{Movement\+Dir\+::\+UP}}, 
-\mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fac4e0e4e3118472beeb2ae75827450f1f}{Movement\+Dir\+::\+D\+O\+WN}}, 
-\mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fa684d325a7303f52e64011467ff5c5758}{Movement\+Dir\+::\+L\+E\+FT}}, 
-\mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fa21507b40c80068eda19865706fdc2403}{Movement\+Dir\+::\+R\+I\+G\+HT}}
+enum \mbox{\hyperlink{Player_8h_aea132397c26cad8f8637a9422260deca}{Player\+Action}} \{ \newline
+\mbox{\hyperlink{Player_8h_aea132397c26cad8f8637a9422260decaafbaedde498cdead4f2780217646e9ba1}{Player\+Action\+::\+UP}}, 
+\mbox{\hyperlink{Player_8h_aea132397c26cad8f8637a9422260decaac4e0e4e3118472beeb2ae75827450f1f}{Player\+Action\+::\+D\+O\+WN}}, 
+\mbox{\hyperlink{Player_8h_aea132397c26cad8f8637a9422260decaa684d325a7303f52e64011467ff5c5758}{Player\+Action\+::\+L\+E\+FT}}, 
+\mbox{\hyperlink{Player_8h_aea132397c26cad8f8637a9422260decaa21507b40c80068eda19865706fdc2403}{Player\+Action\+::\+R\+I\+G\+HT}}, 
+\newline
+\mbox{\hyperlink{Player_8h_aea132397c26cad8f8637a9422260decaa866e8db4472be5f72246d816fbcbac48}{Player\+Action\+::\+A\+P\+P\+L\+Y\+\_\+\+A\+C\+T\+I\+ON}}
  \}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-\mbox{\hyperlink{structPoint}{Point}}, Movement\+Direction and \mbox{\hyperlink{structPlayer}{Player}} classes. 
+\mbox{\hyperlink{structPoint}{Point}}, Player\+Actionection and \mbox{\hyperlink{structPlayer}{Player}} classes. 
 
 
 
 \doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}\label{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}} 
-\index{Player.h@{Player.h}!MovementDir@{MovementDir}}
-\index{MovementDir@{MovementDir}!Player.h@{Player.h}}
-\doxysubsubsection{\texorpdfstring{MovementDir}{MovementDir}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61f}{Movement\+Dir}}\hspace{0.3cm}{\ttfamily [strong]}}
+\mbox{\Hypertarget{Player_8h_aea132397c26cad8f8637a9422260deca}\label{Player_8h_aea132397c26cad8f8637a9422260deca}} 
+\index{Player.h@{Player.h}!PlayerAction@{PlayerAction}}
+\index{PlayerAction@{PlayerAction}!Player.h@{Player.h}}
+\doxysubsubsection{\texorpdfstring{PlayerAction}{PlayerAction}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{Player_8h_aea132397c26cad8f8637a9422260deca}{Player\+Action}}\hspace{0.3cm}{\ttfamily [strong]}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!Player.h@{Player.h}}\index{Player.h@{Player.h}!UP@{UP}}}\mbox{\Hypertarget{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fafbaedde498cdead4f2780217646e9ba1}\label{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fafbaedde498cdead4f2780217646e9ba1}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UP@{UP}!Player.h@{Player.h}}\index{Player.h@{Player.h}!UP@{UP}}}\mbox{\Hypertarget{Player_8h_aea132397c26cad8f8637a9422260decaafbaedde498cdead4f2780217646e9ba1}\label{Player_8h_aea132397c26cad8f8637a9422260decaafbaedde498cdead4f2780217646e9ba1}} 
 UP&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!Player.h@{Player.h}}\index{Player.h@{Player.h}!DOWN@{DOWN}}}\mbox{\Hypertarget{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fac4e0e4e3118472beeb2ae75827450f1f}\label{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fac4e0e4e3118472beeb2ae75827450f1f}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOWN@{DOWN}!Player.h@{Player.h}}\index{Player.h@{Player.h}!DOWN@{DOWN}}}\mbox{\Hypertarget{Player_8h_aea132397c26cad8f8637a9422260decaac4e0e4e3118472beeb2ae75827450f1f}\label{Player_8h_aea132397c26cad8f8637a9422260decaac4e0e4e3118472beeb2ae75827450f1f}} 
 D\+O\+WN&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!Player.h@{Player.h}}\index{Player.h@{Player.h}!LEFT@{LEFT}}}\mbox{\Hypertarget{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fa684d325a7303f52e64011467ff5c5758}\label{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fa684d325a7303f52e64011467ff5c5758}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!Player.h@{Player.h}}\index{Player.h@{Player.h}!LEFT@{LEFT}}}\mbox{\Hypertarget{Player_8h_aea132397c26cad8f8637a9422260decaa684d325a7303f52e64011467ff5c5758}\label{Player_8h_aea132397c26cad8f8637a9422260decaa684d325a7303f52e64011467ff5c5758}} 
 L\+E\+FT&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!Player.h@{Player.h}}\index{Player.h@{Player.h}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fa21507b40c80068eda19865706fdc2403}\label{Player_8h_aa91f5cffa9b1b82e96c8824b1fe5c61fa21507b40c80068eda19865706fdc2403}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!Player.h@{Player.h}}\index{Player.h@{Player.h}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{Player_8h_aea132397c26cad8f8637a9422260decaa21507b40c80068eda19865706fdc2403}\label{Player_8h_aea132397c26cad8f8637a9422260decaa21507b40c80068eda19865706fdc2403}} 
 R\+I\+G\+HT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{APPLY\_ACTION@{APPLY\_ACTION}!Player.h@{Player.h}}\index{Player.h@{Player.h}!APPLY\_ACTION@{APPLY\_ACTION}}}\mbox{\Hypertarget{Player_8h_aea132397c26cad8f8637a9422260decaa866e8db4472be5f72246d816fbcbac48}\label{Player_8h_aea132397c26cad8f8637a9422260decaa866e8db4472be5f72246d816fbcbac48}} 
+A\+P\+P\+L\+Y\+\_\+\+A\+C\+T\+I\+ON&\\
 \hline
 
 \end{DoxyEnumFields}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Computer Graphics Task 1: inc/Player.h File Reference</title>
+<title>Computer Graphics Task 1: inc/gameplay/Player.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_bfccd401955b95cf8c75461437045ac0.html">inc</a></li><li class="navelem"><a class="el" href="dir_3e0da0dbc6b350c7650fd60425c62ba8.html">gameplay</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -73,19 +73,20 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="structPoint.html">Point</a>, MovementDirection and <a class="el" href="structPlayer.html">Player</a> classes.  
+<p><a class="el" href="structPoint.html">Point</a>, PlayerActionection and <a class="el" href="structPlayer.html">Player</a> classes.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="Image_8h_source.html">Image.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Image_8h_source.html">graphics/Image.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tile_8h_source.html">graphics/tile.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Player.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="Player_8h__incl.png" border="0" usemap="#inc_2Player_8h" alt=""/></div>
+<div class="center"><img src="Player_8h__incl.png" border="0" usemap="#inc_2gameplay_2Player_8h" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="Player_8h__dep__incl.png" border="0" usemap="#inc_2Player_8hdep" alt=""/></div>
+<div class="center"><img src="Player_8h__dep__incl.png" border="0" usemap="#inc_2gameplay_2Player_8hdep" alt=""/></div>
 <!-- MAP 1 -->
 </div>
 </div>
@@ -100,18 +101,22 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aa91f5cffa9b1b82e96c8824b1fe5c61f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61f">MovementDir</a> { <a class="el" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fafbaedde498cdead4f2780217646e9ba1">MovementDir::UP</a>, 
-<a class="el" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fac4e0e4e3118472beeb2ae75827450f1f">MovementDir::DOWN</a>, 
-<a class="el" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fa684d325a7303f52e64011467ff5c5758">MovementDir::LEFT</a>, 
-<a class="el" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61fa21507b40c80068eda19865706fdc2403">MovementDir::RIGHT</a>
+<tr class="memitem:aea132397c26cad8f8637a9422260deca"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Player_8h.html#aea132397c26cad8f8637a9422260deca">PlayerAction</a> { <br />
+&#160;&#160;<a class="el" href="Player_8h.html#aea132397c26cad8f8637a9422260decaafbaedde498cdead4f2780217646e9ba1">PlayerAction::UP</a>, 
+<a class="el" href="Player_8h.html#aea132397c26cad8f8637a9422260decaac4e0e4e3118472beeb2ae75827450f1f">PlayerAction::DOWN</a>, 
+<a class="el" href="Player_8h.html#aea132397c26cad8f8637a9422260decaa684d325a7303f52e64011467ff5c5758">PlayerAction::LEFT</a>, 
+<a class="el" href="Player_8h.html#aea132397c26cad8f8637a9422260decaa21507b40c80068eda19865706fdc2403">PlayerAction::RIGHT</a>, 
+<br />
+&#160;&#160;<a class="el" href="Player_8h.html#aea132397c26cad8f8637a9422260decaa866e8db4472be5f72246d816fbcbac48">PlayerAction::APPLY_ACTION</a>
+<br />
  }</td></tr>
-<tr class="separator:aa91f5cffa9b1b82e96c8824b1fe5c61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aea132397c26cad8f8637a9422260deca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="structPoint.html">Point</a>, MovementDirection and <a class="el" href="structPlayer.html">Player</a> classes. </p>
+<div class="textblock"><p><a class="el" href="structPoint.html">Point</a>, PlayerActionection and <a class="el" href="structPlayer.html">Player</a> classes. </p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="aa91f5cffa9b1b82e96c8824b1fe5c61f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa91f5cffa9b1b82e96c8824b1fe5c61f">&#9670;&nbsp;</a></span>MovementDir</h2>
+<a id="aea132397c26cad8f8637a9422260deca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea132397c26cad8f8637a9422260deca">&#9670;&nbsp;</a></span>PlayerAction</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -120,7 +125,7 @@ Enumerations</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="Player_8h.html#aa91f5cffa9b1b82e96c8824b1fe5c61f">MovementDir</a></td>
+          <td class="memname">enum <a class="el" href="Player_8h.html#aea132397c26cad8f8637a9422260deca">PlayerAction</a></td>
         </tr>
       </table>
   </td>
@@ -130,10 +135,11 @@ Enumerations</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa91f5cffa9b1b82e96c8824b1fe5c61fafbaedde498cdead4f2780217646e9ba1"></a>UP&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa91f5cffa9b1b82e96c8824b1fe5c61fac4e0e4e3118472beeb2ae75827450f1f"></a>DOWN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa91f5cffa9b1b82e96c8824b1fe5c61fa684d325a7303f52e64011467ff5c5758"></a>LEFT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa91f5cffa9b1b82e96c8824b1fe5c61fa21507b40c80068eda19865706fdc2403"></a>RIGHT&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aea132397c26cad8f8637a9422260decaafbaedde498cdead4f2780217646e9ba1"></a>UP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aea132397c26cad8f8637a9422260decaac4e0e4e3118472beeb2ae75827450f1f"></a>DOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aea132397c26cad8f8637a9422260decaa684d325a7303f52e64011467ff5c5758"></a>LEFT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aea132397c26cad8f8637a9422260decaa21507b40c80068eda19865706fdc2403"></a>RIGHT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aea132397c26cad8f8637a9422260decaa866e8db4472be5f72246d816fbcbac48"></a>APPLY_ACTION&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

@@ -1,4 +1,0 @@
-<map id="Player::Draw" name="Player::Draw">
-<area shape="rect" id="node2" href="$structPlayer.html#a743da3dcbc81ed11bfcb81943aae175b" title="Player::Moved" alt="" coords="156,5,263,32"/>
-<area shape="rect" id="node3" href="$structImage.html#ad728f53861c64498690a311abe1667c4" title="Image::PutPixel" alt="" coords="152,56,267,83"/>
-</map>
