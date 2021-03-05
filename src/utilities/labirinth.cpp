@@ -27,23 +27,23 @@ namespace mapping {
                 switch (c)
                 {
                 case 'A':
-                    labirinth_plan_[{i, j}] = Room::ROOM_TYPE_A;
+                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_A);
                     break;
 
                 case 'B':
-                    labirinth_plan_[{i, j}] = Room::ROOM_TYPE_B;
+                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_B);
                     break;
 
                 case 'C':
-                    labirinth_plan_[{i, j}] = Room::ROOM_TYPE_C;
+                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_C);
                     break;
 
                 case 'D':
-                    labirinth_plan_[{i, j}] = Room::ROOM_TYPE_D;
+                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_D);
                     break;
 
                 case '.':
-                    labirinth_plan_[{i, j}] = Room::NO_ROOM;
+                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_D);
                     break;
                 
                 default:
@@ -52,7 +52,7 @@ namespace mapping {
                 }
             }
 
-            if (labirinth_plan_[{i, j}] != Room::NO_ROOM) {
+            if (labirinth_plan_[{i, j}].get_type() != Room::NO_ROOM) {
 
                 if (!set) {
                     current_pose_x_ = i;
@@ -71,6 +71,8 @@ namespace mapping {
         }
     } // Labirinth::Labirinth ()
 
-    
+    Room& Labirinth::get_current_room () {
+        return labirinth_plan_[{current_pose_x_, current_pose_y_}];
+    }
 
 } // namespace mapping

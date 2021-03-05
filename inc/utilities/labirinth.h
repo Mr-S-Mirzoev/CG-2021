@@ -24,7 +24,7 @@ namespace mapping {
 
     class Labirinth
     {
-        Matrix <Room::room_type> labirinth_plan_;
+        Matrix <Room> labirinth_plan_;
         int current_pose_x_, current_pose_y_;
     public:
         /**
@@ -35,6 +35,8 @@ namespace mapping {
         Labirinth(const std::string &lab_path);
 
         void navigate(int direction);
+
+        Room& get_current_room ();
     }; // class Labirinth
 
 } // namespace mapping
