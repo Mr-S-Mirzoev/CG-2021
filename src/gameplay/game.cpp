@@ -10,9 +10,11 @@
 extern GLfloat deltaTime;
 extern GLfloat lastFrame;
 
-Game::Game(): player_({WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2}), 
-              lab_("./res/labitinth.txt"),
-              screen_buffer_(WINDOW_WIDTH, WINDOW_HEIGHT, 4) {
+Game::Game(): 
+	player_({WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2}), 
+	lab_("./res/labitinth.txt"),
+	screen_buffer_(WINDOW_WIDTH, WINDOW_HEIGHT, 4) 
+{	
     if(!glfwInit())
     	throw utilities::GLException("Game initialization failed");
 
@@ -55,14 +57,15 @@ void Game::initGL() const
 	std::cout << "Version: " << glGetString(GL_VERSION) << std::endl;
 	std::cout << "GLSL: " << glGetString(GL_SHADING_LANGUAGE_VERSION) << std::endl;
 
-	std::cout << "Controls: "<< std::endl;
-	std::cout << "press right mouse button to capture/release mouse cursor  "<< std::endl;
-	std::cout << "W, A, S, D - movement  "<< std::endl;
+	std::cout << "Controls:" << std::endl;
+	std::cout << "press right mouse button to capture/release mouse cursor" << std::endl;
+	std::cout << "W, A, S, D - movement" << std::endl;
+	std::cout << "Enter - apply an action to current room object" << std::endl;
 	std::cout << "press ESC to exit" << std::endl;
 }
 
 void Game::loop() {
-    Room roomA{"./res/maps/roomA.txt"};
+    Room roomA{Room::room_type::ROOM_TYPE_A};
 
     //game loop
 	while (!glfwWindowShouldClose(window_)) {

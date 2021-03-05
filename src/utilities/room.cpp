@@ -18,7 +18,7 @@ constexpr int scale = 16;
   - выход из всего лабиринта: `Q`
   - ключи, которые позволяют открывать закрытые выходы из комнат: `K`
 */
-Room::Room(const std::string &map_file) {
+Room::Room(const std::string &map_file, int type): map_type_(type) {
     std::ifstream infile(map_file);
 
     if (!infile.is_open())
@@ -56,20 +56,19 @@ Room::Room(const std::string &map_file) {
     }
 }
 
-Room::Room(int type): Room(type == ROOM_TYPE_A ? "./res/maps/roomA.txt" : 
-                           type == ROOM_TYPE_B ? "./res/maps/roomB.txt" : 
-                           type == ROOM_TYPE_C ? "./res/maps/roomC.txt" : 
-                           type == ROOM_TYPE_D ? "./res/maps/roomD.txt" :
-                                                 "./res/noroom.txt") {
-    if (type == NO_ROOM)
-        throw utilities::OuterSpaceException("You wished to create an unexisting room");
-}
+Room::Room(int type): 
+    Room(type == ROOM_TYPE_A ? "./res/maps/roomA.txt" : 
+         type == ROOM_TYPE_B ? "./res/maps/roomB.txt" : 
+         type == ROOM_TYPE_C ? "./res/maps/roomC.txt" : 
+         type == ROOM_TYPE_D ? "./res/maps/roomD.txt" :
+                               "./res/noroom.txt", 
+         type) {}
 
 std::vector<std::vector<GameObject>> Room::get_layout() const {
     return map_layout_;
 }
 
-std::string Room::get_type() const {
+int Room::get_type() const {
     return map_type_;
 }
 
@@ -88,6 +87,9 @@ std::string Room::to_string() const {
 }
 
 void Room::DrawScaledPixel(Image &screen, int i, int j, Pixel color) const {
+    if (map_type_ == NO_ROOM)
+        throw utilities::OuterSpaceException("You wished to create an unexisting room");
+    
     i *= scale - 1;
     j *= scale - 1;
     for (int x = 0; x < scale; ++x)

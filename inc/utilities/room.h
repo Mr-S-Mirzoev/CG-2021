@@ -72,7 +72,7 @@ public:
 };
 
 class Room {
-    std::string map_type_;
+    int map_type_;
     std::vector<std::vector<GameObject>> map_layout_;
     std::pair <unsigned, unsigned> player_starting_pose_;
 
@@ -80,6 +80,8 @@ class Room {
                           int room_height,
                           int screen_width,
                           int screen_height) const;
+
+    Room (const std::string &map_file, int type);
 
 public:
 
@@ -91,12 +93,11 @@ public:
         NO_ROOM
     } room_type;
 
-    Room (const std::string &map_file);
-    Room (int room_type);
-    Room (Room &rhs) = default;
+    Room (int room_type = room_type::NO_ROOM);
+    Room (const Room &rhs) = default;
 
     std::vector<std::vector<GameObject>> get_layout() const;
-    std::string get_type() const;
+    int get_type() const;
     std::pair <int, int> get_size() const;
 
     std::string to_string() const;
