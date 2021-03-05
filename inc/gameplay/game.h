@@ -4,14 +4,30 @@
 #ifndef GAME_H
 #define GAME_H
 
-class Game
-{
-private:
-    /* data */
-public:
-    Game(/* args */);
-    ~Game();
-};
+#include "gameplay/Player.h"
+#include "gameplay/inventory.h"
 
+#include "graphics/Image.h"
+#include "graphics/screen.h"
+
+#include "utilities/labirinth.h"
+
+class GLFWwindow;
+
+struct Game
+{
+    mapping::Labirinth lab_;
+    Player player_;
+    Screen screen_buffer_;
+    Inventory inventory_;
+    GLFWwindow* window_ = nullptr;
+
+    Game();
+    ~Game();
+
+    void initGL() const;
+
+    void loop ();
+};
 
 #endif //GAME_H
