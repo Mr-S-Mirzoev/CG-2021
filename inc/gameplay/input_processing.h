@@ -6,7 +6,7 @@
 
 #include "gameplay/Player.h"
 
-constexpr GLsizei WINDOW_WIDTH = 1024, WINDOW_HEIGHT = 1024;
+constexpr GLsizei WINDOW_WIDTH = 512, WINDOW_HEIGHT = 512;
 
 struct InputState
 {
