@@ -11,12 +11,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
 set(SOURCE_FILES
-        ${SRC_DIR}/glad.c
-        ${SRC_DIR}/input_processing.cpp
-        ${SRC_DIR}/Image.cpp
-        ${SRC_DIR}/map_loader.cpp
-        ${SRC_DIR}/Player.cpp
-        ${SRC_DIR}/main.cpp)
+        ${SRC_DIR}/abcd.cpp)
 
 set(ADDITIONAL_INCLUDE_DIRS
         deps/include/GLAD)
@@ -39,10 +34,11 @@ endif()
 include_directories(${ADDITIONAL_INCLUDE_DIRS} ${INC_DIR})
 
 find_package(OpenGL REQUIRED)
+find_package(GLUT REQUIRED)
 
 add_executable(main ${SOURCE_FILES})
 
-target_include_directories(main PRIVATE ${OPENGL_INCLUDE_DIR})
+target_include_directories(main PRIVATE ${OPENGL_INCLUDE_DIR} ${GLUT_INCLUDE_DIRS})
 
 if(WIN32)
   add_custom_command(TARGET main POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory "${PROJECT_SOURCE_DIR}/deps/bin" $<TARGET_FILE_DIR:main>)
@@ -51,7 +47,7 @@ if(WIN32)
   target_link_libraries(main LINK_PUBLIC ${OPENGL_gl_LIBRARY} glfw3dll)
 else()
   target_compile_options(main PRIVATE -Wnarrowing)
-  target_link_libraries(main LINK_PUBLIC ${OPENGL_gl_LIBRARY} glfw rt dl)
+  target_link_libraries(main LINK_PUBLIC ${OPENGL_gl_LIBRARY} ${GLUT_LIBRARY} glfw GLU rt dl)
 endif()
 
 # first we can indicate the documentation build as an option and set it to ON by default
