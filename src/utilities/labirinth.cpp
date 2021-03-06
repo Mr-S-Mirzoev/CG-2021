@@ -85,6 +85,8 @@ namespace mapping {
     void Labirinth::navigate(int direction) {
         auto sz = labirinth_plan_.size();
 
+        std::cout << direction << std::endl;
+
         switch (direction)
         {
         case GO_UP:
@@ -111,6 +113,8 @@ namespace mapping {
         if (current_pose_y_ < 0 || current_pose_y_ >= sz.second || 
             current_pose_x_ < 0 || current_pose_x_ >= sz.first  ||
             get_current_room().get_type() == Room::room_type::NO_ROOM) {
+            std::cout << current_pose_x_ << " " << current_pose_y_ << std::endl;
+            std::cout << sz.first << " " << sz.second << std::endl;
             throw utilities::OuterSpaceException("Out of labirinth");
         }
     }

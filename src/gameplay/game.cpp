@@ -117,6 +117,8 @@ void Game::process_action() {
 int Game::get_direction() {
 	auto object = get_pose_in_map_coords();
 
+	std::cout << "Object: " << object.first << " " << object.second << std::endl;
+
 	if (object.first == 0) {
 		return mapping::GO_LEFT;
 	} else if (object.first == lab_.get_current_room().get_size().first - 1) {
