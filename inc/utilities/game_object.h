@@ -39,7 +39,7 @@ class WallObject: public GameObject {
 public:
     WallObject (): GameObject("wall") {}
 
-    void apply_action(Game &gm) override {};
+    void apply_action(Game &gm) override;
 };
 
 class FloorObject: public GameObject {

@@ -90,16 +90,16 @@ void Room::DrawScaledPixel(Image &screen, int i, int j, Pixel color) const {
     if (map_type_ == NO_ROOM)
         throw utilities::OuterSpaceException("You wished to create an unexisting room");
     
-    i *= scale - 1;
-    j *= scale - 1;
+    i *= scale;
+    j *= scale;
     for (int x = 0; x < scale; ++x)
         for (int y = 0; y < scale; ++y)
             screen.PutPixel(j + x, i + y, color);
 }
 
 void Room::DrawTile(Image &screen, int i, int j, const Tile &tl) const {
-    i *= scale - 1;
-    j *= scale - 1;
+    i *= scale;
+    j *= scale;
     for (int x = 0; x < scale; ++x)
         for (int y = 0; y < scale; ++y)
             screen.PutPixel(j + x, i + y, tl.get_pixel(x, y));

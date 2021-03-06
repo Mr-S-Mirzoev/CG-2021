@@ -32,6 +32,10 @@ struct Player
      */
     bool Moved() const;
     /**
+     * @brief retrueves last movement
+     */
+    void Collision();
+    /**
      * @brief Move the player from it's current position to the direction
      * 
      * @param dir - movement direction (of enum class PlayerAction)

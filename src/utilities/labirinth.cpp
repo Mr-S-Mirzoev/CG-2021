@@ -10,8 +10,6 @@ namespace mapping {
     Labirinth::Labirinth(const std::string &lab_path) {
         std::ifstream infile(lab_path);
 
-        std::cout << "ISOPEN: " << lab_path << " " << infile.is_open() << std::endl;
-
         std::string line;
         int i = 0, j;
         bool set = false;

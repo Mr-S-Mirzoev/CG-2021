@@ -104,17 +104,56 @@ std::pair <int, int> Game::get_pose_in_map_coords() {
 	return {object_i, object_j};
 }
 
+std::vector<std::pair <int, int>> Game::get_poses_in_map_coords() {
+	auto player_coords = player_.get_coords();
+	//player_coords.x += tileSize / 2;
+	//player_coords.y += tileSize / 2;
+	std::cout << player_coords.x << " " << player_coords.y << std::endl;
+	auto pt2 = lab_.get_current_room().get_mins();
+	std::cout << "lab mins " << pt2.first << " " << pt2.second << std::endl;
+
+	std::vector<std::pair <int, int>> result;
+	const int dx[] = {0, 0, tileSize - 1, tileSize - 1};
+	const int dy[] = {0, tileSize - 1, 0, tileSize - 1};
+	for (int dId = 0; dId < 4; ++dId) {
+
+		int delta_x = player_coords.x - tileSize * pt2.first  + dx[dId];
+		int delta_y = player_coords.y - tileSize * pt2.second + dy[dId];
+
+		std::cout << "dId: " << dId << std::endl;
+		std::cout << "delta x y " << delta_x / tileSize << " " << delta_y / tileSize << std::endl;
+
+		int object_i = (delta_x / tileSize);// + 1;
+		int object_j = (delta_y / tileSize);// + 1;
+
+		std::cout << "obj i j " << object_i << " " << object_j << std::endl;
+
+		bool has = false;
+		for (auto rs : result)
+			if (rs.first == object_i && rs.second == object_j)
+				has = true;
+		if (!has)
+			result.push_back({object_i, object_j});
+	}
+	return result;
+}
+
+
 void Game::process_action() {
+	auto objects = get_poses_in_map_coords();
 	auto object = get_pose_in_map_coords();
 
 	auto sz = lab_.get_current_room().get_size();
-	auto cur_tile = lab_.get_current_room().get_layout()[object.second][object.first];
-	
-	cur_tile->apply_action(*this);
-	std::cout << cur_tile->get_name() << std::endl;
+	std::cout << "Process" << std::endl;
+	for(auto obj : objects) {
+		auto cur_tile = lab_.get_current_room().get_layout()[obj.second][obj.first];
+		cur_tile->apply_action(*this);
+		std::cout << cur_tile->get_name() << std::endl;
+	}
 }
 
 int Game::get_direction() {
+	std::cout << "Direct" << std::endl;
 	auto object = get_pose_in_map_coords();
 
 	std::cout << "Object: " << object.first << " " << object.second << std::endl;

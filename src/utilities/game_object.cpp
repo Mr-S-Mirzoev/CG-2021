@@ -27,3 +27,7 @@ void DoorObject::apply_action(Game &gm) {
 void VoidObject::apply_action(Game &gm) {
 
 }
+
+void WallObject::apply_action(Game &gm) {
+    gm.player_.Collision();
+}

@@ -18,6 +18,7 @@ struct Game
 {
 private:
     std::pair <int, int> get_pose_in_map_coords();
+    std::vector<std::pair <int, int>> get_poses_in_map_coords();
 public:
     mapping::Labirinth lab_;
     Player player_;

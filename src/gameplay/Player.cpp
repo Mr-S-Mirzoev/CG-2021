@@ -10,6 +10,12 @@ bool Player::Moved() const
         return true;
 }
 
+void Player::Collision()
+{
+    coords.x = old_coords.x;
+    coords.y = old_coords.y;
+}
+
 void Player::ProcessInput(PlayerAction dir)
 {
     int move_dist = move_speed * 1;
