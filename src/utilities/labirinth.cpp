@@ -82,4 +82,37 @@ namespace mapping {
         return labirinth_plan_[{current_pose_x_, current_pose_y_}];
     }
 
+    void Labirinth::navigate(int direction) {
+        auto sz = labirinth_plan_.size();
+
+        switch (direction)
+        {
+        case GO_UP:
+            ++current_pose_y_;
+            break;
+
+        case GO_RIGHT:
+            ++current_pose_x_;
+            break;
+
+        case GO_LEFT:
+            --current_pose_x_;
+            break;
+
+        case GO_DOWN:
+            --current_pose_y_;
+            break;
+        
+        default:
+            throw utilities::GameException("Unknown Direction");
+            break;
+        }
+
+        if (current_pose_y_ < 0 || current_pose_y_ >= sz.second || 
+            current_pose_x_ < 0 || current_pose_x_ >= sz.first  ||
+            get_current_room().get_type() == Room::room_type::NO_ROOM) {
+            throw utilities::OuterSpaceException("Out of labirinth");
+        }
+    }
+
 } // namespace mapping

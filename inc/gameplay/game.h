@@ -16,6 +16,9 @@ class GLFWwindow;
 
 struct Game
 {
+private:
+    std::pair <int, int> get_pose_in_map_coords();
+public:
     mapping::Labirinth lab_;
     Player player_;
     Screen screen_buffer_;
@@ -28,6 +31,7 @@ struct Game
     void initGL() const;
 
     void process_action();
+    int get_direction();
 
     void loop ();
 };

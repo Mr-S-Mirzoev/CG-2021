@@ -7,7 +7,7 @@
 #include <string>
 
 class Inventory {
-    std::set <std::string> inventory_data_;
+    std::set <std::string> inventory_data_ {};
 public:
     Inventory() = default;
 

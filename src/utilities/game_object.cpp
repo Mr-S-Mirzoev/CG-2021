@@ -1,7 +1,29 @@
 #include "utilities/game_object.h"
+#include "gameplay/game.h"
 
-GameObject::GameObject(const std::string &name, bool mutability):
-    name_(name), mutable_(mutability), current_tile_(&get_tile_by_name(name_)) {}
+void KeyObject::apply_action(Game &gm) {
+    if (state_ == ACTION_NOT_APPLIED) {
+        state_ = ACTION_APPLIED;
+        current_tile_ = &get_tile_by_name("floor");
+        gm.inventory_.add("key");
+    }
+}
 
-std::string GameObject::get_name() const { return name_; }
-bool GameObject::is_mutable() const { return mutable_; }  
+void ExitObject::apply_action(Game &gm) {
+    if (state_ == ACTION_NOT_APPLIED)
+        current_tile_ = &get_tile_by_name("exit");
+
+    gm.lab_.navigate(gm.get_direction());
+}
+
+void MainExitObject::apply_action(Game &gm) {
+    
+}
+
+void DoorObject::apply_action(Game &gm) {
+
+}
+
+void VoidObject::apply_action(Game &gm) {
+
+}

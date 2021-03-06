@@ -27,26 +27,26 @@ Room::Room(const std::string &map_file, int type): map_type_(type) {
     std::string line;
     while (std::getline(infile, line))
     {
-        std::vector <GameObject> line_of_objects;
+        std::vector <GameObject *> line_of_objects;
         for (auto c : line) {
             switch (c) {
                 case ' ':
-                    line_of_objects.push_back(VoidObject{}); break;
+                    line_of_objects.push_back(new VoidObject{}); break;
                 case '#':
-                    line_of_objects.push_back(WallObject{}); break;
+                    line_of_objects.push_back(new WallObject{}); break;
                 case '.':
-                    line_of_objects.push_back(FloorObject{}); break;
+                    line_of_objects.push_back(new FloorObject{}); break;
                 case '@':
-                    line_of_objects.push_back(FloorObject{});
+                    line_of_objects.push_back(new FloorObject{});
                     player_starting_pose_ = {map_layout_.size(), line_of_objects.size()}; break;
                 case 'x':
-                    line_of_objects.push_back(ExitObject{}); break;
+                    line_of_objects.push_back(new ExitObject{}); break;
                 case 'X':
-                    line_of_objects.push_back(DoorObject{}); break;
+                    line_of_objects.push_back(new DoorObject{}); break;
                 case 'Q':
-                    line_of_objects.push_back(MainExitObject{}); break;
+                    line_of_objects.push_back(new MainExitObject{}); break;
                 case 'K':
-                    line_of_objects.push_back(KeyObject{}); break;
+                    line_of_objects.push_back(new KeyObject{}); break;
                 default:
                     throw std::runtime_error("Unrecognized object ");
             }
@@ -64,7 +64,7 @@ Room::Room(int type):
                                "./res/noroom.txt", 
          type) {}
 
-std::vector<std::vector<GameObject>> Room::get_layout() const {
+std::vector<std::vector<GameObject *>> Room::get_layout() const {
     return map_layout_;
 }
 
@@ -78,7 +78,7 @@ std::string Room::to_string() const {
         for (int j = 0; j < map_layout_[i].size(); ++j) {
             if (std::pair<unsigned int,unsigned int>{i, j} == player_starting_pose_)
                 s += "@";
-            s += map_layout_[i][j].get_name()[0];
+            s += map_layout_[i][j]->get_name()[0];
         }
         s += '\n';
     }
@@ -97,7 +97,7 @@ void Room::DrawScaledPixel(Image &screen, int i, int j, Pixel color) const {
             screen.PutPixel(j + x, i + y, color);
 }
 
-void Room::DrawTile(Image &screen, int i, int j, Tile &tl) const {
+void Room::DrawTile(Image &screen, int i, int j, const Tile &tl) const {
     i *= scale - 1;
     j *= scale - 1;
     for (int x = 0; x < scale; ++x)
@@ -125,9 +125,9 @@ void Room::throw_exception (int room_width,
         "; " + 
         std::to_string(room_width) + 
         "). Size of screen: (" + 
-        std::to_string(screen_height) + 
+        std::to_string(screen_height / 16) + 
         "; " + 
-        std::to_string(screen_width) + 
+        std::to_string(screen_width / 16) + 
         ")"
     );
 }
@@ -139,22 +139,24 @@ void Room::DrawRoomOn(Image* screen) {
     int room_width = map_layout_[0].size();
     int room_height = map_layout_.size();
 
-    int x_min = center_x - room_width / 2;
-    int x_max = center_x + room_width - room_width / 2;
+    int x_min = center_x - room_width + room_width / 2;
+    int x_max = center_x + room_width / 2;
 
-    int y_min = center_y - room_height / 2;
-    int y_max = center_y + room_height - room_height / 2;
+    int y_min = center_y - room_height + room_height / 2;
+    int y_max = center_y + room_height / 2;
+
+    //std::cout << x_min << " " << y_min << ";" << x_max << ";" << y_max << std::endl;
 
     if (x_min < 0)
         throw_exception(room_width, room_height, screen->Width(), screen->Height());
 
-    if (x_max >= screen->Width())
+    if (x_max >= screen->Width() / scale)
         throw_exception(room_width, room_height, screen->Width(), screen->Height());
     
     if (y_min < 0) 
         throw_exception(room_width, room_height, screen->Width(), screen->Height());
 
-    if (y_max >= screen->Height())
+    if (y_max >= screen->Height() / scale)
         throw_exception(room_width, room_height, screen->Width(), screen->Height());
 
     mins_ = {x_min, y_min};
@@ -171,43 +173,8 @@ void Room::DrawRoomOn(Image* screen) {
             std::cout << room_height << " " << room_width << std::endl;
             std::cout << i_m << " " << j_m << std::endl;
 */
-
-            auto& tile = get_tile_by_name(map_layout_[i_m][j_m].get_name());
-
-            if (map_layout_[i_m][j_m].get_name() == "void") {
-                DrawTile(*screen, i, j, tile);
-            } else if (map_layout_[i_m][j_m].get_name() == "wall") {
-                DrawTile(*screen, i, j, tile);
-            } else if (map_layout_[i_m][j_m].get_name() == "floor") {
-                DrawTile(*screen, i, j, tile);
-            } else if (map_layout_[i_m][j_m].get_name() == "exit") {
-                DrawTile(*screen, i, j, tile);
-            } else if (map_layout_[i_m][j_m].get_name() == "main_exit") {
-                DrawTile(*screen, i, j, tile);
-            } else if (map_layout_[i_m][j_m].get_name() == "door") {
-                DrawTile(*screen, i, j, tile);
-            } else if (map_layout_[i_m][j_m].get_name() == "key") {
-                DrawTile(*screen, i, j, tile);
-            }
+            DrawTile(*screen, i, j, map_layout_[i_m][j_m]->get_tile());
         }
     }
 }
 
-void KeyObject::apply_action(Game &gm) {
-    if (state_ == ACTION_NOT_APPLIED)
-        current_tile_ = &get_tile_by_name("floor");
-
-    gm.inventory_.add("key");
-}
-
-void ExitObject::apply_action(Game &gm) {
-    
-}
-
-void MainExitObject::apply_action(Game &gm) {
-    
-}
-
-void DoorObject::apply_action(Game &gm) {
-
-}

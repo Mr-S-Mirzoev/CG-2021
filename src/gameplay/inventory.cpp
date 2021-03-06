@@ -1,7 +1,11 @@
 #include "gameplay/inventory.h"
 #include "utilities/exceptions.h"
 
+#include <iostream>
+
 void Inventory::add(const std::string &object) {
+    std::cout << "Inv size: " << inventory_data_.size() << std::endl;
+
     if (has(object))
         throw utilities::InventoryHadItException(object);
     

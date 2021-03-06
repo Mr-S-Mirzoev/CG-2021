@@ -83,12 +83,52 @@ void Game::loop() {
 	}
 }
 
-void Game::process_action() {
-	auto pt = player_.get_coords();
-	std::cout << pt.x << " " << pt.y << std::endl;
+std::pair <int, int> Game::get_pose_in_map_coords() {
+	auto player_coords = player_.get_coords();
+	player_coords.x += tileSize / 2;
+	player_coords.y += tileSize / 2;
+	std::cout << player_coords.x << " " << player_coords.y << std::endl;
 
 	auto pt2 = lab_.get_current_room().get_mins();
-	std::cout << pt2.first << " " << pt2.second << std::endl;
+	std::cout << "lab mins " << pt2.first << " " << pt2.second << std::endl;
+
+	int delta_x = player_coords.x - tileSize * pt2.first;
+	int delta_y = player_coords.y - tileSize * pt2.second;
+
+	std::cout << "delta x y " << delta_x / tileSize << " " << delta_y / tileSize << std::endl;
+
+	int object_i = (delta_x / tileSize) + 1;
+	int object_j = (delta_y / tileSize) + 1;
+
+	std::cout << "obj i j " << object_i << " " << object_j << std::endl;
+
+	return {object_i, object_j};
+}
+
+void Game::process_action() {
+	auto object = get_pose_in_map_coords();
+
+	auto sz = lab_.get_current_room().get_size();
+	auto cur_tile = lab_.get_current_room().get_layout()[object.second][object.first];
+	
+	cur_tile->apply_action(*this);
+	std::cout << cur_tile->get_name() << std::endl;
+}
+
+int Game::get_direction() {
+	auto object = get_pose_in_map_coords();
+
+	if (object.first == 0) {
+		return mapping::GO_LEFT;
+	} else if (object.first == lab_.get_current_room().get_size().first - 1) {
+		return mapping::GO_RIGHT;
+	}
+
+	if (object.second == 0) {
+		return mapping::GO_UP;
+	} else {
+		return mapping::GO_DOWN;
+	}
 }
 
 Game::~Game () {
