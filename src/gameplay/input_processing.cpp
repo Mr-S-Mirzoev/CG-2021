@@ -36,9 +36,10 @@ void processPlayerMovement(Player &player)
         player.ProcessInput(PlayerAction::LEFT);
     else if (Input.keys[GLFW_KEY_D])
         player.ProcessInput(PlayerAction::RIGHT);
+}
 
-    if (Input.keys[GLFW_KEY_ENTER])
-        player.ProcessInput(PlayerAction::APPLY_ACTION);
+bool isEnterPressed() {
+    return Input.keys[GLFW_KEY_ENTER];
 }
 
 void OnMouseButtonClicked(GLFWwindow* window, int button, int action, int mods)

@@ -128,7 +128,7 @@ void Room::throw_exception (int room_width,
     );
 }
 
-void Room::DrawRoomOn(Image* screen) const {
+void Room::DrawRoomOn(Image* screen) {
     int center_x = screen->Width() / (scale * 2);
     int center_y = screen->Height() / (scale * 2);
 
@@ -152,6 +152,11 @@ void Room::DrawRoomOn(Image* screen) const {
 
     if (y_max >= screen->Height())
         throw_exception(room_width, room_height, screen->Width(), screen->Height());
+
+    x_min_ = x_min;
+    x_max_ = x_max;
+    y_min_ = y_min;
+    y_max_ = y_max;
 
     for (int j = x_min; j < x_max; ++j) {
         for (int i = y_min; i < y_max; ++i) {
@@ -185,6 +190,18 @@ void Room::DrawRoomOn(Image* screen) const {
             }
         }
     }
+}
+
+void Room::get_screen_pose(int &xmin, int &ymin,
+                           int &xmax, int &ymax) const {
+    xmin = x_min_;
+    ymin = y_min_;
+    xmax = x_max_;
+    ymax = y_max_;
+}
+
+GameObject& Room::game_object_by_idxs(std::pair <int, int> idx) {
+    return map_layout_[idx.first][idx.second];
 }
 
 void KeyObject::apply_action(Game &gm) {

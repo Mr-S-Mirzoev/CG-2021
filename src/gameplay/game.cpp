@@ -74,6 +74,8 @@ void Game::loop() {
 		lastFrame = currentFrame;
     	glfwPollEvents();
 
+		if (isEnterPressed())
+			closest_object();
 		processPlayerMovement(player_);
 		roomA.DrawRoomOn(&screen_buffer_); // x grows from bottom to begining, y grows from left to right
 		player_.Draw(screen_buffer_);
@@ -83,6 +85,30 @@ void Game::loop() {
 
 		glfwSwapBuffers(window_);
 	}
+}
+
+GameObject* Game::closest_object() {
+	auto& cur_room = lab_.get_current_room();
+	auto  cur_pose = player_.get_current_pose();
+
+	std::cout << "Hui" << std::endl;
+	int x_min, y_min, x_max, y_max;
+	cur_room.get_screen_pose(x_min, y_min, x_max, y_max);
+	std::cout << "Pizda" << std::endl;
+
+	cur_pose.x -= x_min + 8;
+	cur_pose.y -= y_min + 8;
+
+	auto x_cached = (cur_pose.x % 16);
+	cur_pose.x = cur_pose.x - x_cached + (x_cached % 16 > 8 ? 16 : 0);
+
+	auto y_cached = (cur_pose.y % 16);
+	cur_pose.y = cur_pose.y - y_cached + (y_cached % 16 > 8 ? 16 : 0);
+
+	auto &game_obj = cur_room.game_object_by_idxs({cur_pose.x / 16, cur_pose.y / 16});
+	std::cout << game_obj.get_name() << std::endl;
+
+	return &game_obj;
 }
 
 Game::~Game () {

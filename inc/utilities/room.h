@@ -1,6 +1,7 @@
 #ifndef ROOM_H
 #define ROOM_H
 
+#include <array>
 #include <sstream>
 #include <vector>
 
@@ -76,6 +77,11 @@ class Room {
     std::vector<std::vector<GameObject>> map_layout_;
     std::pair <unsigned, unsigned> player_starting_pose_;
 
+    int x_min_ = 0;
+    int y_min_ = 0;
+    int x_max_ = 0;
+    int y_max_ = 0;
+
     void throw_exception (int room_width,
                           int room_height,
                           int screen_width,
@@ -84,7 +90,6 @@ class Room {
     Room (const std::string &map_file, int type);
 
 public:
-
     typedef enum {
         ROOM_TYPE_A,
         ROOM_TYPE_B,
@@ -99,14 +104,16 @@ public:
     std::vector<std::vector<GameObject>> get_layout() const;
     int get_type() const;
     std::pair <int, int> get_size() const;
+    GameObject& game_object_by_idxs(std::pair <int, int> idx);
 
     std::string to_string() const;
+    void get_screen_pose(int &xmin, int &ymin, int &xmax, int &ymax) const ;
 
     void DrawScaledPixel(Image &screen, int i, int j, Pixel color) const;
 
     void DrawTile(Image &screen, int i, int j, Tile &tl) const;
 
-    void DrawRoomOn(Image* screen) const;
+    void DrawRoomOn(Image* screen);
 };
 
 #endif // ROOM_H

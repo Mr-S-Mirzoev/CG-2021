@@ -25,6 +25,7 @@ void OnMouseButtonClicked(GLFWwindow* window, int button, int action, int mods);
 
 void OnMouseMove(GLFWwindow* window, double xpos, double ypos);
 
+bool isEnterPressed();
 
 void OnMouseScroll(GLFWwindow* window, double xoffset, double yoffset);
 

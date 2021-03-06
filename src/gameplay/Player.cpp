@@ -58,3 +58,7 @@ void Player::Draw(Image &screen)
         }
     }
 }
+
+Point Player::get_current_pose() const {
+    return coords;
+}

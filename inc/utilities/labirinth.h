@@ -24,7 +24,7 @@ namespace mapping {
 
     class Labirinth
     {
-        Matrix <Room> labirinth_plan_;
+        Matrix <Room *> labirinth_plan_;
         int current_pose_x_, current_pose_y_;
     public:
         /**

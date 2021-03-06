@@ -26,6 +26,7 @@ struct Game
     ~Game();
 
     void initGL() const;
+    GameObject* closest_object();
 
     void loop ();
 };

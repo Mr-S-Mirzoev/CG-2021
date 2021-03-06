@@ -27,23 +27,23 @@ namespace mapping {
                 switch (c)
                 {
                 case 'A':
-                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_A);
+                    labirinth_plan_[{i, j}] = new Room(Room::room_type::ROOM_TYPE_A);
                     break;
 
                 case 'B':
-                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_B);
+                    labirinth_plan_[{i, j}] = new Room(Room::room_type::ROOM_TYPE_B);
                     break;
 
                 case 'C':
-                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_C);
+                    labirinth_plan_[{i, j}] = new Room(Room::room_type::ROOM_TYPE_C);
                     break;
 
                 case 'D':
-                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_D);
+                    labirinth_plan_[{i, j}] = new Room(Room::room_type::ROOM_TYPE_D);
                     break;
 
                 case '.':
-                    labirinth_plan_[{i, j}] = Room(Room::room_type::ROOM_TYPE_D);
+                    labirinth_plan_[{i, j}] = new Room(Room::room_type::ROOM_TYPE_D);
                     break;
                 
                 default:
@@ -52,7 +52,7 @@ namespace mapping {
                 }
             }
 
-            if (labirinth_plan_[{i, j}].get_type() != Room::NO_ROOM) {
+            if (labirinth_plan_[{i, j}]->get_type() != Room::NO_ROOM) {
 
                 if (!set) {
                     current_pose_x_ = i;
@@ -71,8 +71,31 @@ namespace mapping {
         }
     } // Labirinth::Labirinth ()
 
+    void Labirinth::navigate(int direction) {
+        switch (direction) {
+        case GO_DOWN:
+            ++current_pose_x_; break;
+        case GO_UP:
+            --current_pose_x_; break;
+        case GO_RIGHT:
+            ++current_pose_y_; break;
+        case GO_LEFT:
+            --current_pose_y_; break;
+        default:
+            break;    
+        }
+
+        if (current_pose_x_ >= labirinth_plan_.size().first  ||
+            current_pose_y_ >= labirinth_plan_.size().second ||
+            current_pose_x_ < 0 || current_pose_y_ < 0       ||
+            get_current_room().get_type() == Room::room_type::NO_ROOM) 
+        {
+            throw utilities::OuterSpaceException("You fell out of our ship:)");
+        }
+    }
+
     Room& Labirinth::get_current_room () {
-        return labirinth_plan_[{current_pose_x_, current_pose_y_}];
+        return *labirinth_plan_[{current_pose_x_, current_pose_y_}];
     }
 
 } // namespace mapping
