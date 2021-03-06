@@ -29,22 +29,26 @@ void OnKeyboardPressed(GLFWwindow* window, int key, int scancode, int action, in
 
 void processPlayerMovement(Game &game)
 {
-    if (Input.keys[GLFW_KEY_W])
-        game.player_.ProcessInput(PlayerAction::UP);
-    else if (Input.keys[GLFW_KEY_S])
-        game.player_.ProcessInput(PlayerAction::DOWN);
-    
-    if (Input.keys[GLFW_KEY_A])
-        game.player_.ProcessInput(PlayerAction::LEFT);
-    else if (Input.keys[GLFW_KEY_D])
-        game.player_.ProcessInput(PlayerAction::RIGHT);
+    bool toggled = false;
 
-    if (Input.keys[GLFW_KEY_ENTER]) {
-        game.process_action();
-        //std::cout << "Pressed enter" << std::endl;
-    } else {
-        //std::cout << "Released enter" << std::endl;
+    if (Input.keys[GLFW_KEY_W]) {
+        game.player_.ProcessInput(PlayerAction::UP);
+        toggled = true;
+    } else if (Input.keys[GLFW_KEY_S]) {
+        game.player_.ProcessInput(PlayerAction::DOWN);
+        toggled = true;
     }
+
+    if (Input.keys[GLFW_KEY_A]) {
+        game.player_.ProcessInput(PlayerAction::LEFT);
+        toggled = true;
+    } else if (Input.keys[GLFW_KEY_D]) {
+        game.player_.ProcessInput(PlayerAction::RIGHT);
+        toggled = true;
+    }
+
+    if (toggled)
+        game.process_action();
 }
 
 void OnMouseButtonClicked(GLFWwindow* window, int button, int action, int mods)

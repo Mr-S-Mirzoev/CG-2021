@@ -60,7 +60,6 @@ void Game::initGL() const
 	std::cout << "Controls:" << std::endl;
 	std::cout << "press right mouse button to capture/release mouse cursor" << std::endl;
 	std::cout << "W, A, S, D - movement" << std::endl;
-	std::cout << "Enter - apply an action to current room object" << std::endl;
 	std::cout << "press ESC to exit" << std::endl;
 }
 
