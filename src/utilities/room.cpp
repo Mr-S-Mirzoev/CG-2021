@@ -111,6 +111,10 @@ std::pair <int, int> Room::get_size() const {
     return {room_height, room_width};
 }
 
+std::pair <int, int> Room::get_mins() const {
+    return mins_;
+}
+
 void Room::throw_exception (int room_width,
                             int room_height,
                             int screen_width,
@@ -128,7 +132,7 @@ void Room::throw_exception (int room_width,
     );
 }
 
-void Room::DrawRoomOn(Image* screen) const {
+void Room::DrawRoomOn(Image* screen) {
     int center_x = screen->Width() / (scale * 2);
     int center_y = screen->Height() / (scale * 2);
 
@@ -152,6 +156,8 @@ void Room::DrawRoomOn(Image* screen) const {
 
     if (y_max >= screen->Height())
         throw_exception(room_width, room_height, screen->Width(), screen->Height());
+
+    mins_ = {x_min, y_min};
 
     for (int j = x_min; j < x_max; ++j) {
         for (int i = y_min; i < y_max; ++i) {

@@ -44,6 +44,8 @@ struct Player
      */
     void Draw(Image &screen);
 
+    Point get_coords() const;
+
 private:
     Point coords {.x = 10, .y = 10};
     Point old_coords {.x = 10, .y = 10};

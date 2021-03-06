@@ -27,6 +27,8 @@ struct Game
 
     void initGL() const;
 
+    void process_action();
+
     void loop ();
 };
 

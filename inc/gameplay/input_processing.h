@@ -6,6 +6,7 @@
 
 #include "gameplay/Player.h"
 
+class Game;
 constexpr GLsizei WINDOW_WIDTH = 512, WINDOW_HEIGHT = 512;
 
 struct InputState
@@ -19,7 +20,7 @@ struct InputState
 
 void OnKeyboardPressed(GLFWwindow* window, int key, int scancode, int action, int mode);
 
-void processPlayerMovement(Player &player);
+void processPlayerMovement(Game &game);
 
 void OnMouseButtonClicked(GLFWwindow* window, int button, int action, int mods);
 

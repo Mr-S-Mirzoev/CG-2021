@@ -1,4 +1,6 @@
 #include "gameplay/input_processing.h"
+#include "gameplay/game.h"
+#include <iostream>
 
 GLfloat deltaTime = 0.0f;
 GLfloat lastFrame = 0.0f;
@@ -25,20 +27,24 @@ void OnKeyboardPressed(GLFWwindow* window, int key, int scancode, int action, in
 	}
 }
 
-void processPlayerMovement(Player &player)
+void processPlayerMovement(Game &game)
 {
     if (Input.keys[GLFW_KEY_W])
-        player.ProcessInput(PlayerAction::UP);
+        game.player_.ProcessInput(PlayerAction::UP);
     else if (Input.keys[GLFW_KEY_S])
-        player.ProcessInput(PlayerAction::DOWN);
+        game.player_.ProcessInput(PlayerAction::DOWN);
     
     if (Input.keys[GLFW_KEY_A])
-        player.ProcessInput(PlayerAction::LEFT);
+        game.player_.ProcessInput(PlayerAction::LEFT);
     else if (Input.keys[GLFW_KEY_D])
-        player.ProcessInput(PlayerAction::RIGHT);
+        game.player_.ProcessInput(PlayerAction::RIGHT);
 
-    if (Input.keys[GLFW_KEY_ENTER])
-        player.ProcessInput(PlayerAction::APPLY_ACTION);
+    if (Input.keys[GLFW_KEY_ENTER]) {
+        game.process_action();
+        //std::cout << "Pressed enter" << std::endl;
+    } else {
+        //std::cout << "Released enter" << std::endl;
+    }
 }
 
 void OnMouseButtonClicked(GLFWwindow* window, int button, int action, int mods)

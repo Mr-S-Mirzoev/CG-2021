@@ -12,7 +12,7 @@ extern GLfloat lastFrame;
 
 Game::Game(): 
 	player_({WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2}), 
-	lab_("./res/labitinth.txt"),
+	lab_("./res/maps/labirinth.txt"),
 	screen_buffer_(WINDOW_WIDTH, WINDOW_HEIGHT, 4) 
 {	
     if(!glfwInit())
@@ -65,8 +65,6 @@ void Game::initGL() const
 }
 
 void Game::loop() {
-    Room roomA{Room::room_type::ROOM_TYPE_A};
-
     //game loop
 	while (!glfwWindowShouldClose(window_)) {
 		GLfloat currentFrame = glfwGetTime();
@@ -74,8 +72,8 @@ void Game::loop() {
 		lastFrame = currentFrame;
     	glfwPollEvents();
 
-		processPlayerMovement(player_);
-		roomA.DrawRoomOn(&screen_buffer_); // x grows from bottom to begining, y grows from left to right
+		processPlayerMovement(*this);
+		lab_.get_current_room().DrawRoomOn(&screen_buffer_); // x grows from bottom to begining, y grows from left to right
 		player_.Draw(screen_buffer_);
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); GL_CHECK_ERRORS;
@@ -83,6 +81,14 @@ void Game::loop() {
 
 		glfwSwapBuffers(window_);
 	}
+}
+
+void Game::process_action() {
+	auto pt = player_.get_coords();
+	std::cout << pt.x << " " << pt.y << std::endl;
+
+	auto pt2 = lab_.get_current_room().get_mins();
+	std::cout << pt2.first << " " << pt2.second << std::endl;
 }
 
 Game::~Game () {

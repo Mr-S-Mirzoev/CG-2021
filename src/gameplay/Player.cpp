@@ -37,6 +37,10 @@ void Player::ProcessInput(PlayerAction dir)
     }
 }
 
+Point Player::get_coords() const {
+    return coords;
+}
+
 void Player::Draw(Image &screen)
 {
     

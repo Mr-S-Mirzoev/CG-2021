@@ -75,6 +75,7 @@ class Room {
     int map_type_;
     std::vector<std::vector<GameObject>> map_layout_;
     std::pair <unsigned, unsigned> player_starting_pose_;
+    std::pair <int, int> mins_;
 
     void throw_exception (int room_width,
                           int room_height,
@@ -99,6 +100,7 @@ public:
     std::vector<std::vector<GameObject>> get_layout() const;
     int get_type() const;
     std::pair <int, int> get_size() const;
+    std::pair <int, int> get_mins() const;
 
     std::string to_string() const;
 
@@ -106,7 +108,7 @@ public:
 
     void DrawTile(Image &screen, int i, int j, Tile &tl) const;
 
-    void DrawRoomOn(Image* screen) const;
+    void DrawRoomOn(Image* screen);
 };
 
 #endif // ROOM_H
