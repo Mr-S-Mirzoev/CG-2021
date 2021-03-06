@@ -13,6 +13,7 @@ class Room {
     std::vector < std::vector<GameObject*> > map_layout_;
     std::pair <unsigned, unsigned> player_starting_pose_;
     std::pair <int, int> mins_;
+    std::vector <std::pair <int, int> > exit_poses_;
 
     void throw_exception (int room_width,
                           int room_height,
@@ -40,6 +41,8 @@ public:
     std::pair <int, int> get_mins() const;
 
     std::string to_string() const;
+
+    std::pair <unsigned, unsigned> get_player() const;
 
     void DrawScaledPixel(Image &screen, int i, int j, Pixel color) const;
 

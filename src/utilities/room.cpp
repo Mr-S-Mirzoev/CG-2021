@@ -24,11 +24,18 @@ Room::Room(const std::string &map_file, int type): map_type_(type) {
     if (!infile.is_open())
         throw utilities::FileException(map_file);
 
+    for (int i = 0; i < 4; ++i) {
+        exit_poses_.push_back({1, 1});
+    }
+
     std::string line;
+    int i = 0;
     while (std::getline(infile, line))
     {
         std::vector <GameObject *> line_of_objects;
-        for (auto c : line) {
+
+        for (int j = 0; j < line.size(); ++j) {
+            char c = line[j];
             switch (c) {
                 case ' ':
                     line_of_objects.push_back(new VoidObject{}); break;
@@ -40,7 +47,16 @@ Room::Room(const std::string &map_file, int type): map_type_(type) {
                     line_of_objects.push_back(new FloorObject{});
                     player_starting_pose_ = {map_layout_.size(), line_of_objects.size()}; break;
                 case 'x':
-                    line_of_objects.push_back(new ExitObject{}); break;
+                    line_of_objects.push_back(new ExitObject{}); 
+                    if (j == line.size() - 1)
+                        exit_poses_[2] = {i, j};
+                    else if (j == 0)
+                        exit_poses_[0] = {i, j};
+                    else if (i == 0)
+                        exit_poses_[1] = {i, j};
+                    else
+                        exit_poses_[3] = {i, j};
+                    break;
                 case 'X':
                     line_of_objects.push_back(new DoorObject{}); break;
                 case 'Q':
@@ -53,6 +69,8 @@ Room::Room(const std::string &map_file, int type): map_type_(type) {
         }
 
         map_layout_.push_back(line_of_objects);
+
+        ++i;
     }
 }
 
@@ -178,3 +196,6 @@ void Room::DrawRoomOn(Image* screen) {
     }
 }
 
+std::pair <unsigned, unsigned> Room::get_player() const {
+    return player_starting_pose_;
+}

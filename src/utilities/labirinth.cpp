@@ -108,11 +108,12 @@ namespace mapping {
             break;
         }
 
-        if (current_pose_y_ < 0 || current_pose_y_ >= sz.second || 
-            current_pose_x_ < 0 || current_pose_x_ >= sz.first  ||
+        if (current_pose_y_ < 0 || current_pose_y_ >= sz.first || 
+            current_pose_x_ < 0 || current_pose_x_ >= sz.second  ||
             get_current_room().get_type() == Room::room_type::NO_ROOM) {
             std::cout << current_pose_x_ << " " << current_pose_y_ << std::endl;
             std::cout << sz.first << " " << sz.second << std::endl;
+            std::cout << "Type: " << get_current_room().get_type() << std::endl;
             throw utilities::OuterSpaceException("Out of labirinth");
         }
     }

@@ -68,3 +68,8 @@ void Player::Draw(Image &screen)
         }
     }
 }
+
+void Player::place_on_coords(int x, int y) {
+    coords.x = x;
+    coords.y = y;
+}

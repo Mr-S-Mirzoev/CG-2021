@@ -1,5 +1,5 @@
 ........
-.ABDBAC.
-..CAADB.
-.BD.BAC.
+.ABAAAB.
+.BCCCCB
+.DDDBDD.
 ........

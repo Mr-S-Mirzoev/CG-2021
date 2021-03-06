@@ -7,6 +7,8 @@
 #include "gameplay/input_processing.h"
 #include "gameplay/game.h"
 
+#include <unistd.h>
+
 extern GLfloat deltaTime;
 extern GLfloat lastFrame;
 
@@ -71,9 +73,18 @@ void Game::loop() {
 		lastFrame = currentFrame;
     	glfwPollEvents();
 
-		processPlayerMovement(*this);
-		lab_.get_current_room().DrawRoomOn(&screen_buffer_); // x grows from bottom to begining, y grows from left to right
-		player_.Draw(screen_buffer_);
+		try {
+			processPlayerMovement(*this);
+			lab_.get_current_room().DrawRoomOn(&screen_buffer_); // x grows from bottom to begining, y grows from left to right
+			player_.Draw(screen_buffer_);
+		} catch (...) {
+			Image img{"./res/game_over.png"};
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); GL_CHECK_ERRORS;
+			glDrawPixels (WINDOW_WIDTH, WINDOW_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, img.Data()); GL_CHECK_ERRORS;
+
+			glfwSwapBuffers(window_);
+			sleep(10);
+		}
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); GL_CHECK_ERRORS;
 	    glDrawPixels (WINDOW_WIDTH, WINDOW_HEIGHT, GL_RGBA, GL_UNSIGNED_BYTE, screen_buffer_.Data()); GL_CHECK_ERRORS;
@@ -158,16 +169,19 @@ int Game::get_direction() {
 
 	std::cout << "Object: " << object.first << " " << object.second << std::endl;
 
-	if (object.first == 0) {
-		return mapping::GO_LEFT;
-	} else if (object.first == lab_.get_current_room().get_size().first - 1) {
+	auto sz = lab_.get_current_room().get_size();
+	std::cout << "Size of room: " << sz.first << " " << sz.second << std::endl;
+
+	if (object.first >= sz.second) {
 		return mapping::GO_RIGHT;
+	} else if (object.first <= 2) {
+		return mapping::GO_LEFT;
 	}
 
-	if (object.second == 0) {
-		return mapping::GO_UP;
-	} else {
+	if (object.second >= sz.first) {
 		return mapping::GO_DOWN;
+	} else {
+		return mapping::GO_UP;
 	}
 }
 

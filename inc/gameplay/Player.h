@@ -48,6 +48,8 @@ struct Player
      */
     void Draw(Image &screen);
 
+    void place_on_coords(int x, int y);
+
     Point get_coords() const;
 
 private:
